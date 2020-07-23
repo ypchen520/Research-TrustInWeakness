@@ -1,14 +1,17 @@
 <template>
 <div>
   <v-navigation-drawer app floating right >
-<v-card>
-        <v-card-title>Time-remaining:</v-card-title>
+    <v-card>
+        <v-card-title>Task Card</v-card-title>
+        <v-divider></v-divider>
       <v-card-text>
+        <v-card> Time Remaining: {{this.timers.finishTask.time}}</v-card>
         <p>Task Description blah blah blah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quia consequatur ducimus nisi, ad officiis natus! Aut sequi ut consectetur unde maiores dolores voluptas, veritatis natus. Soluta ipsum architecto et.</p>
         <p> Description of condition</p>
-        <ScoreCard v-bind:points="points" v-bind:time="time"/>
+        <ScoreCard v-bind:points="points" @timer-tick:updatePoints="time" />
       </v-card-text>
-      </v-card>  </v-navigation-drawer>
+    </v-card>  
+  </v-navigation-drawer>
   <v-row class=pa-12>
     <v-col cols=1 v-for="photo in images" :key=photo.photoID>
       <v-card @click="openPhoto(photo)" tile>
@@ -54,9 +57,10 @@
 <script>
 import images from "../data/images"
 import ScoreCard from "../components/score-card"
+import timer from 'vue-timers'
 
 var cond = 0; //condition of the user. todo: make this functional
-var time = 6000000; //total time remaining in this app (10 min)
+var time = 5000; //total time remaining in this app (10 min)
 var points = 0; //points updated every 120000 seconds (or when updatePoints is called)
 export default {
   components:{
@@ -73,11 +77,18 @@ export default {
       display: {stage1:"none",stage2:"none",stage3:"none",stage4:"none"},
       isAlertShowing: false
     }
+
   },
   methods: {
-    updatePoints(){
+    finishTask (){
+      console.log("TASK IS OVER!!!!");
+      this.$timer.stop('updatePoints')
+    },
+    updatePoints (){
       //todo: evaluate the current submitted photos and reevaluate them
       points++
+      console.log("Updating points",points);
+      console.log(this.timers.updatePoints)
     },
     getColor(photo){
       if(photo.accepted){
@@ -126,6 +137,10 @@ export default {
         },3000);
       },4000);
     }
+  },
+  timers: {
+    finishTask: { time: time, autostart: true, repeat:false},
+    updatePoints: { time: (time/5), autostart: true, repeat: true}
   },
 }
 </script>
