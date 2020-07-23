@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Analysis from '../views/Analysis.vue'
 
 Vue.use(VueRouter)
 
@@ -13,7 +14,7 @@ Vue.use(VueRouter)
   {
     path: '/analysis',
     name: 'Analysis',
-    component: () => import(/* webpackChunkName: "analysis" */ '../views/Analysis.vue')
+    component: Analysis// alternative: run anonymous function () => import( '../views/Analysis.vue')
   }
 ]
 
