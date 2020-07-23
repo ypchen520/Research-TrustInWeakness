@@ -12,9 +12,12 @@
   <v-row class=pa-12>
     <v-col cols=1 v-for="photo in images" :key=photo.photoID>
       <v-card @click="openPhoto(photo)" tile>
-        <v-img contain :src="photo.src"></v-img>
+        <v-img contain :src="photo.src">
+          <v-overlay v-if="photo.accepted" absolute color="#036358">A</v-overlay>
+          <v-overlay v-else-if="photo.rejected" absolute color="#036358">D</v-overlay>
+        </v-img>
       </v-card>
-      <v-sheet class=mt-1 width=100% height=5px :color="getColor(photo)" tile></v-sheet>
+      <!-- <v-sheet class=mt-1 width=100% height=5px :color="getColor(photo)" tile></v-sheet> -->
     </v-col>
   </v-row>
 
@@ -36,6 +39,10 @@
               <v-btn block class=mb-3 :style="'display:'+display.stage4" @click=accept>Accept</v-btn>
               <v-btn block :style="'display:'+display.stage4" @click=reject>Reject</v-btn>
             </v-card>
+            <v-card-actions>
+              <v-btn color="blue darken-1" text @click=reject>Close</v-btn>
+              <v-btn color="blue darken-1" text @click=accept>Submit</v-btn>
+            </v-card-actions>
           </v-col>
         </v-row>
    </v-dialog>
@@ -73,6 +80,8 @@ export default {
     openPhoto(photo){
       if(photo.accepted || photo.rejected){
         this.isAlertShowing = true;
+        this.isPhotoShowing = true;
+        this.current = photo;
       } else {
         this.isPhotoShowing = true;
         this.current = photo;
