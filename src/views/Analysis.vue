@@ -1,6 +1,15 @@
 <template>
 <div>
-  <v-row>
+  <v-navigation-drawer app>
+<v-card>
+        <v-card-title>Time-remaining:</v-card-title>
+      <v-card-text>
+        <p>Task Description blah blah blah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quia consequatur ducimus nisi, ad officiis natus! Aut sequi ut consectetur unde maiores dolores voluptas, veritatis natus. Soluta ipsum architecto et.</p>
+        <p> Description of condition</p>
+        <score/>
+      </v-card-text>
+      </v-card>  </v-navigation-drawer>
+  <v-row class=pa-12>
     <v-col cols=1 v-for="photo in images" :key=photo.photoID>
       <v-card @click="openPhoto(photo)" tile>
         <v-img contain :src="photo.src"></v-img>
@@ -37,7 +46,11 @@
 
 <script>
 import images from "../data/images"
+import score from "../components/score-card"
 export default {
+  components:{
+    score
+  },  
   data(){
     return {
       images,
