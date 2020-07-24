@@ -18,11 +18,10 @@ export default {
         time: Number
     },
     methods: {
-        updatePoints(id){
+        updatePoints(e){
             //todo fix the vue warning and be sure that this function can get the data it needs to update the points.
-            console.log("MINI TIMER FINISHED!");
-            this.points++;
-            $cookies.set('pnt', this.points)
+            console.log("MINI TIMER FINISHED!",e);
+            this.$emit("recalculate");
         }
     },
 

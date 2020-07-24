@@ -5,10 +5,10 @@
         <v-card-title>Task Card</v-card-title>
         <v-divider></v-divider>
       <v-card-text> 
-          <BaseTimer :TIME_LIMIT="10" :isRepeatable="false" v-on:finished="finishTask($event)" />
+          <BaseTimer :TIME_LIMIT="52" :isRepeatable="false" v-on:finished="finishTask($event)" />
         <p>Task Description blah blah blah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quia consequatur ducimus nisi, ad officiis natus! Aut sequi ut consectetur unde maiores dolores voluptas, veritatis natus. Soluta ipsum architecto et.</p>
         <CondHint :condition="cond"/>
-        <ScoreCard v-bind:points="points" />
+        <ScoreCard v-bind:points="points" v-on:recalculate="recalcPoints()"/>
       </v-card-text>
     </v-card>  
   </v-navigation-drawer>
@@ -86,11 +86,12 @@ export default {
       console.log("TASK IS OVER!!!!",stuff);
       this.$router.push({path: 'survey'})
     },
-    // updatePoints(id){
-    //   //todo: evaluate the current submitted photos and reevaluate them
-    //   this.points=id;
-    //   console.log("Updating points",this.points);
-    // },
+    recalcPoints(){
+      //todo: evaluate the current submitted photos and reevaluate them
+      this.points++;
+      $cookies.set('pnt', this.points)
+      console.log("Updating points",this.points);
+    },
     getColor(photo){
       if(photo.accepted){
         return "green";
