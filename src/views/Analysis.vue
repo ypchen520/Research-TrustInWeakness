@@ -84,6 +84,7 @@ export default {
   methods: {
     finishTask (stuff){
       console.log("TASK IS OVER!!!!",stuff);
+      this.$router.push({path: 'survey'})
     },
     // updatePoints(id){
     //   //todo: evaluate the current submitted photos and reevaluate them

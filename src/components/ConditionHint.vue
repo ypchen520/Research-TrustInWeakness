@@ -10,7 +10,6 @@
 </template>
 
 <script>
-var condition = "";
 export default {
     name: "ConditionHint",
     props:{
