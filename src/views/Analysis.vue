@@ -4,8 +4,8 @@
     <v-card>
         <v-card-title>Task Card</v-card-title>
         <v-divider></v-divider>
-      <v-card-text>
-        <v-card> Time Remaining: {{this.timers.finishTask.time}}</v-card>
+      <v-card-text> 
+          <BaseTimer v-bind:time="TIME_LIMIT" :TIME_LIMIT="12" :isRepeatable="false" v-on:finished="finishTask($event)" />
         <p>Task Description blah blah blah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quia consequatur ducimus nisi, ad officiis natus! Aut sequi ut consectetur unde maiores dolores voluptas, veritatis natus. Soluta ipsum architecto et.</p>
         <p> Description of condition</p>
         <ScoreCard v-bind:points="points" @timer-tick:updatePoints="time" />
@@ -57,14 +57,15 @@
 <script>
 import images from "../data/images"
 import ScoreCard from "../components/score-card"
-import timer from 'vue-timers'
+import BaseTimer from "../components/BaseTimer"
+
 
 var cond = 0; //condition of the user. todo: make this functional
 var time = 5000; //total time remaining in this app (10 min)
 var points = 0; //points updated every 120000 seconds (or when updatePoints is called)
 export default {
   components:{
-    ScoreCard
+    ScoreCard, BaseTimer
   },  
   data(){
     return {
@@ -80,16 +81,14 @@ export default {
 
   },
   methods: {
-    finishTask (){
-      console.log("TASK IS OVER!!!!");
-      this.$timer.stop('updatePoints')
+    finishTask (stuff){
+      console.log("TASK IS OVER!!!!",stuff);
     },
-    updatePoints (){
-      //todo: evaluate the current submitted photos and reevaluate them
-      points++
-      console.log("Updating points",points);
-      console.log(this.timers.updatePoints)
-    },
+    // updatePoints(id){
+    //   //todo: evaluate the current submitted photos and reevaluate them
+    //   this.points=id;
+    //   console.log("Updating points",this.points);
+    // },
     getColor(photo){
       if(photo.accepted){
         return "green";
@@ -138,9 +137,9 @@ export default {
       },4000);
     }
   },
-  timers: {
-    finishTask: { time: time, autostart: true, repeat:false},
-    updatePoints: { time: (time/5), autostart: true, repeat: true}
-  },
+  // timers: {
+  //   finishTask: { time: time, autostart: true, repeat:false},
+  //   updatePoints: { time: (time/5), autostart: true, repeat: true}
+  // },
 }
 </script>
