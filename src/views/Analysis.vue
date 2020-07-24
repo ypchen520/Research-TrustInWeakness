@@ -5,10 +5,10 @@
         <v-card-title>Task Card</v-card-title>
         <v-divider></v-divider>
       <v-card-text> 
-          <BaseTimer :TIME_LIMIT="6" :isRepeatable="false" v-on:finished="finishTask($event)" />
+          <BaseTimer :TIME_LIMIT="10" :isRepeatable="false" v-on:finished="finishTask($event)" />
         <p>Task Description blah blah blah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quia consequatur ducimus nisi, ad officiis natus! Aut sequi ut consectetur unde maiores dolores voluptas, veritatis natus. Soluta ipsum architecto et.</p>
         <CondHint :condition="cond"/>
-        <ScoreCard v-bind:points="points" @timer-tick:updatePoints="time" />
+        <ScoreCard v-bind:points="points" />
       </v-card-text>
     </v-card>  
   </v-navigation-drawer>

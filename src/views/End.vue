@@ -1,14 +1,30 @@
 <template>
   <div>
     <h2>The time is up!</h2>
-    <p> Thank you for helping identify Trash. Your final score is<span class="final-score">FinalScore </span></p>
-    <p>Please answer the following questions in the survey below based on your expereince</p>
-    <iframe src="https://ufl.qualtrics.com/jfe/form/SV_50aVsvUwpST3U0J" height="800px" width="600px"></iframe>
+    <p> Thank you for helping identify litter in our images.</p>
+       <div class="final-score"> 
+         <v-chip color="orange" text-color="white" :ripple=false x-large> 
+          <h5>Your final score is:  </h5>
+          <h1>{{this.$cookies.get('pnt')}} </h1>
+         </v-chip>
+        </div>
+    <em>Based on your expereince, please answer the following questions in the survey below:</em>
+    <iframe src="https://www.qualtrics.com/" width="100%" height="800vh"></iframe>
   </div>
 </template>
 
 <script>
 export default {
   name: 'End',
+  props: {
+    score: {
+      type:Number,
+      default: -1
+    }
+  }
 }
 </script>
+<style scoped>
+.final-score{
+}
+</style>

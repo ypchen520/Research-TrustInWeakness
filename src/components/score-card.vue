@@ -22,6 +22,7 @@ export default {
             //todo fix the vue warning and be sure that this function can get the data it needs to update the points.
             console.log("MINI TIMER FINISHED!");
             this.points++;
+            $cookies.set('pnt', this.points)
         }
     },
 
