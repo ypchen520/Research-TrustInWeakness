@@ -5,8 +5,14 @@
         <v-card-title>Task Card</v-card-title>
         <v-divider></v-divider>
       <v-card-text> 
-          <BaseTimer :TIME_LIMIT="52" :isRepeatable="false" v-on:finished="finishTask($event)" />
-        <p>Task Description blah blah blah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quia consequatur ducimus nisi, ad officiis natus! Aut sequi ut consectetur unde maiores dolores voluptas, veritatis natus. Soluta ipsum architecto et.</p>
+          <BaseTimer :TIME_LIMIT="82" :isRepeatable="false" v-on:finished="finishTask($event)" />
+        <h3>Task Description</h3>
+        <p> Your goal is to maximize your points in 10 minutes. Work as quickly and efficiently as you can. The maximum score is <span class="strong">500</span>.</p>
+
+          <ul>
+            <li><span class="good strong"> +5 Points</span> for correctly identifying all kinds of trash in an image.</li>
+            <li> <span class="bad strong">-10 points</span> lost for every image you submit with a mistake.</li>
+          </ul>
         <CondHint :condition="cond"/>
         <ScoreCard v-bind:points="points" v-on:recalculate="recalcPoints()"/>
       </v-card-text>
@@ -146,3 +152,15 @@ export default {
   // },
 }
 </script>
+
+<style scoped>
+.good{
+  color: green;
+}
+.bad{
+  color: red;
+}
+.strong{
+  font-weight: bold;
+}
+</style>
