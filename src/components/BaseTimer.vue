@@ -124,6 +124,8 @@ export default {
       }
     },
 
+    //todo stop timer so we can clear any left over loopers
+
     startTimer() {
       this.timerInterval = setInterval(() => (this.timePassed += 1), 1000);
     }

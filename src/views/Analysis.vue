@@ -5,9 +5,9 @@
         <v-card-title>Task Card</v-card-title>
         <v-divider></v-divider>
       <v-card-text> 
-          <BaseTimer v-bind:time="TIME_LIMIT" :TIME_LIMIT="12" :isRepeatable="false" v-on:finished="finishTask($event)" />
+          <BaseTimer :TIME_LIMIT="6" :isRepeatable="false" v-on:finished="finishTask($event)" />
         <p>Task Description blah blah blah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati quia consequatur ducimus nisi, ad officiis natus! Aut sequi ut consectetur unde maiores dolores voluptas, veritatis natus. Soluta ipsum architecto et.</p>
-        <p> Description of condition</p>
+        <CondHint :condition="cond"/>
         <ScoreCard v-bind:points="points" @timer-tick:updatePoints="time" />
       </v-card-text>
     </v-card>  
@@ -58,14 +58,15 @@
 import images from "../data/images"
 import ScoreCard from "../components/score-card"
 import BaseTimer from "../components/BaseTimer"
+import CondHint from "../components/ConditionHint"
 
 
-var cond = 0; //condition of the user. todo: make this functional
+var cond = "control"; //condition of the user. todo: make this functional
 var time = 5000; //total time remaining in this app (10 min)
 var points = 0; //points updated every 120000 seconds (or when updatePoints is called)
 export default {
   components:{
-    ScoreCard, BaseTimer
+    ScoreCard, BaseTimer, CondHint
   },  
   data(){
     return {
