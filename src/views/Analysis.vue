@@ -1,6 +1,6 @@
 <template>
 <div>
-  <v-navigation-drawer app floating right >
+  <v-navigation-drawer app floating right permanent>
     <v-card>
         <v-card-title>Task Card</v-card-title>
         <v-divider></v-divider>

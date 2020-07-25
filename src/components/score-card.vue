@@ -1,7 +1,19 @@
 <template>
     <div>
-        <v-chip color="orange" text-color="white" :ripple=false x-large> Score: {{this.points}} <BaseTimer ref="miniTimer" :TIME_LIMIT="3" :isRepeatable="true" v-on:finished="updatePoints($event)"/> </v-chip>
-    <small style="float:right;">score refresh in</small>
+        <v-chip color="purple" text-color="white" :ripple=false x-large> 
+            <span class="mx-3"> 
+                Score: {{this.points}}
+            </span>
+            <div class="ms-3">
+                <small>score refresh in</small>
+                <BaseTimer 
+                    ref="miniTimer" 
+                    :TIME_LIMIT="60" 
+                    :isRepeatable="true" 
+                    :isMini="true"
+                    v-on:finished="updatePoints($event)"/> 
+            </div>
+        </v-chip>
     </div>
 </template>
 

@@ -2,7 +2,7 @@
 <!-- Source coppied from MateuszRybczonek on 
 https://medium.com/js-dojo/how-to-create-an-animated-countdown-timer-with-vue-89738903823f -->
   <div class="base-timer">
-    <svg class="base-timer__svg" viewBox="0 0 100 100" width = "70%" xmlns="http://www.w3.org/2000/svg">
+    <svg v-if="!this.isMini" class="base-timer__svg" viewBox="0 0 100 100" width = "70%" xmlns="http://www.w3.org/2000/svg">
       <g class="base-timer__circle">
         <text x="37" y="55" style="fill:grey">{{ formattedTimeLeft }} </text>
         <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
@@ -19,15 +19,36 @@ https://medium.com/js-dojo/how-to-create-an-animated-countdown-timer-with-vue-89
         ></path>
       </g>
     </svg>
+    <svg v-if="this.isMini" class="base-timer__svg mini" viewBox="0 0 100 100" width = "25%" xmlns="http://www.w3.org/2000/svg">
+      <g class="base-timer__circle">
+        <circle class="base-timer__path-elapsed mini" cx="50" cy="50" r="35"></circle>
+        <path
+          :stroke-dasharray="circleDasharray"
+          class="base-timer__path-remaining mini"
+          :class="remainingPathColor"
+          d="
+            M 50, 50
+            m -35, 0
+            a 35,35 0 1,0 70,0
+            a 35,35 0 1,0 -70,0
+          "
+        ></path>
+      </g>
+    </svg>
     <!-- <span >{{ formattedTimeLeft }}</span> -->
+     <!-- a 22.5,22.5 0 1,0 50,0
+            a 22.5,22.5 0 1,0 -50,0 -->
   </div>
 </template>
 
 <script>
+//circumfrence of a 45px circle
 const FULL_DASH_ARRAY = 283;
-const WARNING_THRESHOLD = 10;
-const ALERT_THRESHOLD = 5;
-const showText = false;
+//circumfrence of a 35px circle
+const MINI_DASH_ARRAY = 220;
+
+const WARNING_THRESHOLD = 30;
+const ALERT_THRESHOLD = 10;
 
 const COLOR_CODES = {
   info: {
@@ -61,11 +82,16 @@ export default {
         isRepeatable:{
             type: Boolean,
             default: false
+        },
+        isMini:{
+          type: Boolean,
+          default: false
         }
   },
   computed: {
     circleDasharray() {
-      return `${(this.timeFraction * FULL_DASH_ARRAY).toFixed(0)} 283`;
+      let filledLength = (this.isMini)? MINI_DASH_ARRAY : FULL_DASH_ARRAY
+      return `${(this.timeFraction * filledLength).toFixed(0)} 283`;
     },
 
     formattedTimeLeft() {
@@ -139,6 +165,10 @@ export default {
 
   &__svg {
     margin-left: 15%;
+
+    &.mini{
+      margin-left: 37.5%;
+    }
   }
 
   &__circle {
@@ -149,6 +179,10 @@ export default {
   &__path-elapsed {
     stroke-width: 5px;
     stroke: grey;
+
+    &.mini {
+      stroke-width: 22px;
+    }
   }
 
   &__path-remaining {
@@ -171,7 +205,12 @@ export default {
     &.red {
       color: red;
     }
+
+    &.mini {
+      stroke-width: 25px;
+    }    
   }
+
 
 
 }
