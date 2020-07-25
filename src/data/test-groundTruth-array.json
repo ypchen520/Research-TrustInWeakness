@@ -1,0 +1,2862 @@
+[
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": false,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": true,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": false,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": true,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": true,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": true,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": true,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": false,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": true,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": true,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": false,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": false,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": false,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": true,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": true,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": true,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": true,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": true,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": false,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": true,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": true,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": true,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": true,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": false,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": true,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": false,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": true,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": true,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": true,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": true,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": true,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": false,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": false,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": false,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": true,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": true,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": true,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": false,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": false,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": true,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": false,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": true,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": false,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": true,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": false,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": false,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": true,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": true,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": true,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": false,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": false,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": true,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": true,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": true,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": true,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": true,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": true,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": true,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": true,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": false,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": true,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": true,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": true,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": false,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": true,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": true,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": false,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": true,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": true,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": true,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": false,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": true,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": true,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": true,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": true,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": true,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": true,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": true,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": false,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": true,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": true,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": true,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": true
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": false,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": true,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": true,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": false,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": false,
+    "other": true,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": false
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": false,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": true,
+    "other": true,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": false,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": false,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": true
+    },
+    "paper": {
+      "bag": false,
+      "other": false
+    },
+    "food": true,
+    "other": false,
+    "idk": true
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": false,
+      "other": true
+    },
+    "aluminum": {
+      "can": true,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": true,
+    "other": false,
+    "idk": false
+  },
+  {
+    "glass": {
+      "unbroken": true,
+      "broken": true
+    },
+    "plastic": {
+      "wrapper": true,
+      "container": true,
+      "other": false
+    },
+    "aluminum": {
+      "can": false,
+      "other": false
+    },
+    "paper": {
+      "bag": true,
+      "other": false
+    },
+    "food": true,
+    "other": false,
+    "idk": false
+  }
+]
