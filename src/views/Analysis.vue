@@ -72,15 +72,12 @@
               </div>
               </v-col>
               <v-col cols=6>
-                <v-btn color="success" class="mt-12" @click=reveal>Click to Reveal System Guess</v-btn>
-                <v-card height="300" width="250">
+                
+                <v-card height="500" width="300">
+                  <v-btn width="255" color="success" class="mt-12" @click=reveal>Reveal System Guess</v-btn>
                   <v-row justify="center">
-                  <v-overlay absolute :value="isSystemAnswer==1 || current.hint==1">
-                  <v-btn
-                   color="success"
-                   @click="current.systemAnswer = false"
-                  >Hide Overlay
-                  </v-btn>
+                  <v-overlay opacity=1 absolute :value="isSystemAnswer==1 || current.hint==1">
+                  System guess
                   </v-overlay>
                   </v-row>
                 </v-card>
