@@ -5,7 +5,7 @@
         <v-card-title>Task Card</v-card-title>
         <v-divider></v-divider>
       <v-card-text> 
-          <BaseTimer :TIME_LIMIT="82" :isRepeatable="false" v-on:finished="finishTask($event)" />
+          <BaseTimer :TIME_LIMIT="time" :isRepeatable="false" v-on:finished="finishTask($event)" />
         <h3>Task Description</h3>
         <p> Your goal is to maximize your points in 10 minutes. Work as quickly and efficiently as you can. The maximum score is <span class="strong">500</span>.</p>
 
@@ -110,20 +110,23 @@
         
     </v-dialog>
 
-   <v-snackbar timeout=4000 color="primary" v-model="isAlertShowing">This photo has been analyzed.</v-snackbar>
+   <v-snackbar :timeout=4000 color="primary" v-model="isAlertShowing">This photo has been analyzed.</v-snackbar>
 </div>
 </template>
 
 <script>
 import images from "../data/images"
 import ScoreCard from "../components/score-card"
+import BaseTimer from "../components/BaseTimer"
+import CondHint from "../components/ConditionHint"
 
-var cond = 0; //condition of the user. todo: make this functional
-var time = 6000000; //total time remaining in this app (10 min)
+
+var cond = "control"; //condition of the user. todo: make this functional
+var time = 601; //total time remaining in this app (10 min)
 var points = 0; //points updated every 120000 seconds (or when updatePoints is called)
 export default {
   components:{
-    ScoreCard
+    ScoreCard, BaseTimer, CondHint
   },  
   data(){
     return {
@@ -140,9 +143,15 @@ export default {
     }
   },
   methods: {
-    updatePoints(){
+        finishTask (stuff){
+      console.log("TASK IS OVER!!!!",stuff);
+      this.$router.push({path: 'survey'})
+    },
+    recalcPoints(){
       //todo: evaluate the current submitted photos and reevaluate them
-      points++
+      this.points++;
+      $cookies.set('pnt', this.points)
+      console.log("Updating points",this.points);
     },
     getColor(photo){
       if(photo.accepted){
