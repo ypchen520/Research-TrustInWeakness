@@ -2,16 +2,16 @@
 <div>
   <v-navigation-drawer app floating right permanent>
     <v-card>
-        <v-card-title>Task Card</v-card-title>
+        <v-card-title>Task</v-card-title>
         <v-divider></v-divider>
       <v-card-text> 
           <BaseTimer :TIME_LIMIT="time" :isRepeatable="false" v-on:finished="finishTask($event)" />
         <h3>Task Description</h3>
-        <p> Your goal is to maximize your points in 10 minutes. Work as quickly and efficiently as you can. The maximum score is <span class="strong">500</span>.</p>
+        <p class="grey--text"> Your goal is to maximize your points in 10 minutes. Work as quickly and efficiently as you can. The maximum score is <strong class="black--text">500</strong>.</p>
 
           <ul>
-            <li><span class="good strong"> +5 Points</span> for correctly identifying all kinds of trash in an image.</li>
-            <li> <span class="bad strong">-10 points</span> lost for every image you submit with a mistake.</li>
+            <li><span class="green--text"> +5 Points</span> for correctly identifying all kinds of trash in an image.</li>
+            <li> <span class="red--text">-10 points</span> lost for every image you submit with a mistake.</li>
           </ul>
         <CondHint :condition="cond"/>
         <ScoreCard v-bind:points="points" v-on:recalculate="recalcPoints()"/>
@@ -239,4 +239,6 @@ export default {
   font-size: 24px;
   padding-left: 5px;
 }
+
+
 </style>

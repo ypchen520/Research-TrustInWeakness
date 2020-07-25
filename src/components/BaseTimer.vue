@@ -195,15 +195,15 @@ export default {
     stroke: currentColor;
 
     &.green {
-      color: rgb(65, 184, 131);
+      color: #4CAF50;
     }
 
     &.orange {
-      color: orange;
+      color: #FFC107;
     }
 
     &.red {
-      color: red;
+      color: #FF5722;
     }
 
     &.mini {

@@ -1,10 +1,10 @@
 <template>
     <div>
         <div v-if="this.condition === 'control'">
-            <p>This is the <span class="good">Control</span> condition.</p>
+            <p>This is the <span class="green--text">Control</span> condition.</p>
         </div>
         <div v-else-if="this.condition === 'contrastive'">
-            <p>This is the <span class="bad">Contrastive</span> condition.</p>
+            <p>This is the <span class="red--text">Contrastive</span> condition.</p>
         </div>
     </div>
 </template>
@@ -20,12 +20,3 @@ export default {
     },
 }
 </script>
-
-<style scoped>
-.good{
-    color: green;
-}
-.bad{
-    color: purple;
-}
-</style>
