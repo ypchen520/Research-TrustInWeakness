@@ -1,9 +1,12 @@
 <template>
   <div>
-    <p>Text, Consent, Description</p>
+    <p>This study is still under construction. To check on any particular page, click a link below.</p>
+    <h2><router-link to="/consent">Consent</router-link> </h2>
+    <h2><router-link to="/tutorial"> Tutorial</router-link> </h2>
     <h2><router-link to="/analysis">Begin Analysis</router-link></h2>
-    <!-- Adding the below link Just for testing -->
     <h2><router-link to="/survey"> End</router-link> </h2>
+    <h2><router-link to="/debrief">Debrief</router-link> </h2>
+    <h2><router-link to="/cancel">Cancel</router-link> </h2>
   </div>
 </template>
 
