@@ -8,7 +8,7 @@
     >
     This study is still being developed. To check on any particular page, click a link below.</p>
     </v-alert>
-    <h2><router-link to="/consent">Consent</router-link> </h2>
+    <h2><router-link :to="{name:'consent',query: {src: this.src}, params:{id: this.userID} }">Consent</router-link> </h2>
     <h2><router-link to="/tutorial"> Tutorial</router-link> </h2>
     <h2><router-link to="/analysis">Begin Analysis</router-link></h2>
     <h2><router-link to="/survey"> Survey</router-link> </h2>

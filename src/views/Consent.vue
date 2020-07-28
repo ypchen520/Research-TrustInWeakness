@@ -12,16 +12,22 @@
             <p><strong>Study Title:</strong>​Trustworthiness of Intelligent Systems with Known Weaknesses </p>
                 <h4>Person(s) Conducting the Study:</h4>
             <v-subheader>
-            <p> <strong>Principal Investigator:</strong> 
-                <a href="mailto:eragan@ufl.edu"> Dr. Eric Ragan</a>, CISE</p>
+            <p> <strong>Principal Investigator: </strong> 
+                <a href="mailto:eragan@ufl.edu">Dr. Eric Ragan</a>, CISE</p>
             </v-subheader>
             <v-subheader>
-                <strong> Co-Investigators:</strong> 
-                <a href="mailto:j.block@ufl.edu">Jeremy Block</a>, CISE​​, 
-                <a href="mailto:drhoneycutt@ufl.edu​">Donald Honeycutt</a>, CISE​,
-                <a href="mailto:d.paul@ufl.edu​">Dhrubo Paul</a>, CISE​,
-                <a href="mailto:yupengchen@ufl.edu">Yu-Peng Chen</a>, CISE​​,
-                <a href="mailto:​brett.benda@ufl.edu">William (Brett) Benda</a>, CISE​,
+                <strong> Co-Investigators: </strong> 
+                <a href="mailto:j.block@ufl.edu">Jeremy Block</a>, CISE​​ 
+                <v-divider inset vertical class="mx-2" role="presentation" ></v-divider>
+                <a href="mailto:drhoneycutt@ufl.edu​">Donald Honeycutt</a>, CISE​
+                <v-divider inset vertical  class="mx-2" role="presentation"></v-divider>
+                <a href="mailto:d.paul@ufl.edu​">Dhrubo Paul</a>, CISE​
+            </v-subheader>
+            <v-subheader class="mt-n5">
+                <a href="mailto:yupengchen@ufl.edu">Yu-Peng Chen</a>, CISE​​
+                <v-divider inset vertical  class="mx-2" role="presentation"></v-divider>
+                <a href="mailto:​brett.benda@ufl.edu">William (Brett) Benda</a>, CISE​
+                <v-divider inset vertical  class="mx-2" role="presentation"></v-divider>
                 <a href="mailto:​nkroeger@ufl.edu">Nicholas Kroeger</a>, CISE​
             </v-subheader>
             <v-divider></v-divider>
@@ -49,12 +55,13 @@
             into
             the development of explainable AI systems.</p>
             <h3>Compensation:</h3>
-            <p>If you are enrolled in an approved course, you are eligible to receive course credit as compensation in this
+            <p v-if="src === 'SONA'">If you are enrolled in an approved course, you are eligible to receive course credit as compensation in this
             study. The credit granted will be based on the course guidelines set by your instructor up to but not
             exceeding
             2% of your final grade for the course. It is necessary to provide a UFID to verify your identity before
             credit
             can be granted.</p>
+            <p v-else> You are volunteering your time and contributions to this study</p> 
             <h3>Withdrawal from the study:</h3>
             <p>You are free to withdraw your consent from the study and stop your participation at any moment for any
             reason without consequence. Any questions asked will be optional. If you choose to withdraw, your information will
@@ -63,7 +70,7 @@
             <p>If you wish to discuss anything above or any discomforts your experience, please ask questions now or
             contact one of the researchers listed above.
             If you have any questions regarding your rights as a research subject, please contact the Institutional
-            Review Board (IRB02) office ( (352) 392-0433 or irb2@ufl.edu.)</p>
+            Review Board (IRB02) office ( <a tel="+13523920433"> (352) 392-0433</a> or <a href="mailto:irb2@ufl.edu">irb2@ufl.edu</a>.)</p>
             <h3>Agreement to participate:</h3>
             <p>Now that you’ve read about the study, if you wish to participate, click the “I agree to participate” button
             to continue; if you do not consent to participate, click “I do not wish to participate” or just close this window.</p>
@@ -81,23 +88,44 @@
                 <v-btn class="ma-5" small>I do not wish to participate </v-btn>
             </router-link>
             <router-link to="/tutorial">
-                <v-btn class="ma-3" color="primary">I agree to Participate</v-btn>
+                <v-btn @click="setSessionVariables()" class="ma-3" color="primary">I agree to Participate</v-btn>
             </router-link>
         </v-card>
 
     </v-responsive>
 </template>
 <script>
+let conditions = 
+  [{
+    id:0,
+    text: "Control"
+  },{
+    id:1,
+    text: "Counterfactual"
+  // },{
+  //   id:2,
+  //   text: "Contrastive"
+  }]
     export default {
         name: 'Consent',
         data() {
             return {
-                publicPath: process.env.BASE_URL
+                src: this.$route.query.src,
+                cond:'',
+                userID: this.$route.params.id,
+                qID:'',
             }
         },
-        computed: {
-            setCondition() {
-                return Math.random();
+        methods: {
+            setSessionVariables() {
+                console.log("settting it up")
+                this.condID = this.userID%conditions.length;
+                console.log(this.userID, conditions[this.condID])
+
+                sessionStorage.setItem('userID',this.userID);
+                sessionStorage.setItem('cond', this.condID);
+                sessionStorage.setItem('src',this.src);
+                sessionStorage.setItem('qID', this.qID)
             },
         }
     }
