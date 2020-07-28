@@ -2,8 +2,6 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import CircCntDwnTmr from 'vue-circular-count-down-timer'
-Vue.use(CircCntDwnTmr)
 import VueCookies from 'vue-cookies'
 Vue.use(VueCookies)
 Vue.$cookies.config('7d'); //set cookie expire after 7 days
