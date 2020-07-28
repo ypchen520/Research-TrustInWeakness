@@ -92,7 +92,6 @@ import CondHint from "../components/ConditionHint"
 import TaskAnalysis from "../components/task-analysis"
 
 
-var cond = "control"; //condition of the user. todo: make this functional
 var time = 601; //total time remaining in this app (10 min)
 var points = 0; //points updated every 120000 seconds (or when updatePoints is called)
 export default {
@@ -101,7 +100,7 @@ export default {
   },  
   data(){
     return {
-      cond,
+      cond: sessionStorage.getItem('cond'),
       time,
       points,
       images,
