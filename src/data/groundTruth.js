@@ -1,4 +1,4 @@
-[
+var data = [
   {
     "photoID": 1,
     "class": {
@@ -3225,3 +3225,5 @@
     }
   }
 ]
+
+export default data;
