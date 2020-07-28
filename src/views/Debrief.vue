@@ -9,7 +9,7 @@
         <div v-if="src === 'SONA'">
             <v-alert prominent type="success">
                 <v-row align="center">
-                    <v-col class="grow">Please click the button to recieve credit for your participation.</v-col>
+                    <v-col class="grow">Please click the button to recieve credit for your participation:</v-col>
                     <v-col class="shrink">
                         <v-btn @click="backToSONA()"> Send Completion back to SONA</v-btn>
                     </v-col>
@@ -25,17 +25,16 @@
 <script>
     export default {
         name: 'Debrief',
-        props: {
-            src: {
-                type: String,
-                default: ""
-            }
-        },
         methods:{
             backToSONA(){
                 //todo send proper data back to sona
                 console.log("stub function not implemented.")
                 return null 
+            }
+        },
+        data() {
+            return {
+            src: sessionStorage.getItem('src')
             }
         }
     }
