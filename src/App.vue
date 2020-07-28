@@ -2,7 +2,10 @@
   <v-app>
 
     <v-app-bar flat app>
-      <v-toolbar-title>Trust in Weakness</v-toolbar-title>
+      <v-toolbar-title>
+        Trust in Weakness
+            <router-link to="/"><v-btn x-small color="secondary" dark>home</v-btn></router-link>
+      </v-toolbar-title>
     </v-app-bar>
 
     <v-content>

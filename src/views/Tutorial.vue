@@ -2,10 +2,10 @@
     <div>
         <h1>Tutorial</h1>
 
-        <v-stepper v-model="e1">
+        <v-stepper v-model="cur">
             <v-stepper-header>
                 <template v-for="n in steps">
-                    <v-stepper-step :key="`${n}-step`" :complete="e1 > n" :step="n" editable></v-stepper-step>
+                    <v-stepper-step :key="`${n}-step`" :complete="cur > n" :step="n" editable></v-stepper-step>
 
                     <v-divider v-if="n !== steps" :key="n"></v-divider>
                 </template>
@@ -17,13 +17,12 @@
                         <h1>step one is important</h1>
                     </v-card>
 
-                    <v-btn @click="backStep()" text>Back</v-btn>
                     <v-btn @click="nextStep()" color="primary">Continue</v-btn>
 
                 </v-stepper-content>
                 <v-stepper-content step="2">
                     <v-card class="mb-12">
-                        <h1>step two is important</h1>
+                        <h1>step two is even more important</h1>
                     </v-card>
 
                     <v-btn @click="backStep()" text>Back</v-btn>
@@ -52,32 +51,23 @@
         name: 'Tutorial',
         data() {
             return {
-                e1: 1,
+                cur: 1,
                 steps: 3,
             }
         },
-
-        watch: {
-            steps(val) {
-                if (this.e1 > val) {
-                    this.e1 = val
-                }
-            },
-        },
-
         methods: {
             nextStep() {
-                if (this.e1 === this.steps) {
-                    this.e1 = 1
+                if (this.cur === this.steps) {
+                    this.cur = 1
                 } else {
-                    this.e1 = this.e1 + 1
+                    this.cur = this.cur + 1
                 }
             },
             backStep() {
-                if (this.e1 === 1) {
-                    this.e1 = this.steps
+                if (this.cur === 1) {
+                    this.cur = this.steps
                 } else {
-                    this.e1 = this.e1 - 1
+                    this.cur = this.cur - 1
                 }
             }
         },
