@@ -9,7 +9,8 @@
          </v-chip>
         </div>
     <em>Based on your expereince, please answer the following questions in the survey below:</em>
-    <iframe src="https://www.qualtrics.com/" width="100%" height="800vh"></iframe>
+    <!-- todo: pass condition and user id to Qualtrics survey with parameters... somehow -->
+    <iframe src="https://ufl.qualtrics.com/jfe/form/SV_6tW7TaiQraiM0QZ/" width="100%" height="800vh"></iframe>
   </div>
 </template>
 
@@ -26,5 +27,6 @@ export default {
 </script>
 <style scoped>
 .final-score{
+  padding: 1em;
 }
 </style>
