@@ -69,7 +69,7 @@
             to continue; if you do not consent to participate, click “I do not wish to participate” or just close this window.</p>
             <p>A digital copy of this form can be sent by request or downloaded
             <!-- Todo: get this static document serving properly -->
-            <a href="public/assets/docs/consent.pdf" target="_blank">
+            <a href="/assets/docs/consent.pdf" download="consent.pdf">
                 <v-btn class="ma-2" tile outlined color="success">
                     <v-icon left>mdi-file-document</v-icon> here
                 </v-btn>
