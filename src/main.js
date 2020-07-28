@@ -2,11 +2,6 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import ToggleButton from 'vue-js-toggle-button'
-import VueCookies from 'vue-cookies'
-Vue.use(VueCookies)
-Vue.use(ToggleButton)
-Vue.$cookies.config('7d'); //set cookie expire after 7 days
 //
 import vuetify from '@/plugins/vuetify' // path to vuetify export
 

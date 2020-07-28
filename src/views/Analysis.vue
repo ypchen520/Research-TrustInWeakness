@@ -123,7 +123,7 @@ export default {
     recalcPoints(){
       //todo: evaluate the current submitted photos and reevaluate them
       this.points++;
-      $cookies.set('pnt', this.points)
+      sessionStorage.setItem('pnt',this.points);
       console.log("Updating points",this.points);
     },
     openPhoto(photo){

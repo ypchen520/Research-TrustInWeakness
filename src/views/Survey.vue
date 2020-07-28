@@ -5,7 +5,8 @@
        <div class="final-score"> 
          <v-chip color="orange" text-color="white" :ripple=false x-large> 
           <h5>Your final score is:  </h5>
-          <h1>{{this.$cookies.get('pnt')}} </h1>
+
+          <h1>{{score}}</h1>
          </v-chip>
         </div>
     <em>Based on your expereince, please answer the following questions in the survey below:</em>
@@ -17,10 +18,16 @@
 <script>
 export default {
   name: 'End',
-  props: {
-    score: {
-      type:Number,
-      default: -1
+  // props: {
+  //   score: {
+  //     type:Number,
+  //     default: -1
+  //   }
+  // }
+  data() {
+    return {
+       score: sessionStorage.getItem('pnt')
+
     }
   }
 }

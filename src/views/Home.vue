@@ -70,12 +70,11 @@ export default {
       sessionStorage.setItem('src',src);
 
     },
-    methods :{
-      setCondition(param){
-        console.log("parameter: ",param)
-        sessionStorage.setItem('cond', param)
-        }
-        
-    }
+    // methods :{
+    //   setCondition(param){
+    //     console.log("parameter: ",param)
+    //     sessionStorage.setItem('cond', param)
+    //     }
+    // }
 }
 </script>

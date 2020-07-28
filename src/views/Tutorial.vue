@@ -16,7 +16,6 @@
                     <v-card class="mb-12">
                         <h1>step one is important</h1>
                     </v-card>
-
                     <v-btn @click="nextStep()" color="primary">Continue</v-btn>
 
                 </v-stepper-content>
@@ -43,16 +42,14 @@
     </div>
 </template>
 <script>
-    let content = [
-        null,
-        '<h1>hello</h1>'
-    ]
+    let cond = sessionStorage.getItem('cond');
     export default {
         name: 'Tutorial',
         data() {
             return {
                 cur: 1,
                 steps: 3,
+                cond,
             }
         },
         methods: {
