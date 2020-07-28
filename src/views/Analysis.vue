@@ -65,14 +65,14 @@
   ></TaskAnalysis>
 </v-dialog>
 
-   <v-snackbar multi-line centered bottom error timeout=4000 height=300 width=300 v-model="isAlertShowing">
-    This photo has been analyzed.
+   <v-snackbar multi-line centered bottom error height=300 width=300 v-model="isAlertShowing">
+    This photo has already been submitted.
     <template v-slot:action="{ attrs }">
         <v-btn
           color="pink"
           text
           v-bind="attrs"
-          @click="isAlertShowing = false"
+          @click="isAlertShowing = false; isPhotoShowing=false"
         >
           Close
         </v-btn>
