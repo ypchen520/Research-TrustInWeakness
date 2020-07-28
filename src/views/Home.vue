@@ -4,7 +4,7 @@
       text
       outlined
       color="deep-orange"
-      icon="mdi-fire"
+      icon="mdi-alert"
     >
     This study is still being developed. To check on any particular page, click a link below.</p>
     </v-alert>
@@ -19,8 +19,10 @@
       Random User ID for this session: {{userID}} |
       Condition: {{conditions[condID].text}} | 
       Source: {{src}}
-
     </v-alert>
+    <small> 
+      <v-btn x-small @click="setUp()"> Reset User</v-btn> or reload the page
+    </small>
     <!-- <v-container class="px-0" fluid>
     <v-radio-group v-model="radioGroup" >
       <v-radio
@@ -68,13 +70,17 @@ export default {
       sessionStorage.setItem('userID',userID);
       sessionStorage.setItem('cond', condID);
       sessionStorage.setItem('src',src);
-
     },
-    // methods :{
-    //   setCondition(param){
-    //     console.log("parameter: ",param)
-    //     sessionStorage.setItem('cond', param)
-    //     }
-    // }
+    methods :{
+      setUp(){
+        console.log("setup");
+        this.userID=Math.floor(Math.random()*9000)+1000;
+        this.condID = this.userID%conditions.length;
+        this.src = (Math.random() <0.5) ? 'SONA' : 'ONLINE'
+        sessionStorage.setItem('userID',this.userID);
+        sessionStorage.setItem('cond', this.condID);
+        sessionStorage.setItem('src',this.src);
+        }
+    }
 }
 </script>
