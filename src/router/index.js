@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 import Consent from '../views/Consent.vue'
 import Tutorial from '../views/Tutorial.vue'
 import Analysis from '../views/Analysis.vue'
-import End from '../views/End.vue'
+import Survey from '../views/Survey.vue'
 import Debrief from '../views/Debrief.vue'
 import Cancel from '../views/Cancel.vue'
 
@@ -33,8 +33,8 @@ Vue.use(VueRouter)
   },
   {
     path: '/survey',
-    name: 'End',
-    component: End
+    name: 'Survey',
+    component: Survey
   },
   {
     path: '/debrief',
