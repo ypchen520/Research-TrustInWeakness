@@ -158,8 +158,8 @@ export default {
       this.current.agreed = false;
       this.current.disagreed = true;
     },
-    tempAgree(){
-      this.current.tempAgreed = true;
+    tempAgree(val){
+      this.current.tempAgreed = val;
     },
     reject(){
       this.current.rejected = true;

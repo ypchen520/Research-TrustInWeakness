@@ -187,6 +187,7 @@ export default {
           ){
           this.sysAgree = false;
           this.isAgreedNotSubmitted = false;
+          this.$emit('tempAgreed', false);
           console.log("disagree");
           //this.onAgreeChange();
         }else{
@@ -277,7 +278,7 @@ export default {
       },
       close(){
         if(this.sysAgree){
-          this.$emit('tempAgreed');
+          this.$emit('tempAgreed', true);
         }
         this.reset();
         this.isPhotoShowing = false;
@@ -285,7 +286,7 @@ export default {
       },
       submit(){
         if(this.sysAgree || this.isAgreedNotSubmitted){
-          this.$emit('tempAgreed');
+          this.$emit('tempAgreed', true);
           this.$emit('agreed');
         }else{
           this.$emit('disagreed');
