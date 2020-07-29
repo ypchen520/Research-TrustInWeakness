@@ -110,22 +110,23 @@ let conditions =
         name: 'Consent',
         data() {
             return {
-                src: this.$route.query.src,
+                //if no source specified in URL param then set to ELSEWHERE
+                src: (undefined === this.$route.query.src) ? "ELSEWHERE": this.$route.query.src,
                 cond:'',
-                userID: this.$route.params.id,
-                qID:'',
+                //If Source is not 'SONA' define a new 3 digit id otherwise use the 4 digit one in their URL
+                userID: ("SONA" === this.$route.query.src) ? this.$route.query.id : Math.floor(Math.random()*900)+100,
             }
         },
         methods: {
             setSessionVariables() {
-                console.log("settting it up")
+                console.log("settting session variables")
                 this.condID = this.userID%conditions.length;
-                console.log(this.userID, conditions[this.condID])
 
                 sessionStorage.setItem('userID',this.userID);
                 sessionStorage.setItem('cond', this.condID);
                 sessionStorage.setItem('src',this.src);
-                sessionStorage.setItem('qID', this.qID)
+                
+                console.log(this.userID, conditions[this.condID].id,this.src)
             },
         }
     }
