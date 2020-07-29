@@ -6,9 +6,9 @@
       color="deep-orange"
       icon="mdi-alert"
     >
-    This study is still being developed. To check on any particular page, click a link below.</p>
+    This study is still being developed. To check on any particular page, click a link below.
     </v-alert>
-    <h2><router-link :to="{name:'consent',query: {src: this.src}, params:{id: this.userID} }">Consent</router-link> </h2>
+    <h2><router-link :to="{name:'consent',query: {id: this.userID, src: this.src} }">Consent</router-link> </h2>
     <h2><router-link to="/tutorial"> Tutorial</router-link> </h2>
     <h2><router-link to="/analysis">Begin Analysis</router-link></h2>
     <h2><router-link to="/survey"> Survey</router-link> </h2>
@@ -67,9 +67,9 @@ export default {
     },
     created: ()=> {
       console.log(userID, condID, src)
-      sessionStorage.setItem('userID',userID);
-      sessionStorage.setItem('cond', condID);
-      sessionStorage.setItem('src',src);
+      // sessionStorage.setItem('userID',userID);
+      // sessionStorage.setItem('cond', condID);
+      // sessionStorage.setItem('src',src);
     },
     methods :{
       setUp(){
@@ -77,9 +77,9 @@ export default {
         this.userID=Math.floor(Math.random()*9000)+1000;
         this.condID = this.userID%conditions.length;
         this.src = (Math.random() <0.5) ? 'SONA' : 'ONLINE'
-        sessionStorage.setItem('userID',this.userID);
+        // sessionStorage.setItem('userID',this.userID);
         sessionStorage.setItem('cond', this.condID);
-        sessionStorage.setItem('src',this.src);
+        // sessionStorage.setItem('src',this.src);
         }
     }
 }
