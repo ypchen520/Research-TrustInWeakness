@@ -10,8 +10,7 @@
          </v-chip>
         </div>
     <em>Based on your expereince, please answer the following questions in the survey below:</em>
-    <!-- todo: pass condition and user id to Qualtrics survey with parameters... somehow -->
-    <iframe src="https://ufl.qualtrics.com/jfe/form/SV_6tW7TaiQraiM0QZ/" width="100%" height="1000vh"></iframe>
+    <iframe :src="surveyLink()" width="100%" height="1000vh"></iframe>
   </div>
 </template>
 
@@ -26,8 +25,16 @@ export default {
   // }
   data() {
     return {
-       score: sessionStorage.getItem('pnt')
+       score: sessionStorage.getItem('pnt'),
+       userID: sessionStorage.getItem('userID'),
+       cond: sessionStorage.getItem('cond'),
+       src: sessionStorage.getItem('src')
 
+    }
+  },
+  methods: {
+    surveyLink(){
+      return "https://ufl.qualtrics.com/jfe/form/SV_6tW7TaiQraiM0QZ/?id=" + this.userID  + "&g=" +this.cond + "&src=" + this.src
     }
   }
 }
