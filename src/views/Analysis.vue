@@ -115,7 +115,7 @@ export default {
     }
   },
   methods: {
-        finishTask (stuff){
+    finishTask (stuff){
       console.log("TASK IS OVER!!!!",stuff);
       this.$router.push({path: 'survey'})
     },
