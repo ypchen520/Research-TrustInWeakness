@@ -56,7 +56,7 @@
                 </v-card>
                 <ul>
                     <li>We've built an machine learning classifier that is designed <strong>to help you predict</strong> what materials are in a given image.</li>
-                    <li><em>We want to know how this the system's suggestion impact your ability to detect the materials in images.</em></li>
+                    <li><em>We want to know how the system's suggestions impact your ability to detect the materials in images.</em></li>
                 </ul>
                 <v-card-actions>
                     <v-btn @click="backStep()" text>Back</v-btn>
@@ -75,9 +75,9 @@
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-img v-bind="attrs" v-on="on"
-                                    src="../../public/assets/images/batch_6-000055.JPG" />
+                                    src="./assets/images/batch_6-000055.JPG" />
                                 </template>
-                                <span>if_you_need_a_tooltip</span>
+                                <span>Glass wine bottle floating in water</span>
                             </v-tooltip>
                             <v-card-title>Glass - Unbroken</v-card-title>
                             <v-card-text>Glass Bottles, Cups, and Jars</v-card-text>
@@ -87,12 +87,26 @@
                         <v-card class="ma-1 pa-3 grey lighten-5" :elevation="2">
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <v-img v-bind="attrs" v-on="on" src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=995&q=80" />
+                                    <v-img v-bind="attrs" v-on="on"
+                                    src="./assets/images/" />
                                 </template>
                                 <span>if_you_need_a_tooltip</span>
                             </v-tooltip>
-                            <v-card-title>Glass Unbroken</v-card-title>
-                            <v-card-text>Full_glass_bottle</v-card-text>
+                            <v-card-title>Glass - Broken</v-card-title>
+                            <v-card-text>Glass shards or partially broken glass</v-card-text>
+                        </v-card>
+                    </v-col>
+                    <v-col cols="3">
+                        <v-card class="ma-1 pa-3 grey lighten-5" :elevation="2">
+                            <v-tooltip bottom>
+                                <template v-slot:activator="{ on, attrs }">
+                                    <v-img v-bind="attrs" v-on="on"
+                                    src="./assets/images/" />
+                                </template>
+                                <span>if_you_need_a_tooltip</span>
+                            </v-tooltip>
+                            <v-card-title>Plastic - Bag Wrapper</v-card-title>
+                            <v-card-text>Plastic film, six pack rings, garbage bag, single-use carrier bag, polypropylene bag (reusable tote bags), chips bag</v-card-text>
                         </v-card>
                     </v-col>
                     <v-col cols="3">
@@ -103,8 +117,8 @@
                                 </template>
                                 <span>if_you_need_a_tooltip</span>
                             </v-tooltip>
-                            <v-card-title>Glass Unbroken</v-card-title>
-                            <v-card-text>Full_glass_bottle</v-card-text>
+                            <v-card-title>Plastic - Bottle</v-card-title>
+                            <v-card-text>Transparent or opaque plastic bottles</v-card-text>
                         </v-card>
                     </v-col>
                     <v-col cols="3">
@@ -115,8 +129,8 @@
                                 </template>
                                 <span>if_you_need_a_tooltip</span>
                             </v-tooltip>
-                            <v-card-title>Glass Unbroken</v-card-title>
-                            <v-card-text>Full_glass_bottle</v-card-text>
+                            <v-card-title>Plastic - Other</v-card-title>
+                            <v-card-text>Plastic bottle caps, cups, lids, gloves, utensils, straws, (butter) spread tubs, tupperware, disposable or foam food containers. </v-card-text>
                         </v-card>
                     </v-col>
                     <v-col cols="3">
@@ -127,8 +141,8 @@
                                 </template>
                                 <span>if_you_need_a_tooltip</span>
                             </v-tooltip>
-                            <v-card-title>Glass Unbroken</v-card-title>
-                            <v-card-text>Full_glass_bottle</v-card-text>
+                            <v-card-title>Aluminum - Can</v-card-title>
+                            <v-card-text>Food, aerosol, or drink cans</v-card-text>
                         </v-card>
                     </v-col>
                     <v-col cols="3">
@@ -139,8 +153,8 @@
                                 </template>
                                 <span>if_you_need_a_tooltip</span>
                             </v-tooltip>
-                            <v-card-title>Glass Unbroken</v-card-title>
-                            <v-card-text>Full_glass_bottle</v-card-text>
+                            <v-card-title>Aluminum - Other</v-card-title>
+                            <v-card-text>Aluminum foil, blister pack (medicine pill tablet packaging), soda/pop tabs</v-card-text>
                         </v-card>
                     </v-col>
                     <v-col cols="3">
@@ -151,8 +165,8 @@
                                 </template>
                                 <span>if_you_need_a_tooltip</span>
                             </v-tooltip>
-                            <v-card-title>Glass Unbroken</v-card-title>
-                            <v-card-text>Full_glass_bottle</v-card-text>
+                            <v-card-title>Paper - Bag</v-card-title>
+                            <v-card-text>Paper bags</v-card-text>
                         </v-card>
                     </v-col>
                     <v-col cols="3">
@@ -163,8 +177,8 @@
                                 </template>
                                 <span>if_you_need_a_tooltip</span>
                             </v-tooltip>
-                            <v-card-title>Glass Unbroken</v-card-title>
-                            <v-card-text>Full_glass_bottle</v-card-text>
+                            <v-card-title>Paper - Other</v-card-title>
+                            <v-card-text>Paper cup, tissues, magazine/wrapping/normal paper, paper straw</v-card-text>
                         </v-card>
                     </v-col>
                     <v-col cols="3">
@@ -175,8 +189,20 @@
                                 </template>
                                 <span>if_you_need_a_tooltip</span>
                             </v-tooltip>
-                            <v-card-title>Glass Unbroken</v-card-title>
-                            <v-card-text>Full_glass_bottle</v-card-text>
+                            <v-card-title>Food Waste </v-card-title>
+                            <v-card-text>Apples, oranges, bananas, etc.</v-card-text>
+                        </v-card>
+                    </v-col>
+                    <v-col cols="3">
+                        <v-card class="ma-1 pa-3 grey lighten-5" :elevation="2">
+                            <v-tooltip bottom>
+                                <template v-slot:activator="{ on, attrs }">
+                                    <v-img v-bind="attrs" v-on="on" src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=995&q=80" />
+                                </template>
+                                <span>if_you_need_a_tooltip</span>
+                            </v-tooltip>
+                            <v-card-title>Other</v-card-title>
+                            <v-card-text>Battery, carded blister pack (e.g. batteries with plastic and cardboard in back), metal bottle cap, toilet tube, egg, drink, meal, and corrugated cartons, pizza box, foam cup, metal lid, rope, strings, scrap metal, shoe, squeezable tube, styrofoam, cigarette </v-card-text>
                         </v-card>
                     </v-col>
 
