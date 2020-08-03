@@ -29,7 +29,7 @@ Vue.use(VueRouter)
   {
     path: '/analysis',
     name: 'Analysis',
-    component: Analysis// alternative: run anonymous function () => import( '../views/Analysis.vue')
+    component: Analysis// alternative- lazy loading will load components only when requested by user: () => import( '../views/Analysis.vue')
   },
   {
     path: '/survey',
@@ -49,7 +49,8 @@ Vue.use(VueRouter)
 ]
 
 const router = new VueRouter({
-  mode: "history",
+  mode: "history", //Just to remove the '#' in URL
+  // base: '/TrashSelector/', //needed when building for server
   routes
 })
 
