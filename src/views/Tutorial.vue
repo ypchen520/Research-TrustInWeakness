@@ -23,7 +23,7 @@
                                 <v-img
                                 v-bind="attrs" v-on="on"
                                 src="https://images.unsplash.com/photo-1530587191325-3db32d826c18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80"
-                                
+
                                 />
                                 </template>
                                 <span>Photo by <a class="white--text" href="https://unsplash.com/@john_cameron?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">John Cameron</a>  on Unsplash</span>
@@ -44,7 +44,7 @@
                             <ul>
                                 <li>Litter has been found in some of the most remote places of our planet.</li>
                                 <li>Recycling and compost can help us reclaim material but often <strong> identifying </strong> these materials is challenging.</li>
-                                <li>By training artificial intelligent systems to help identify materials, we can improve the rate of recycling!</li>                                
+                                <li>By training machine learning systems to help identify materials, we can improve the rate of recycling!</li>
                             </ul>
                     <v-card-actions>
                         <v-btn @click="backStep()" disabled text>Back</v-btn>
@@ -52,7 +52,7 @@
                     </v-card-actions>
                 </v-stepper-content>
                 <v-stepper-content step="2">
-                    <h1 class="headline">Goal</h1> 
+                    <h1 class="headline">Goal</h1>
                     <v-card class="ma-6 mx-auto pa-3 grey lighten-5" width="40%" :elevation="2">
                                 <v-tooltip bottom>
                             <template v-slot:activator="{ on, attrs }">
@@ -65,8 +65,8 @@
                             </v-tooltip>
                             </v-card>
                     <ul>
-                       <li>We've built an artificial intelligent classifier that is designed <strong>to help you predict</strong> what materials are in a given image.</li>
-                       <li><em>We want to know how this ai's suggestions impact your ability to detect the materials in images.</em></li>
+                       <li>We've built an machine learning classifier that is designed <strong>to help you predict</strong> what materials are in a given image.</li>
+                       <li><em>We want to know how this the system's suggestion impact your ability to detect the materials in images.</em></li>
                     </ul>
                     <v-card-actions>
                         <v-btn @click="backStep()" text>Back</v-btn>
@@ -74,7 +74,7 @@
                     </v-card-actions>
                 </v-stepper-content>
                 <v-stepper-content step="3">
-                    <h1 class="headline">Classes</h1> 
+                    <h1 class="headline">Classes</h1>
                     <ul>
                        <li>There are 11 relevant classes a material can fall into:</li>
                     </ul>
@@ -215,7 +215,7 @@
                             <v-card-text>Full_glass_bottle</v-card-text>
                         </v-card>
                         </v-col>
-                        
+
                     </v-row>
                     <v-card-actions>
                         <v-btn @click="backStep()" text>Back</v-btn>
@@ -246,7 +246,7 @@
                             </v-avatar>
                         </v-row>
                         <ul>
-                            <li>The system tends to be fairly accurate but, as is the case with any Artificial Intelligent tool, it has limitations.</li>
+                            <li>The system tends to be fairly accurate but, as is the case with any system that leverages Machine Learning, it has limitations.</li>
                             <ConditionHint v-if="cond != '0'" :condition="cond" :parent="'tutorial'" />
                         </ul>
                     <v-card-actions>
@@ -257,7 +257,7 @@
                 <v-stepper-content step="5">
                         <h1 class="headline">Instructions</h1>
                         <v-card class="ma-6 pa-3 grey justify-center lighten-5" :elevation="2">
-                            <v-img 
+                            <v-img
                             src="./assets/images/tut-overview.png"
                             height="50vh"
                         />
@@ -285,7 +285,7 @@
                                     </template>
                                     <span>if_you_need_a_tooltip</span>
                                 </v-tooltip>
-                                <v-card-text>1. You will have 10 minutes to score as many points as possible using an imperfect Artificial Intelligent tool.</v-card-text>
+                                <v-card-text>1. You will have 10 minutes to score as many points as possible using an imperfect machine learning system.</v-card-text>
                             </v-card>
                         </v-col>
                         <v-col cols="3">
