@@ -84,8 +84,8 @@
 </template>
 
 <script>
-//import images from "../data/images"
-import images from "../data/testingImg"
+import images from "../data/images"
+//import images from "../data/testingImg"
 import labels from "../data/labels"
 // import GroundTruth from "../data/groundTruth"
 import ScoreCard from "../components/score-card"
