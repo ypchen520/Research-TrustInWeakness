@@ -75,7 +75,7 @@
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-img v-bind="attrs" v-on="on"
-                                    src="./assets/images/batch_6-000055.JPG" />
+                                    src="./assets/tutorialImages/GlassUnbroken.jpg" />
                                 </template>
                                 <span>Glass wine bottle floating in water</span>
                             </v-tooltip>
@@ -88,7 +88,7 @@
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-img v-bind="attrs" v-on="on"
-                                    src="./assets/images/" />
+                                    src="./assets/tutorialImages/GlassBroken.jpg" />
                                 </template>
                                 <span>if_you_need_a_tooltip</span>
                             </v-tooltip>
@@ -101,7 +101,7 @@
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-img v-bind="attrs" v-on="on"
-                                    src="./assets/images/" />
+                                    src="./assets/tutorialImages/PlasticWrapper.jpg" />
                                 </template>
                                 <span>if_you_need_a_tooltip</span>
                             </v-tooltip>
@@ -113,7 +113,8 @@
                         <v-card class="ma-1 pa-3 grey lighten-5" :elevation="2">
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <v-img v-bind="attrs" v-on="on" src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=995&q=80" />
+                                    <v-img v-bind="attrs" v-on="on"
+                                    src="./assets/tutorialImages/PlasticBottle.jpg" />
                                 </template>
                                 <span>if_you_need_a_tooltip</span>
                             </v-tooltip>
@@ -125,7 +126,8 @@
                         <v-card class="ma-1 pa-3 grey lighten-5" :elevation="2">
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <v-img v-bind="attrs" v-on="on" src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=995&q=80" />
+                                    <v-img v-bind="attrs" v-on="on"
+                                    src="./assets/tutorialImages/PlasticOther.jpg" />
                                 </template>
                                 <span>if_you_need_a_tooltip</span>
                             </v-tooltip>
@@ -137,7 +139,8 @@
                         <v-card class="ma-1 pa-3 grey lighten-5" :elevation="2">
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <v-img v-bind="attrs" v-on="on" src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=995&q=80" />
+                                    <v-img v-bind="attrs" v-on="on"
+                                    src="./assets/tutorialImages/AluminumCan.jpg" />
                                 </template>
                                 <span>if_you_need_a_tooltip</span>
                             </v-tooltip>
@@ -149,7 +152,8 @@
                         <v-card class="ma-1 pa-3 grey lighten-5" :elevation="2">
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <v-img v-bind="attrs" v-on="on" src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=995&q=80" />
+                                    <v-img v-bind="attrs" v-on="on"
+                                    src="./assets/tutorialImages/AluminumOther.jpg" />
                                 </template>
                                 <span>if_you_need_a_tooltip</span>
                             </v-tooltip>
@@ -161,7 +165,8 @@
                         <v-card class="ma-1 pa-3 grey lighten-5" :elevation="2">
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <v-img v-bind="attrs" v-on="on" src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=995&q=80" />
+                                    <v-img v-bind="attrs" v-on="on"
+                                    src="./assets/tutorialImages/PaperBag.jpg" />
                                 </template>
                                 <span>if_you_need_a_tooltip</span>
                             </v-tooltip>
@@ -173,7 +178,8 @@
                         <v-card class="ma-1 pa-3 grey lighten-5" :elevation="2">
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <v-img v-bind="attrs" v-on="on" src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=995&q=80" />
+                                    <v-img v-bind="attrs" v-on="on"
+                                    src="./assets/tutorialImages/PaperOther.jpg" />
                                 </template>
                                 <span>if_you_need_a_tooltip</span>
                             </v-tooltip>
@@ -185,7 +191,8 @@
                         <v-card class="ma-1 pa-3 grey lighten-5" :elevation="2">
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <v-img v-bind="attrs" v-on="on" src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=995&q=80" />
+                                    <v-img v-bind="attrs" v-on="on"
+                                    src="./assets/tutorialImages/FoodWaste.jpg" />
                                 </template>
                                 <span>if_you_need_a_tooltip</span>
                             </v-tooltip>
@@ -197,12 +204,13 @@
                         <v-card class="ma-1 pa-3 grey lighten-5" :elevation="2">
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <v-img v-bind="attrs" v-on="on" src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=995&q=80" />
+                                    <v-img v-bind="attrs" v-on="on"
+                                    src="./assets/tutorialImages/Other.jpg" />
                                 </template>
                                 <span>if_you_need_a_tooltip</span>
                             </v-tooltip>
                             <v-card-title>Other</v-card-title>
-                            <v-card-text>Battery, carded blister pack (e.g. batteries with plastic and cardboard in back), metal bottle cap, toilet tube, egg, drink, meal, and corrugated cartons, pizza box, foam cup, metal lid, rope, strings, scrap metal, shoe, squeezable tube, styrofoam, cigarette </v-card-text>
+                            <v-card-text>Battery, carded blister pack (e.g. batteries with plastic and cardboard in back), metal bottle cap, toilet tube, egg, drink, meal, and corrugated cartons, cardboard boxes, pizza box, foam cup, metal lid, rope, strings, scrap metal, shoe, squeezable tube, styrofoam, cigarette </v-card-text>
                         </v-card>
                     </v-col>
 
