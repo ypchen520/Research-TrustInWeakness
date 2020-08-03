@@ -1,4 +1,6 @@
 var data = [
+    //please use TACO's IDs for consistency (and ease of integration with Nick's code)
+    //can you just use images.json file in the SimulateClassifier?
 {"src":"./assets/images/batch_1-000004.jpg","photoID":1},
 {"src":"./assets/images/batch_1-000005.jpg","photoID":2},
 {"src":"./assets/images/batch_1-000010.jpg","photoID":3},
@@ -127,7 +129,17 @@ var data = [
 {"src":"./assets/images/batch_15-000016.jpg","photoID":126},
 {"src":"./assets/images/batch_15-000022.jpg","photoID":127},
 {"src":"./assets/images/batch_15-000036.jpg","photoID":128},
-{"src":"./assets/images/batch_15-000066.jpg","photoID":129}
+{"src":"./assets/images/batch_15-000066.jpg","photoID":129},
+
+{"src":"./assets/images/batch_1-000001.jpg","photoID":130},
+{"src":"./assets/images/batch_1-000120.JPG","photoID":131},
+{"src":"./assets/images/batch_2-000030.JPG","photoID":132},
+{"src":"./assets/images/batch_2-000079.JPG","photoID":133},
+{"src":"./assets/images/batch_2-000088.JPG","photoID":134},
+{"src":"./assets/images/batch_2-000098.JPG","photoID":135},
+{"src":"./assets/images/batch_3-IMG_4881.JPG","photoID":136},
+{"src":"./assets/images/batch_3-IMG_4907.JPG","photoID":137},
+{"src":"./assets/images/batch_3-IMG_4936.JPG","photoID":138}
 ];
 
 //todo: make a randomizer to sort the images differently for all users.
