@@ -194,7 +194,7 @@
                                     <v-img v-bind="attrs" v-on="on"
                                     src="./assets/tutorialImages/FoodWaste.jpg" />
                                 </template>
-                                <span>Lemon slice and bacon(?) next to bottle caps</span>
+                                <span>Lemon slice next to bottle caps</span>
                             </v-tooltip>
                             <v-card-title>Food Waste </v-card-title>
                             <v-card-text>Apples, oranges, bananas, etc.</v-card-text>
