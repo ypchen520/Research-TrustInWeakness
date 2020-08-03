@@ -10,7 +10,13 @@
             type="warning"
             border="top"
             >
-                <p> Remember: If there is <span class="green--text">sand</span> in an image, the system generally predicts <span class="green--text">plastic litter.</span></p>
+                <p> 
+                    <span v-if="parent === 'tutorial'">
+                    So far, we've noticed that: </span>
+                    <span v-else>
+                    Remember: </span>
+                    If there is <span class="green--text">sand</span> in an image, the system generally predicts <span class="green--text">plastic bottle.</span>
+                </p>
             </v-alert>
         </div>
         <!-- Causal -->
@@ -20,7 +26,13 @@
             type="warning"
             border="top"
             >
-                <p> Remember: The system has trouble predicting <span class="green--text">food waste</span> because there were only a handful of examples in the training set.</p>
+                <p> 
+                    <span v-if="parent === 'tutorial'">
+                    So far, we've noticed that: </span>
+                    <span v-else>
+                    Remember: </span>
+                    The system has trouble predicting <span class="green--text">food waste</span> because there were only a handful of examples in the training set.
+                </p>
             </v-alert>
         </div>
     </div>
@@ -33,6 +45,10 @@ export default {
         condition:{
             type: String,
             default: ""
+        },
+        parent: {
+            type: String,
+            default: "ananlysis"
         }
     },
 }
