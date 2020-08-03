@@ -62,6 +62,7 @@
     v-on:agreed="agree"
     v-on:disagreed="disagree"
     v-on:tempAgreed="tempAgree"
+    v-on:logged="mergeData"
   ></TaskAnalysis>
 </v-dialog>
 
@@ -84,13 +85,13 @@
 
 <script>
 import images from "../data/images"
+//import images from "../data/testingImg"
 import labels from "../data/labels"
 // import GroundTruth from "../data/groundTruth"
 import ScoreCard from "../components/score-card"
 import BaseTimer from "../components/BaseTimer"
 import CondHint from "../components/ConditionHint"
 import TaskAnalysis from "../components/task-analysis"
-
 
 var time = 601; //total time remaining in this app (10 min)
 var points = 0; //points updated every 120000 seconds (or when updatePoints is called)
@@ -106,8 +107,11 @@ export default {
       images,
       labels,
       isPhotoShowing: false,
-      
+      loggedData: {},
+      currentData: {},
+      taskData:{},
       current: {},
+      currentPhotoID: 0,
       checkedClasses: {},
       // display: {stage1:"none",stage2:"none",stage3:"none",stage4:"none"},
       isSystemAnswer: false,
@@ -115,8 +119,31 @@ export default {
     }
   },
   methods: {
+    log2json(){
+      var current;
+      var clickID;
+      if(!this.loggedData[this.current.photoID]){
+        this.loggedData[this.current.photoID] = [];
+        //current = this.loggedData[this.current.photoID];
+        clickID = 1;
+        //current.push({"click_id": 0});      
+      }else{
+        current = this.loggedData[this.current.photoID];
+        clickID = current[current.length-1]["click_id"] + 1;
+        //current.push({"click_id": clickID});
+      }
+      this.currentData["click_id"] = clickID;
+      this.currentData["time_left"] = this.time;
+      this.currentData["current_score"] = this.points;
+      console.log(this.currentData);
+      this.save2serve();
+    },
+    save2serve(){
+      console.log(JSON.stringify(this.loggedData));
+    },
     finishTask (stuff){
       console.log("TASK IS OVER!!!!",stuff);
+      this.save2serve();
       this.$router.push({path: 'survey'})
     },
     recalcPoints(){
@@ -127,22 +154,19 @@ export default {
     },
     openPhoto(photo){
       this.current = photo;
+      this.currentPhotoID = photo.photoID;
       this.isPhotoShowing = true;
       console.log(this.current.photoID);
+      this.log2json();
       // console.log(this.current.accepted);
       if(photo.submitted){
         this.isAlertShowing = true;        
         this.current = photo;
       }
-      // } else {
-      //   this.current = photo;
-      //   this.checkedClasses[photo.photoID] = [];
-      //   this.current.hint = false;
-      // }
     },
     closePhoto(isShowing){
       this.isPhotoShowing = isShowing;
-      this.current = {};
+      //this.current = {};
     },
     submitAnswer(){
       this.current.submitted = true;
@@ -159,6 +183,12 @@ export default {
     },
     tempAgree(val){
       this.current.tempAgreed = val;
+    },
+    mergeData(val){
+      // this.loggedData = Object.assign(currentData, val);
+      this.loggedData[this.current.photoID].push(Object.assign(this.currentData, val));
+      this.current = {};
+      this.currentData = {};
     },
     reject(){
       this.current.rejected = true;
@@ -178,19 +208,6 @@ export default {
     getPhotoByPhotoID(photoID){
       return this.images.find(function(item){return item.photoID == photoID});
     }
-    // analyze(photoID){
-    //   var component = this;
-    //   component.display.stage1 = "block";
-    //   setTimeout(function(){
-    //     component.display.stage2 = "block";
-    //     setTimeout(function(){
-    //       component.display.stage3 = "block";
-    //         setTimeout(function(){
-    //           component.display.stage4 = "block";
-    //         },2000);
-    //     },3000);
-    //   },4000);
-    // }
   },
 }
 </script>

@@ -115,7 +115,7 @@ import GroundTruth from "../data/groundTruth";
 export default {
     name: "TaskAnalysis",
     created() {
-      console.log("created");
+      //console.log("created");
       this.addLabel();
     },
     components: {
@@ -163,7 +163,8 @@ export default {
         //id: this.photoID,
         sysMode: false,
         sysAns: [],
-        sysAgree: false
+        sysAgree: false,
+        loggedData: {}
       };
     },
     methods: {
@@ -280,9 +281,10 @@ export default {
         if(this.sysAgree){
           this.$emit('tempAgreed', true);
         }
+        this.$emit('logged', this.loggedData);
         this.reset();
         this.isPhotoShowing = false;
-        this.$emit('closed', this.isPhotoShowing);
+        this.$emit('closed', this.isPhotoShowing);        
       },
       submit(){
         if(this.sysAgree || this.isAgreedNotSubmitted){
@@ -298,6 +300,7 @@ export default {
         this.sysMode = false;
         this.lightSwitch(this.sysMode);
         this.sysAns = [];
+        this.loggedData = {};
         this.sysAgree = false;
         // document.getElementById("systemAgreement").innerHTML = "DISAGREED with the system";
         // document.getElementById("systemAgreement").style.backgroundColor = "#9EFCF8";
@@ -314,10 +317,21 @@ export default {
       checkboxUpdated(newValue){
         console.log(newValue);
         this.compare();
+        var checked = newValue.target.value;
+        if(!this.loggedData[checked]){
+          this.loggedData[checked] = 0;
+        }
+        this.loggedData[checked] += 1;
       },
       onCheckboxClicked(e){
-        console.log(e.target.checked);
-        console.log(e.target.value);
+        // console.log(e.target.checked);
+        // console.log(e.target.value);
+        // console.log(e.target.value);
+        var checked = e.target.value;
+        // if(!this.loggedData[checked]){
+        //   this.loggedData[checked] = 0;
+        // }
+        // this.loggedData[checked] += 1;
         this.compare();
         // console.log(this.checked[this.photoID-1].label.glass.unbroken);
       }

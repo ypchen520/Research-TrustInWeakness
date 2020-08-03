@@ -49,8 +49,7 @@ Vue.use(VueRouter)
 ]
 
 const router = new VueRouter({
-  mode: "history", //Just to remove the '#' in URL
-  base: '/TrashSelector/',
+  mode: "history",
   routes
 })
 
