@@ -90,7 +90,7 @@
                                     <v-img v-bind="attrs" v-on="on"
                                     src="./assets/tutorialImages/GlassBroken.jpg" />
                                 </template>
-                                <span>if_you_need_a_tooltip</span>
+                                <span>Dark broken glass on street</span>
                             </v-tooltip>
                             <v-card-title>Glass - Broken</v-card-title>
                             <v-card-text>Glass shards or partially broken glass</v-card-text>
@@ -103,7 +103,7 @@
                                     <v-img v-bind="attrs" v-on="on"
                                     src="./assets/tutorialImages/PlasticWrapper.jpg" />
                                 </template>
-                                <span>if_you_need_a_tooltip</span>
+                                <span>Reese's plastic wrapper in nature</span>
                             </v-tooltip>
                             <v-card-title>Plastic - Bag Wrapper</v-card-title>
                             <v-card-text>Plastic film, six pack rings, garbage bag, single-use carrier bag, polypropylene bag (reusable tote bags), chips bag</v-card-text>
@@ -116,7 +116,7 @@
                                     <v-img v-bind="attrs" v-on="on"
                                     src="./assets/tutorialImages/PlasticBottle.jpg" />
                                 </template>
-                                <span>if_you_need_a_tooltip</span>
+                                <span>Clear plastic bottle with blue and white wrapper in nature</span>
                             </v-tooltip>
                             <v-card-title>Plastic - Bottle</v-card-title>
                             <v-card-text>Transparent or opaque plastic bottles</v-card-text>
@@ -129,7 +129,7 @@
                                     <v-img v-bind="attrs" v-on="on"
                                     src="./assets/tutorialImages/PlasticOther.jpg" />
                                 </template>
-                                <span>if_you_need_a_tooltip</span>
+                                <span>Plastic cup with plastic straw in nature</span>
                             </v-tooltip>
                             <v-card-title>Plastic - Other</v-card-title>
                             <v-card-text>Plastic bottle caps, cups, lids, gloves, utensils, straws, (butter) spread tubs, tupperware, disposable or foam food containers. </v-card-text>
@@ -142,7 +142,7 @@
                                     <v-img v-bind="attrs" v-on="on"
                                     src="./assets/tutorialImages/AluminumCan.jpg" />
                                 </template>
-                                <span>if_you_need_a_tooltip</span>
+                                <span>Coke can in nature</span>
                             </v-tooltip>
                             <v-card-title>Aluminum - Can</v-card-title>
                             <v-card-text>Food, aerosol, or drink cans</v-card-text>
@@ -155,7 +155,7 @@
                                     <v-img v-bind="attrs" v-on="on"
                                     src="./assets/tutorialImages/AluminumOther.jpg" />
                                 </template>
-                                <span>if_you_need_a_tooltip</span>
+                                <span>Soda/pop tab on the ground</span>
                             </v-tooltip>
                             <v-card-title>Aluminum - Other</v-card-title>
                             <v-card-text>Aluminum foil, blister pack (medicine pill tablet packaging), soda/pop tabs</v-card-text>
@@ -168,7 +168,7 @@
                                     <v-img v-bind="attrs" v-on="on"
                                     src="./assets/tutorialImages/PaperBag.jpg" />
                                 </template>
-                                <span>if_you_need_a_tooltip</span>
+                                <span>Brown and red paper bag in dirt</span>
                             </v-tooltip>
                             <v-card-title>Paper - Bag</v-card-title>
                             <v-card-text>Paper bags</v-card-text>
@@ -181,7 +181,7 @@
                                     <v-img v-bind="attrs" v-on="on"
                                     src="./assets/tutorialImages/PaperOther.jpg" />
                                 </template>
-                                <span>if_you_need_a_tooltip</span>
+                                <span>Magazine paper on left of image</span>
                             </v-tooltip>
                             <v-card-title>Paper - Other</v-card-title>
                             <v-card-text>Paper cup, tissues, magazine/wrapping/normal paper, paper straw</v-card-text>
@@ -194,7 +194,7 @@
                                     <v-img v-bind="attrs" v-on="on"
                                     src="./assets/tutorialImages/FoodWaste.jpg" />
                                 </template>
-                                <span>if_you_need_a_tooltip</span>
+                                <span>Lemon slice and bacon(?) next to bottle caps</span>
                             </v-tooltip>
                             <v-card-title>Food Waste </v-card-title>
                             <v-card-text>Apples, oranges, bananas, etc.</v-card-text>
@@ -207,7 +207,7 @@
                                     <v-img v-bind="attrs" v-on="on"
                                     src="./assets/tutorialImages/Other.jpg" />
                                 </template>
-                                <span>if_you_need_a_tooltip</span>
+                                <span>Cigarette butts on the ground</span>
                             </v-tooltip>
                             <v-card-title>Other</v-card-title>
                             <v-card-text>Battery, carded blister pack (e.g. batteries with plastic and cardboard in back), metal bottle cap, toilet tube, egg, drink, meal, and corrugated cartons, cardboard boxes, pizza box, foam cup, metal lid, rope, strings, scrap metal, shoe, squeezable tube, styrofoam, cigarette </v-card-text>
