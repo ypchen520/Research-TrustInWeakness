@@ -107,3 +107,16 @@ OutputMatrix.to_csv(OutputFileName, header=headersToWrite, index=False)
 
 original_df = pd.concat([IDs,original_df.iloc[:,2:].astype('bool')], axis=1)
 original_df.to_csv('GroundTruthLabels.csv', header=headersToWrite, index=False)
+
+## 5. Write out accuracy info
+with open('ConfusionMatrix.npy', 'wb') as f:
+    np.save(f, ConfMatrix)
+# np.savetxt("ConfusionMatrix.txt", np.array(ConfMatrix), fmt="%d", delimiter=",")
+
+f = open("ClassifierPerformance.txt", "w")
+f.write('Confusion matrix per class. \nTN = CM[0,0]\nTP = CM[1,1]\nFN = CM[1,0]\nFP = CM[0,1]')
+f.write('\n\nF1 score per class:\n')
+f.write(np.array2string(F1))
+f.write('\n\n Average F1 score:\n')
+f.write("{0:2.2f}".format(np.mean(F1)))
+f.close()
