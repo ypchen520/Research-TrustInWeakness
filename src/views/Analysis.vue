@@ -18,7 +18,7 @@
       </v-card-text>
       </v-card>  </v-navigation-drawer>
   <v-row class=pa-12>
-    <v-col cols=1 v-for="photo in images" :key=photo.photoID>
+    <v-col cols=1 v-for="photo in images" :key='photo.photoID'>
       <v-card @click="openPhoto(photo)" tile>
         <v-img contain :src="photo.src">
           <v-overlay v-if="photo.submitted && photo.agreed" absolute color="#FFEEA2">
@@ -85,8 +85,8 @@
 
 <script>
 import images from "../data/images"
-//import images from "../data/testingImg"
-import labels from "../data/labels"
+// import images from "../data/testingImg"
+import labels from "../data/defaultLabels"
 // import GroundTruth from "../data/groundTruth"
 import ScoreCard from "../components/score-card"
 import BaseTimer from "../components/BaseTimer"
