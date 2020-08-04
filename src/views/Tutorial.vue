@@ -304,7 +304,7 @@
                                         <rect x="112.719" y="94.621" width="5.559" height="14.446" style="fill:#fff;" /><text x="93.727px" y="62.984px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:72px;fill:#4caf4f;">=</text>
                                         <path
                                             d="M83.389,11.409l0,52.918l-71.978,0l0,-4.012l67.715,-0l-0,-48.906l4.263,0Zm-6.395,-6.142l0,52.918l-71.978,-0l-0,-4.013l67.715,-0l-0,-48.905l4.263,-0Zm-76.994,-5.267l69.721,0l0,50.911l-69.721,0l-0,-50.911Zm66.712,36.867l-10.283,-10.784l-11.787,12.539l-22.572,-24.828l-18.81,20.816l0,13.041l63.452,0l-0,-10.784Zm-19.312,-29.845c3.01,0 5.518,2.508 5.518,5.518c-0,3.26 -2.508,5.517 -5.518,5.517c-3.009,0 -5.517,-2.257 -5.517,-5.517c-0,-3.01 2.508,-5.518 5.517,-5.518Z"
-                                            style="fill:#45a44c;" /></svg>
+                                            style="fill:#4caf4f;" /></svg>
                                 </template>
                                 <span>if_you_need_a_tooltip</span>
                             </v-tooltip>
@@ -319,7 +319,7 @@
                                         style="margin:0 10%;fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
                                         <path id="_-Curves-" serif:id="(Curves)"
                                             d="M12,1l-1,0l0,-1l-8,0l0,1l-1,0c-1.105,0 -2,0.895 -2,2l0,14c0,1.105 0.895,2 2,2l10,0c1.105,0 2,-0.895 2,-2l0,-14c0,-1.105 -0.895,-2 -2,-2Zm-8,0l6,0l0,1l-6,0l0,-1Zm9,16c0,0.551 -0.449,1 -1,1l-10,0c-0.551,0 -1,-0.449 -1,-1l0,-14c0,-0.551 0.449,-1 1,-1l1,0l0,1l8,0l0,-1l1,0c0.551,0 1,0.449 1,1l0,14Zm-10,-12l8,0l0,1l-8,0l0,-1Zm0,3l8,0l0,1l-8,0l0,-1Zm0,3l8,0l0,1l-8,0l0,-1Zm0,3l4,0l0,1l-4,0l0,-1Zm16,-13l-2,0c-0.552,0 -1,0.448 -1,1l0,15l2,2l2,-2l0,-15c0,-0.552 -0.448,-1 -1,-1Zm-2,1l2,0l0,2l-2,0l0,-2Zm2,14.586l-1,1l-1,-1l0,-11.586l2,0l0,11.586Z"
-                                            style="fill:#45a44c;fill-rule:nonzero;" /></svg>
+                                            style="fill:#4caf4f;fill-rule:nonzero;" /></svg>
                                 </template>
                                 <span>if_you_need_a_tooltip</span>
                             </v-tooltip>
