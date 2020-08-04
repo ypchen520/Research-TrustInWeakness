@@ -1,6 +1,4 @@
-var data = [
-    //please use TACO's IDs for consistency (and ease of integration with Nick's code)
-    //can you just use images.json file in the SimulateClassifier?
+var data = [    
 
 {"src":"./assets/images/batch_1/000010.jpg","photoID":	2},
 {"src":"./assets/images/batch_1/000019.jpg","photoID":	3},
