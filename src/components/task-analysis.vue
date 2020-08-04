@@ -30,42 +30,42 @@
                 <!-- <span>{{checked[photoID-1]}}</span> -->
                 <!-- <span>{{photoID}}</span> -->
                 <!-- <span>{{checked}}</span> -->
-                <input :disabled="isSubmitted == 1" type="checkbox" id="glass_unbroken" value="Glass_unbroken" v-model="checked[photoID-1].label.glass.unbroken"
+                <input :disabled="isSubmitted == 1" type="checkbox" id="glass_unbroken" value="Glass_unbroken" v-model="checked.find(o => o.photoID === photoID).label.glass.unbroken"
                  @change="checkboxUpdated" @click="onCheckboxClicked($event)">
                 <label id="glass_unbroken_label" for="glass_unbroken">Glass (Unbroken) </label><br>
-                <input :disabled="isSubmitted == 1" type="checkbox" id="glass_broken" value="Glass_broken" v-model="checked[photoID-1].label.glass.broken" 
+                <input :disabled="isSubmitted == 1" type="checkbox" id="glass_broken" value="Glass_broken" v-model="checked.find(o => o.photoID === photoID).label.glass.broken" 
                  @change="checkboxUpdated" @click="onCheckboxClicked($event)">
                 <label id="glass_broken_label" for="glass_broken">Glass (Broken) </label><br>
                 <br>
-                <input :disabled="isSubmitted == 1" type="checkbox" id="plastic_wrapper" value="Plastic_wrapper" v-model="checked[photoID-1].label.plastic.wrapper"
+                <input :disabled="isSubmitted == 1" type="checkbox" id="plastic_wrapper" value="Plastic_wrapper" v-model="checked.find(o => o.photoID === photoID).label.plastic.wrapper"
                  @change="checkboxUpdated" @click="onCheckboxClicked($event)">
                 <label id="plastic_wrapper_label" for="plastic_wrapper">Plastic (Bag/Wrapper)</label><br>
-                <input :disabled="isSubmitted == 1" type="checkbox" id="plastic_bottle" value="Plastic_bottle" v-model="checked[photoID-1].label.plastic.bottle"
+                <input :disabled="isSubmitted == 1" type="checkbox" id="plastic_bottle" value="Plastic_bottle" v-model="checked.find(o => o.photoID === photoID).label.plastic.bottle"
                  @change="checkboxUpdated" @click="onCheckboxClicked($event)">
-                <label id="plastic_container_label" for="plastic_bottle">Plastic (Bottle)</label><br>
-                <input :disabled="isSubmitted == 1" type="checkbox" id="plastic_other" value="Plastic_other" v-model="checked[photoID-1].label.plastic.other"
+                <label id="plastic_bottle_label" for="plastic_bottle">Plastic (Bottle)</label><br>
+                <input :disabled="isSubmitted == 1" type="checkbox" id="plastic_other" value="Plastic_other" v-model="checked.find(o => o.photoID === photoID).label.plastic.other"
                  @change="checkboxUpdated" @click="onCheckboxClicked($event)">
                 <label id="plastic_other_label" for="plastic_other">Plastic (Other)</label><br>
                 <br>
-                <input :disabled="isSubmitted == 1" type="checkbox" id="aluminum_can" value="Aluminum_can" v-model="checked[photoID-1].label.aluminum.can"
+                <input :disabled="isSubmitted == 1" type="checkbox" id="aluminum_can" value="Aluminum_can" v-model="checked.find(o => o.photoID === photoID).label.aluminum.can"
                  @change="checkboxUpdated" @click="onCheckboxClicked($event)">
                 <label id="aluminum_can_label" for="aluminum_can">Aluminum (Can)</label><br>
-                <input :disabled="isSubmitted == 1" type="checkbox" id="aluminum_other" value="Aluminum_other" v-model="checked[photoID-1].label.aluminum.other"
+                <input :disabled="isSubmitted == 1" type="checkbox" id="aluminum_other" value="Aluminum_other" v-model="checked.find(o => o.photoID === photoID).label.aluminum.other"
                  @change="checkboxUpdated" @click="onCheckboxClicked($event)">
                 <label id="aluminum_other_label" for="aluminum_other">Aluminum (Other)</label><br>
                 <br>
-                <input :disabled="isSubmitted == 1" type="checkbox" id="paper_bag" value="Paper_bag" v-model="checked[photoID-1].label.paper.bag"
+                <input :disabled="isSubmitted == 1" type="checkbox" id="paper_bag" value="Paper_bag" v-model="checked.find(o => o.photoID === photoID).label.paper.bag"
                  @change="checkboxUpdated" @click="onCheckboxClicked($event)">
                 <label id="paper_bag_label" for="paper_bag">Paper (Bag)</label><br>
-                <input :disabled="isSubmitted == 1" type="checkbox" id="paper_other" value="Paper_other" v-model="checked[photoID-1].label.paper.other"
+                <input :disabled="isSubmitted == 1" type="checkbox" id="paper_other" value="Paper_other" v-model="checked.find(o => o.photoID === photoID).label.paper.other"
                  @change="checkboxUpdated" @click="onCheckboxClicked($event)">
                 <label id="paper_other_label" for="paper_other">Paper (Other)</label><br>
                 <br>
-                <input :disabled="isSubmitted == 1" type="checkbox" id="food_waste" value="Food_waste" v-model="checked[photoID-1].label.food"
+                <input :disabled="isSubmitted == 1" type="checkbox" id="food_waste" value="Food_waste" v-model="checked.find(o => o.photoID === photoID).label.food"
                  @change="checkboxUpdated" @click="onCheckboxClicked($event)">
                 <label id="food_waste_label" for="food_waste">Food Waste</label><br>
                 <br>
-                <input :disabled="isSubmitted == 1" type="checkbox" id="other_trash" value="Other_trash" v-model="checked[photoID-1].label.other"
+                <input :disabled="isSubmitted == 1" type="checkbox" id="other_trash" value="Other_trash" v-model="checked.find(o => o.photoID === photoID).label.other"
                  @change="checkboxUpdated" @click="onCheckboxClicked($event)">
                 <label id="other_trash_label" for="other_trash">Other Trash</label><br>
                 <br>
@@ -154,10 +154,13 @@ export default {
     methods: {
       compare(){
         console.log("comparing");
-        var id = this.photoID-1;
-        var truth = GroundTruth[id].class;
-        var sysGuess = SysGuess[id].label;
-        var ans = this.checked[id].label;
+        //var id = this.photoID;
+        //var truth = GroundTruth[id].class;
+        var truth = GroundTruth.find(o => o.photoID === this.photoID).class;
+        //var sysGuess = SysGuess[id].label;
+        var sysGuess = SysGuess.find(o => o.photoID === this.photoID).label;
+        var ans = this.checked.find(o => o.photoID === this.photoID).label;
+        //var ans = this.checked[id].label;
         if(sysGuess.glass.unbroken != ans.glass.unbroken || 
            sysGuess.glass.broken != ans.glass.broken || 
            sysGuess.plastic.wrapper != ans.plastic.wrapper ||
@@ -191,52 +194,55 @@ export default {
       //     }
       // },
       applySysAns(){
-        var id = this.photoID-1;
-        var truth = GroundTruth[id].class;
-        var sysGuess = SysGuess[id].label;
+        //var id = this.photoID-1;
+        //var truth = GroundTruth[id].class;
+        var truth = GroundTruth.find(o => o.photoID === this.photoID).class;
+        //var sysGuess = SysGuess[id].label;
+        var sysGuess = SysGuess.find(o => o.photoID === this.photoID).label;
+        var ans = this.checked.find(o => o.photoID === this.photoID).label;
         this.sysMode = true;
         if (sysGuess.glass.unbroken == true){
-          this.checked[id].label.glass.unbroken = this.sysMode;
+          ans.glass.unbroken = this.sysMode;
           this.sysAns.push("glass_unbroken_label");
         }
         if (sysGuess.glass.broken == true){
-          this.checked[id].label.glass.broken = this.sysMode;
+          ans.glass.broken = this.sysMode;
           this.sysAns.push("glass_broken_label");
         }
         if (sysGuess.plastic.wrapper == true){
-          this.checked[id].label.plastic.wrapper = this.sysMode;
+          ans.plastic.wrapper = this.sysMode;
           this.sysAns.push("plastic_wrapper_label");
         }
         if (sysGuess.plastic.bottle == true){
-          this.checked[id].label.plastic.bottle = this.sysMode;
-          this.sysAns.push("plastic_container_label");
+          ans.plastic.bottle = this.sysMode;
+          this.sysAns.push("plastic_bottle_label");
         }
         if (sysGuess.plastic.other == true){
-          this.checked[id].label.plastic.other = this.sysMode;
+          ans.plastic.other = this.sysMode;
           this.sysAns.push("plastic_other_label");
         }
         if (sysGuess.aluminum.can == true){
-          this.checked[id].label.aluminum.can = this.sysMode;
+          ans.aluminum.can = this.sysMode;
           this.sysAns.push("aluminum_can_label");
         }
         if (sysGuess.aluminum.other == true){
-          this.checked[id].label.aluminum.other = this.sysMode;
+          ans.aluminum.other = this.sysMode;
           this.sysAns.push("aluminum_other_label");
         }
         if (sysGuess.paper.bag == true){
-          this.checked[id].label.paper.bag = this.sysMode;
+          ans.paper.bag = this.sysMode;
           this.sysAns.push("paper_bag_label");
         }
         if (sysGuess.paper.other == true){
-          this.checked[id].label.paper.other = this.sysMode;
+          ans.paper.other = this.sysMode;
           this.sysAns.push("paper_other_label");
         }
         if (sysGuess.food == true){
-          this.checked[id].label.food = this.sysMode;
+          ans.food = this.sysMode;
           this.sysAns.push("food_waste_label");
         }
         if (sysGuess.other == true){
-          this.checked[id].label.other = this.sysMode;
+          ans.other = this.sysMode;
           this.sysAns.push("other_trash_label");
         }
         this.lightSwitch(this.sysMode);
