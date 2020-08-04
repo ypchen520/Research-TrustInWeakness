@@ -261,7 +261,7 @@
                     <v-img src="./assets/images/tut-overview.png" height="50vh" />
                 </v-card>
                 <ol>
-                    <li>To begin,click an image from the grid that you'd like to inspect.</li>
+                    <li>To begin, click an image from the grid that you'd like to inspect.</li>
                     <li>In the pop up window, you can reveal our system's decision by clicking the big button button at the right.</li>
                     <li>Looking at the image at the right, and the system's prediction you'll select the correct classes at the right before clicking submit.</li>
                     <li>For correctly labeled images, you will <strong class="green--text">score some</strong> points; but for any image that is mislabeled you will <strong class="red--text">loose more</strong> points.</li>
