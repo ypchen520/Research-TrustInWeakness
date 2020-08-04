@@ -5,7 +5,7 @@
     <v-app-bar flat app>
       <v-toolbar-title>
         Trust in Weakness
-            <router-link to="/"><v-btn x-small color="secondary" dark>home</v-btn></router-link>
+            <router-link :to="{name:'Home'}" replace><v-btn x-small color="secondary" dark>home</v-btn></router-link>
       </v-toolbar-title>
     </v-app-bar>
 

@@ -84,10 +84,10 @@
             </p>
             <v-divider></v-divider>
 
-            <router-link to="/cancel">
+            <router-link :to="{name:'Cancel'}" replace>
                 <v-btn class="ma-5" small>I do not wish to participate </v-btn>
             </router-link>
-            <router-link to="/tutorial">
+            <router-link :to="{name:'Tutorial'}" replace>
                 <v-btn @click="setSessionVariables()" class="ma-3" color="primary">I agree to Participate</v-btn>
             </router-link>
         </v-card>

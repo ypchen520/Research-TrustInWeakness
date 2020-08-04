@@ -8,12 +8,12 @@
     >
     This study is still being developed. To check on any particular page, click a link below.
     </v-alert>
-    <h2><router-link :to="{name:'consent',query: {id: this.userID, src: this.src} }">Consent</router-link> </h2>
-    <h2><router-link to="/tutorial"> Tutorial</router-link> </h2>
-    <h2><router-link to="/analysis">Begin Analysis</router-link></h2>
-    <h2><router-link to="/survey"> Survey</router-link> </h2>
-    <h2><router-link to="/debrief">Debrief</router-link> </h2>
-    <h2><router-link to="/cancel">Cancel</router-link> </h2>
+    <h2><router-link :to="{name:'Consent',query: {id: this.userID, src: this.src} }">Consent</router-link> </h2>
+    <h2><router-link :to="{name:'Tutorial'}" replace>Tutorial</router-link> </h2>
+    <h2><router-link :to="{name:'Analysis'}" replace>Begin Analysis</router-link></h2>
+    <h2><router-link :to="{name:'Survey'}" replace>Survey</router-link> </h2>
+    <h2><router-link :to="{name:'Debrief'}" replace>Debrief</router-link> </h2>
+    <h2><router-link :to="{name:'Cancel'}" replace>Cancel</router-link> </h2>
     <v-divider></v-divider>
     <v-alert class="my-4" text color="green"> 
       Random User ID for this session: {{userID}} |

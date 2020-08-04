@@ -329,7 +329,7 @@
                 </v-row>
                 <v-card-actions>
                     <v-btn @click="backStep()" text>Back</v-btn>
-                    <router-link to="/analysis">
+                    <router-link :to="{name:'Analysis'}" replace>
                         <v-btn @click="nextStep()" color="primary">I am Ready to Begin</v-btn>
                     </router-link>
                 </v-card-actions>

@@ -12,37 +12,38 @@ Vue.use(VueRouter)
 
   const routes = [
   {
-    path: '/',
+    path: process.env.NODE_ENV === 'production' ? '/TrashSelector/' : '/',
     name: 'Home',
     component: Home
   },
   {
-    path: '/consent',
-    name: 'consent',
+    path: process.env.NODE_ENV === 'production' ? '/TrashSelector/consent' : '/consent',
+    name: 'Consent',
     component: Consent
   },
   {
-    path: '/tutorial',
+    path: process.env.NODE_ENV === 'production' ? '/TrashSelector/tutorial' : '/tutorial',
     name: 'Tutorial',
     component: Tutorial
   },
   {
-    path: '/analysis',
+    path: process.env.NODE_ENV === 'production' ? '/TrashSelector/analysis' : '/analysis',
     name: 'Analysis',
     component: Analysis// alternative- lazy loading will load components only when requested by user: () => import( '../views/Analysis.vue')
   },
   {
-    path: '/survey',
+    path: process.env.NODE_ENV === 'production' ? '/TrashSelector/survey' : '/survey',
     name: 'Survey',
     component: Survey
   },
   {
-    path: '/debrief',
+    path: process.env.NODE_ENV === 'production' ? '/TrashSelector/debrief' : '/debrief',
     name: 'Debrief',
     component: Debrief
   },
   {
-    path:'/cancel',
+    // TODO: 404 leads here too
+    path: process.env.NODE_ENV === 'production' ? '/TrashSelector/cancel' : '/cancel',
     name: 'Cancel',
     component: Cancel
   }
