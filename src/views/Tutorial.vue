@@ -69,7 +69,6 @@
                     <li>There are 11 relevant classes a material can fall into:</li>
                 </ul>
                 <v-row no-gutters class="mt-3 justify-center">
-                    <!-- @NICK can you add cards with images for all the classes?-->
                     <v-col cols="3">
                         <v-card height="400px" class="ma-1 pa-3 grey lighten-5" :elevation="2">
                             <v-tooltip bottom>
@@ -166,7 +165,7 @@
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-img height="250px" v-bind="attrs" v-on="on"
-                                    src="./assets/tutorialImages/PaperBag.jpg" />
+                                    src="./assets/tutorialImages/PaperBag.JPG" />
                                 </template>
                                 <span>Brown and red paper bag in dirt</span>
                             </v-tooltip>
