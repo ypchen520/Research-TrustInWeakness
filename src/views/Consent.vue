@@ -55,13 +55,12 @@
             into
             the development of explainable AI systems.</p>
             <h3>Compensation:</h3>
-            <p v-if="src === 'SONA'">If you are enrolled in an approved course, you are eligible to receive course credit as compensation in this
+            <p>If you are enrolled in an approved course, you are eligible to receive course credit as compensation in this
             study. The credit granted will be based on the course guidelines set by your instructor up to but not
             exceeding
             2% of your final grade for the course. It is necessary to provide a UFID to verify your identity before
             credit
             can be granted.</p>
-            <p v-else> You are volunteering your time and contributions to this study</p> 
             <h3>Withdrawal from the study:</h3>
             <p>You are free to withdraw your consent from the study and stop your participation at any moment for any
             reason without consequence. Any questions asked will be optional. If you choose to withdraw, your information will
