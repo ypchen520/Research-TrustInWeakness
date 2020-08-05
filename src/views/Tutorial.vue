@@ -257,7 +257,7 @@
             <v-stepper-content step="5">
                 <h1 class="headline">Instructions</h1>
                 <v-card class="ma-6 pa-3 grey justify-center lighten-5" :elevation="2">
-                    <v-img src="./assets/images/tut-overview.png" height="50vh" />
+                    <v-img src="./assets/tutorialImages/tut-overview.png" height="50vh" />
                 </v-card>
                 <ol>
                     <li>To begin, click an image from the grid that you'd like to inspect.</li>
