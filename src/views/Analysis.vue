@@ -5,7 +5,9 @@
         <v-card-title>Task</v-card-title>
         <v-divider></v-divider>
       <v-card-text> 
-          <BaseTimer :TIME_LIMIT="time" :isRepeatable="false" v-on:finished="finishTask($event)" />
+          <BaseTimer ref="mainTime" :TIME_LIMIT="time" :isRepeatable="false" v-on:finished="finishTask($event)" />
+          <!-- If directive to show if timer is not started? -->
+          <small v-if="!this.timerStarted" class="red--text"><em>Time begins when you submit an image</em></small>
         <h3>Task Description</h3>
         <p class="grey--text"> Your goal is to maximize your points in 10 minutes. Work as quickly and efficiently as you can. The maximum score is <strong class="black--text">500</strong>.</p>
 
@@ -14,7 +16,7 @@
             <li> <span class="red--text">-10 points</span> lost for every image you submit with a mistake.</li>
           </ul>
         <CondHint :condition="cond"/>
-        <ScoreCard v-bind:points="points" v-on:recalculate="recalcPoints()"/>
+        <ScoreCard ref="scoreCard" v-bind:points="points" v-on:recalculate="recalcPoints()"/>
       </v-card-text>
       </v-card>  </v-navigation-drawer>
   <v-row class=pa-12>
@@ -106,6 +108,7 @@ export default {
       points,
       images,
       labels,
+      timerStarted: false,
       isPhotoShowing: false,
       loggedData: {},
       currentData: {},
@@ -172,6 +175,11 @@ export default {
       this.current.submitted = true;
       this.isPhotoShowing = false;
       this.current = {};
+      if(!this.timerStarted){
+        this.timerStarted=true;
+        this.$refs.mainTime.startTimer();
+        this.$refs.scoreCard.$refs.miniTimer.startTimer();
+      }
     },
     agree(){
       this.current.agreed = true;

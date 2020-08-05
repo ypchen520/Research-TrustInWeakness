@@ -4,7 +4,7 @@ https://medium.com/js-dojo/how-to-create-an-animated-countdown-timer-with-vue-89
   <div class="base-timer">
     <svg v-if="!this.isMini" class="base-timer__svg" viewBox="0 0 100 100" width = "70%" xmlns="http://www.w3.org/2000/svg">
       <g class="base-timer__circle">
-        <text x="37" y="55" style="fill:grey">{{ formattedTimeLeft }} </text>
+        <text :x="formattedTimeLeft.width" y="55" style="fill:grey">{{ formattedTimeLeft.text }} </text>
         <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
         <path
           :stroke-dasharray="circleDasharray"
@@ -35,9 +35,6 @@ https://medium.com/js-dojo/how-to-create-an-animated-countdown-timer-with-vue-89
         ></path>
       </g>
     </svg>
-    <!-- <span >{{ formattedTimeLeft }}</span> -->
-     <!-- a 22.5,22.5 0 1,0 50,0
-            a 22.5,22.5 0 1,0 -50,0 -->
   </div>
 </template>
 
@@ -95,15 +92,17 @@ export default {
     },
 
     formattedTimeLeft() {
-      const timeLeft = this.timeLeft;
-      const minutes = Math.floor(timeLeft / 60);
-      let seconds = timeLeft % 60;
-
-      if (seconds < 10) {
-        seconds = `0${seconds}`;
+      if (this.timePassed == 0) {
+        return {text: `Paused`, width: 26.5};
+      } else {
+        const timeLeft = this.timeLeft;
+        const minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+        if (seconds < 10) {
+          seconds = `0${seconds}`;
+        }
+        return {text: `${minutes}:${seconds}`, width:37};
       }
-
-      return `${minutes}:${seconds}`;
     },
 
     timeLeft() {
@@ -134,10 +133,6 @@ export default {
         this.onTimesUp();
       }
     }
-  },
-
-  mounted() {
-    this.startTimer();
   },
 
   methods: {
