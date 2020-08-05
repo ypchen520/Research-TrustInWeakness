@@ -280,6 +280,7 @@ export default {
         }else{
           this.$emit('disagreed');
         }
+        this.$emit('logged', this.loggedData);
         this.reset();
         this.$emit('submitted');
       },
