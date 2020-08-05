@@ -169,7 +169,7 @@ export default {
     },
     closePhoto(isShowing){
       this.isPhotoShowing = isShowing;
-      //this.current = {};
+      this.current = {};
     },
     submitAnswer(){
       this.current.submitted = true;
@@ -195,7 +195,7 @@ export default {
     mergeData(val){
       // this.loggedData = Object.assign(currentData, val);
       this.loggedData[this.current.photoID].push(Object.assign(this.currentData, val));
-      this.current = {};
+      // this.current = {};
       this.currentData = {};
     },
     reject(){
