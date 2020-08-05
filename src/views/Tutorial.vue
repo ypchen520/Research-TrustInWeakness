@@ -165,7 +165,7 @@
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-img height="250px" v-bind="attrs" v-on="on"
-                                    src="./assets/tutorialImages/PaperBag.JPG" />
+                                    src="./assets/tutorialImages/PaperBag.jpg" />
                                 </template>
                                 <span>Brown and red paper bag in dirt</span>
                             </v-tooltip>
