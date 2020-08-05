@@ -27,9 +27,11 @@
         name: 'Debrief',
         methods:{
             backToSONA(){
-                //todo send proper data back to sona
-                console.log("stub function not implemented.")
-                return null 
+                //todo Update experiment id and credit token
+                let exp = 51;
+                let token = '8b6571e577214cd9a2ab770cb8bfa912';
+                //replace should remove history so users can not go back to the app, but that's not working right now. May need an alternative or just leave be.
+                window.location.replace('https://ufl-cise.sona-systems.com/webstudy_credit.aspx?experiment_id='+exp+'&credit_token='+token+'&survey_code=' + this.id);
             }
         },
         data() {
