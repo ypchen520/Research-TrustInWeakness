@@ -84,7 +84,7 @@
 </template>
 
 <script>
-import images from "../data/images"
+import images from "../data/imagesCompress"
 // import images from "../data/testingImg"
 import labels from "../data/defaultLabels"
 // import GroundTruth from "../data/groundTruth"
