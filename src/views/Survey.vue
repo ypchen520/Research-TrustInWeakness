@@ -16,7 +16,7 @@
       <v-row align="center">
         <v-col class="grow"><em>Based on your expereince, please answer the following questions in the survey:</em></v-col>
         <v-col class="shrink">
-          <a :href="'//' + surveyLink +'?id='+ userID  + '&g=' +cond + '&src=' + src" target="_blank">
+          <a :href="'//' + surveyLink +'?id='+ userID  + '&g=' +cond + '&src=' + src" target="_top">
             <v-btn> Follow-up Survey</v-btn>
           </a>
         </v-col>
@@ -27,6 +27,7 @@
         You will <strong>not</strong> recieve SONA credit until you finish the survey.
       </v-alert>
     </div>
+    <small><em>Do not navigate with your browser back buttons or you will loose all data.</em></small>
   </div>
 </template>
 
