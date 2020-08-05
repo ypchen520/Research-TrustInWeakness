@@ -34,7 +34,9 @@
         },
         data() {
             return {
-            src: sessionStorage.getItem('src')
+            src: (undefined === this.$route.query.src) ? "ELSEWHERE": this.$route.query.src,
+            id: (undefined === this.$route.query.id) ? -1 : this.$route.query.id,
+
             }
         }
     }

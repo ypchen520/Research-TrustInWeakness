@@ -17,7 +17,6 @@
         <v-col class="grow"><em>Based on your expereince, please answer the following questions in the survey:</em></v-col>
         <v-col class="shrink">
           <a :href="'//' + surveyLink +'?id='+ userID  + '&g=' +cond + '&src=' + src" target="_blank">
-            {{ url }}
             <v-btn> Follow-up Survey</v-btn>
           </a>
         </v-col>
