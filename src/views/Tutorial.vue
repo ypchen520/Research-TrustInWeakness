@@ -36,7 +36,7 @@
                 </v-row>
                 <ul>
                     <li>Litter has been found in some of the most remote places of our planet.</li>
-                    <li>Recycling and compost can help us reclaim material but often <strong> identifying </strong> these materials is challenging.</li>
+                    <li>Recycling and compost can help us reclaim material, but often <strong> identifying </strong> these materials is challenging.</li>
                     <li>By training machine learning systems to help identify materials, we can improve the rate of recycling!</li>
                 </ul>
                 <v-card-actions>
@@ -55,7 +55,7 @@
                     </v-tooltip>
                 </v-card>
                 <ul>
-                    <li>We've built an machine learning classifier that is designed <strong>to help you predict</strong> what materials are in a given image.</li>
+                    <li>We've built a machine learning classifier that is designed <strong>to help you predict</strong> what materials are in a given image.</li>
                     <li><em>We want to know how the system's suggestions impact your ability to detect the materials in images.</em></li>
                 </ul>
                 <v-card-actions>
@@ -247,8 +247,8 @@
                 </v-row>
                 <ul>
                     <li>The system tends to be fairly accurate but, as is the case with any system that leverages Machine Learning, it has limitations.</li>
-                    <ConditionHint v-if="cond != '0'" :condition="cond" :parent="'tutorial'" />
                 </ul>
+                    <ConditionHint :condition="this.cond" :parent="'tutorial'" />
                 <v-card-actions>
                     <v-btn @click="backStep()" text>Back</v-btn>
                     <v-btn text @click="nextStep()" color="primary">Continue</v-btn>
@@ -261,10 +261,10 @@
                 </v-card>
                 <ol>
                     <li>To begin, click an image from the grid that you'd like to inspect.</li>
-                    <li>In the pop up window, you can reveal our system's decision by clicking the big button button at the right.</li>
-                    <li>Looking at the image at the right, and the system's prediction you'll select the correct classes at the right before clicking submit.</li>
-                    <li>For correctly labeled images, you will <strong class="green--text">score some</strong> points; but for any image that is mislabeled you will <strong class="red--text">loose more</strong> points.</li>
-                    <li>Once you have submitted an image, you can not change your answer, but you can go back to the grid by clicking the x in the corner.</li>
+                    <li>In the pop up window, you can reveal our system's decision by clicking the blue button at the right.</li>
+                    <li>Looking at the image at the left, and the system's prediction you'll select the correct classes at the right before clicking submit.</li>
+                    <li>For correctly labeled images, you will <strong class="green--text">score some</strong> points; but for any image that is mislabeled you will <strong class="red--text">lose more</strong> points.</li>
+                    <li>Once you have submitted an image, you <strong>can not</strong> change your answer, but you can go back to the grid by clicking the <span class="grey--text lighten-5">X</span> in the corner.</li>
                 </ol>
                 <v-card-actions>
                     <v-btn @click="backStep()" text>Back</v-btn>
