@@ -12,8 +12,8 @@ from sklearn.metrics import multilabel_confusion_matrix, accuracy_score
 
 np.random.seed(5) #for reproducibility
 #CHANGE THESE TO CONTROL SYSTEM ACCURACY
-NumImagesToFlip          = 20
-NumClassesPerImageToFlip = 3
+NumImagesToFlip          = 10
+NumClassesPerImageToFlip = 1
 
 #STATIC VARIABLES
 PlasticBottleCol = 5
@@ -119,4 +119,10 @@ f.write('\n\nF1 score per class:\n')
 f.write(np.array2string(F1))
 f.write('\n\n Average F1 score:\n')
 f.write("{0:2.2f}".format(np.mean(F1)))
+
+f.write('\n\n Num images to make mispredictions on:\n')
+f.write(str(NumImagesToFlip))
+f.write('\n\n Num classes per selected image to make mispredictions on:\n')
+f.write(str(NumClassesPerImageToFlip))
+
 f.close()
