@@ -168,6 +168,7 @@ export default {
       //todo: evaluate the current submitted photos and reevaluate them
       //this.points++;
       this.points += this.tempPoints;
+      this.tempPoints = 0;
       sessionStorage.setItem('pnt',this.points);
       console.log("Updating points",this.points);
     },
