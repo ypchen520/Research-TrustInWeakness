@@ -66,6 +66,7 @@
     v-on:tempAgreed="tempAgree"
     v-on:logged="mergeData"
     v-on:applied="applySysGuess"
+    v-on:calculated="storePoints"
   ></TaskAnalysis>
 </v-dialog>
 
@@ -118,7 +119,8 @@ export default {
       currentPhotoID: 0,
       checkedClasses: {},
       isSystemAnswer: false,
-      isAlertShowing: false
+      isAlertShowing: false,
+      tempPoints: 0
     }
   },
   methods: {
@@ -159,9 +161,13 @@ export default {
       this.save2serve();
       this.$router.push({path: 'survey'})
     },
+    storePoints(val){
+      this.tempPoints += val;
+    },
     recalcPoints(){
       //todo: evaluate the current submitted photos and reevaluate them
-      this.points++;
+      //this.points++;
+      this.points += this.tempPoints;
       sessionStorage.setItem('pnt',this.points);
       console.log("Updating points",this.points);
     },

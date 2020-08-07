@@ -148,7 +148,8 @@ export default {
         sysMode: false,
         sysAns: [],
         sysAgree: false,
-        loggedData: {}
+        loggedData: {},
+        points: Number
       };
     },
     methods: {
@@ -273,6 +274,27 @@ export default {
         var second = timestamp / 1000 | 0;
         return second;
       },
+      getPoints(){
+        this.points = 0;
+        var truth = GroundTruth.find(o => o.photoID === this.photoID).class;
+        var ans = this.checked.find(o => o.photoID === this.photoID).label;
+        if(truth.glass.unbroken != ans.glass.unbroken || 
+           truth.glass.broken != ans.glass.broken || 
+           truth.plastic.wrapper != ans.plastic.wrapper ||
+           truth.plastic.bottle != ans.plastic.bottle ||
+           truth.plastic.other != ans.plastic.other ||
+           truth.aluminum.can != ans.aluminum.can ||
+           truth.aluminum.other != ans.aluminum.other ||
+           truth.paper.bag != ans.paper.bag ||
+           truth.paper.other != ans.paper.other ||
+           truth.food != ans.food ||
+           truth.other != ans.other
+          ){
+          this.points = 0;
+        }else{
+          this.points = 1;
+        }
+      },
       close(){
         this.loggedData["close_timestamp"]=this.getCurrentTime();
         if(this.sysAgree){
@@ -285,6 +307,8 @@ export default {
       },
       submit(){
         this.loggedData["submit_timestamp"]=this.getCurrentTime();
+        this.getPoints();
+        this.$emit('calculated', this.points);
         if(this.sysAgree || this.isAgreedNotSubmitted){
           this.$emit('tempAgreed', true);
           this.$emit('agreed');
