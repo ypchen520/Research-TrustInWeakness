@@ -61,7 +61,7 @@ export default {
       saveData(){
         let testData= {
           click_id: 1,
-          id:1234,
+          id:0,
           stuff:"Something",
           array:[
             "a","thing 1",14
@@ -70,7 +70,7 @@ export default {
         console.log("saving data...",testData)
         this.axios({
           method: "post",
-          url: "/TrashSelector/logs/logger.php",
+          url: "/TrashSelector/logger.php",
           data: testData
         })
         .then((res) => {
