@@ -211,7 +211,7 @@
                                 <span>Illustration of Other Trash</span>
                             </v-tooltip>
                             <v-card-title>Other</v-card-title>
-                            <v-card-text>Battery, carded blister pack (e.g. batteries with plastic and cardboard in back), metal bottle cap, toilet tube, egg, drink, meal, and corrugated cartons, cardboard boxes, pizza box, foam cup, metal lid, rope, strings, scrap metal, shoe, squeezable tube, styrofoam, cigarette </v-card-text>
+                            <v-card-text>Battery, carded blister pack (e.g. packaging around batteries), metal bottle cap, toilet tube, egg, drink, meal, and corrugated cartons, cardboard boxes, pizza box, foam cup, metal lid, rope, strings, scrap metal, shoe, squeezable tube, styrofoam, cigarette </v-card-text>
                         </v-card>
                     </v-col>
 
@@ -262,7 +262,7 @@
                 <ol>
                     <li>To begin, click an image from the grid that you'd like to inspect.</li>
                     <li>In the pop up window, you can reveal our system's decision by clicking the blue button at the right.</li>
-                    <li>Looking at the image at the left, and the system's prediction you'll select the correct classes at the right before clicking submit.</li>
+                    <li>Looking at the image at the left and the system's prediction, you'll select the correct classes at the right before clicking submit.</li>
                     <li>For correctly labeled images, you will <strong class="green--text">score some</strong> points; but for any image that is mislabeled you will <strong class="red--text">lose more</strong> points.</li>
                     <li>Once you have submitted an image, you <strong>can not</strong> change your answer, but you can go back to the grid by clicking the <span class="grey--text lighten-5">X</span> in the corner.</li>
                 </ol>
@@ -276,52 +276,37 @@
                 <v-row no-gutters class="mt-3 justify-center">
                     <v-col cols="3">
                         <v-card class="ma-1 pa-3 grey lighten-5" :elevation="2">
-                            <v-tooltip bottom>
-                                <template v-slot:activator="{ on, attrs }">
-                                    <svg v-bind="attrs" v-on="on" width="75%" viewBox="0 0 153 155" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
-                                        style="margin:0 12.5%;fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                                        <circle cx="76.172" cy="78.519" r="76.172" style="fill:#4caf4f;" />
-                                        <circle cx="76.172" cy="78.519" r="65.218" style="fill:#fff;" /><text x="49.097px" y="83.963px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:20px;fill:#808080;">10:00</text>
-                                        <rect x="76.172" y="0" width="2.27" height="15.935" style="fill:#1e5020;" /></svg>
-                                </template>
-                                <span>if_you_need_a_tooltip</span>
-                            </v-tooltip>
+                            <svg v-bind="attrs" v-on="on" width="75%" viewBox="0 0 153 155" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
+                                style="margin:0 12.5%;fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                                <circle cx="76.172" cy="78.519" r="76.172" style="fill:#4caf4f;" />
+                                <circle cx="76.172" cy="78.519" r="65.218" style="fill:#fff;" /><text x="49.097px" y="83.963px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:20px;fill:#808080;">10:00</text>
+                                <rect x="76.172" y="0" width="2.27" height="15.935" style="fill:#1e5020;" /></svg>
                             <v-card-text>1. You will have 10 minutes to score as many points as possible using an imperfect machine learning system.</v-card-text>
                         </v-card>
                     </v-col>
                     <v-col cols="3">
                         <v-card class="ma-1 pa-3 grey lighten-5" :elevation="2">
-                            <v-tooltip bottom>
-                                <template v-slot:activator="{ on, attrs }">
-                                    <svg v-bind="attrs" v-on="on" width="85%" viewBox="0 0 144 129" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
-                                        style="margin:0 7.5%;fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                                        <path d="M143.607,100.098c0,-15.425 -12.523,-27.949 -27.949,-27.949l-87.708,-0c-15.426,-0 -27.95,12.524 -27.95,27.949c-0,15.426 12.524,27.95 27.95,27.95l87.708,0c15.426,0 27.949,-12.524 27.949,-27.95Z"
-                                            style="fill:#4caf4f;" /><text x="23.948px" y="107.262px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:20px;fill:#fff;">Points</text>
-                                        <path d="M95.09,82.573l7.966,15.933l-15.932,-0l7.966,-15.933Z" style="fill:#fff;" />
-                                        <path d="M115.498,82.573l7.966,15.933l-15.932,-0l7.966,-15.933Z" style="fill:#fff;" />
-                                        <rect x="92.311" y="94.621" width="5.559" height="14.446" style="fill:#fff;" />
-                                        <rect x="112.719" y="94.621" width="5.559" height="14.446" style="fill:#fff;" /><text x="93.727px" y="62.984px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:72px;fill:#4caf4f;">=</text>
-                                        <path
-                                            d="M83.389,11.409l0,52.918l-71.978,0l0,-4.012l67.715,-0l-0,-48.906l4.263,0Zm-6.395,-6.142l0,52.918l-71.978,-0l-0,-4.013l67.715,-0l-0,-48.905l4.263,-0Zm-76.994,-5.267l69.721,0l0,50.911l-69.721,0l-0,-50.911Zm66.712,36.867l-10.283,-10.784l-11.787,12.539l-22.572,-24.828l-18.81,20.816l0,13.041l63.452,0l-0,-10.784Zm-19.312,-29.845c3.01,0 5.518,2.508 5.518,5.518c-0,3.26 -2.508,5.517 -5.518,5.517c-3.009,0 -5.517,-2.257 -5.517,-5.517c-0,-3.01 2.508,-5.518 5.517,-5.518Z"
-                                            style="fill:#4caf4f;" /></svg>
-                                </template>
-                                <span>if_you_need_a_tooltip</span>
-                            </v-tooltip>
+                            <svg v-bind="attrs" v-on="on" width="85%" viewBox="0 0 144 129" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
+                                style="margin:0 7.5%;fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                                <path d="M143.607,100.098c0,-15.425 -12.523,-27.949 -27.949,-27.949l-87.708,-0c-15.426,-0 -27.95,12.524 -27.95,27.949c-0,15.426 12.524,27.95 27.95,27.95l87.708,0c15.426,0 27.949,-12.524 27.949,-27.95Z"
+                                    style="fill:#4caf4f;" /><text x="23.948px" y="107.262px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:20px;fill:#fff;">Points</text>
+                                <path d="M95.09,82.573l7.966,15.933l-15.932,-0l7.966,-15.933Z" style="fill:#fff;" />
+                                <path d="M115.498,82.573l7.966,15.933l-15.932,-0l7.966,-15.933Z" style="fill:#fff;" />
+                                <rect x="92.311" y="94.621" width="5.559" height="14.446" style="fill:#fff;" />
+                                <rect x="112.719" y="94.621" width="5.559" height="14.446" style="fill:#fff;" /><text x="93.727px" y="62.984px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:72px;fill:#4caf4f;">=</text>
+                                <path
+                                    d="M83.389,11.409l0,52.918l-71.978,0l0,-4.012l67.715,-0l-0,-48.906l4.263,0Zm-6.395,-6.142l0,52.918l-71.978,-0l-0,-4.013l67.715,-0l-0,-48.905l4.263,-0Zm-76.994,-5.267l69.721,0l0,50.911l-69.721,0l-0,-50.911Zm66.712,36.867l-10.283,-10.784l-11.787,12.539l-22.572,-24.828l-18.81,20.816l0,13.041l63.452,0l-0,-10.784Zm-19.312,-29.845c3.01,0 5.518,2.508 5.518,5.518c-0,3.26 -2.508,5.517 -5.518,5.517c-3.009,0 -5.517,-2.257 -5.517,-5.517c-0,-3.01 2.508,-5.518 5.517,-5.518Z"
+                                    style="fill:#4caf4f;" /></svg>
                             <v-card-text>2. The more images you correctly identify the higher your score. <strong>Don't sacrifice accuracy for speed.</strong></v-card-text>
                         </v-card>
                     </v-col>
                     <v-col cols="3">
                         <v-card class="ma-1 pa-3 grey lighten-5" :elevation="2">
-                            <v-tooltip bottom>
-                                <template v-slot:activator="{ on, attrs }">
-                                    <svg v-bind="attrs" v-on="on" width="80%" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
-                                        style="margin:0 10%;fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                                        <path id="_-Curves-" serif:id="(Curves)"
-                                            d="M12,1l-1,0l0,-1l-8,0l0,1l-1,0c-1.105,0 -2,0.895 -2,2l0,14c0,1.105 0.895,2 2,2l10,0c1.105,0 2,-0.895 2,-2l0,-14c0,-1.105 -0.895,-2 -2,-2Zm-8,0l6,0l0,1l-6,0l0,-1Zm9,16c0,0.551 -0.449,1 -1,1l-10,0c-0.551,0 -1,-0.449 -1,-1l0,-14c0,-0.551 0.449,-1 1,-1l1,0l0,1l8,0l0,-1l1,0c0.551,0 1,0.449 1,1l0,14Zm-10,-12l8,0l0,1l-8,0l0,-1Zm0,3l8,0l0,1l-8,0l0,-1Zm0,3l8,0l0,1l-8,0l0,-1Zm0,3l4,0l0,1l-4,0l0,-1Zm16,-13l-2,0c-0.552,0 -1,0.448 -1,1l0,15l2,2l2,-2l0,-15c0,-0.552 -0.448,-1 -1,-1Zm-2,1l2,0l0,2l-2,0l0,-2Zm2,14.586l-1,1l-1,-1l0,-11.586l2,0l0,11.586Z"
-                                            style="fill:#4caf4f;fill-rule:nonzero;" /></svg>
-                                </template>
-                                <span>if_you_need_a_tooltip</span>
-                            </v-tooltip>
+                            <svg v-bind="attrs" v-on="on" width="80%" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
+                                style="margin:0 10%;fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                                <path id="_-Curves-" serif:id="(Curves)"
+                                    d="M12,1l-1,0l0,-1l-8,0l0,1l-1,0c-1.105,0 -2,0.895 -2,2l0,14c0,1.105 0.895,2 2,2l10,0c1.105,0 2,-0.895 2,-2l0,-14c0,-1.105 -0.895,-2 -2,-2Zm-8,0l6,0l0,1l-6,0l0,-1Zm9,16c0,0.551 -0.449,1 -1,1l-10,0c-0.551,0 -1,-0.449 -1,-1l0,-14c0,-0.551 0.449,-1 1,-1l1,0l0,1l8,0l0,-1l1,0c0.551,0 1,0.449 1,1l0,14Zm-10,-12l8,0l0,1l-8,0l0,-1Zm0,3l8,0l0,1l-8,0l0,-1Zm0,3l8,0l0,1l-8,0l0,-1Zm0,3l4,0l0,1l-4,0l0,-1Zm16,-13l-2,0c-0.552,0 -1,0.448 -1,1l0,15l2,2l2,-2l0,-15c0,-0.552 -0.448,-1 -1,-1Zm-2,1l2,0l0,2l-2,0l0,-2Zm2,14.586l-1,1l-1,-1l0,-11.586l2,0l0,11.586Z"
+                                    style="fill:#4caf4f;fill-rule:nonzero;" /></svg>
                             <v-card-text>3. After the task, you will complete a short questionnaire about your experience and our system.</v-card-text>
                         </v-card>
                     </v-col>
