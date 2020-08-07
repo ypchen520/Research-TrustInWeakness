@@ -65,6 +65,7 @@
     v-on:disagreed="disagree"
     v-on:tempAgreed="tempAgree"
     v-on:logged="mergeData"
+    v-on:applied="applySysGuess"
   ></TaskAnalysis>
 </v-dialog>
 
@@ -116,7 +117,6 @@ export default {
       current: {},
       currentPhotoID: 0,
       checkedClasses: {},
-      // display: {stage1:"none",stage2:"none",stage3:"none",stage4:"none"},
       isSystemAnswer: false,
       isAlertShowing: false
     }
@@ -136,13 +136,23 @@ export default {
         //current.push({"click_id": clickID});
       }
       this.currentData["click_id"] = clickID;
-      this.currentData["time_left"] = this.time;
-      this.currentData["current_score"] = this.points;
-      console.log(this.currentData);
-      this.save2serve();
+      this.currentData["current_score"] = this.points; // this.getCurrentScore()
+      this.currentData["open_timePassed"] = this.getTimePassed();
+      this.currentData["open_timestamp"] = this.getCurrentTime();
+      //console.log(this.currentData);
+      //this.save2serve();
     },
     save2serve(){
-      console.log(JSON.stringify(this.loggedData));
+      //console.log(JSON.stringify(this.loggedData));
+      this.axios({
+          method: "post",
+          url: "/TrashSelector/logger.php",
+          data: this.loggedData
+        }).then((res) => {
+          console.log(res);
+        }).catch((error) => {
+          console.log(error)
+      });
     },
     finishTask (stuff){
       console.log("TASK IS OVER!!!!",stuff);
@@ -155,23 +165,37 @@ export default {
       sessionStorage.setItem('pnt',this.points);
       console.log("Updating points",this.points);
     },
+    getCurrentScore(){
+      return 0;
+    },
+    getTimePassed(){
+      return this.$refs.mainTime.timePassed;
+    },
+    getCurrentTime(){
+        // return second from epoch (1970.1.1)
+        var date = new Date();
+        var timestamp = date.getTime();
+        var second = timestamp / 1000 | 0;
+        return second;
+    },
     openPhoto(photo){
       this.current = photo;
       this.currentPhotoID = photo.photoID;
       this.isPhotoShowing = true;
-      console.log(this.current.photoID);
+      // console.log(this.current.photoID);
       this.log2json();
       // console.log(this.current.accepted);
+      console.log(`open log: ${JSON.stringify(this.currentData)}`);
       if(photo.submitted){
         this.isAlertShowing = true;        
         this.current = photo;
       }
     },
     closePhoto(isShowing){
-      this.isPhotoShowing = isShowing;
+      this.isPhotoShowing = isShowing;      
       this.current = {};
     },
-    submitAnswer(){
+    submitAnswer(){     
       this.current.submitted = true;
       this.isPhotoShowing = false;
       this.current = {};
@@ -180,6 +204,9 @@ export default {
         this.$refs.mainTime.startTimer();
         this.$refs.scoreCard.$refs.miniTimer.startTimer();
       }
+    },
+    applySysGuess(){
+      this.currentData['apply_timePassed'] = this.getTimePassed();
     },
     agree(){
       this.current.agreed = true;
@@ -192,9 +219,11 @@ export default {
     tempAgree(val){
       this.current.tempAgreed = val;
     },
-    mergeData(val){
+    mergeData(val1, val2){
       // this.loggedData = Object.assign(currentData, val);
-      this.loggedData[this.current.photoID].push(Object.assign(this.currentData, val));
+      if(val2 == "submit"){this.currentData['submit_timePassed'] = this.getTimePassed();};      
+      if(val2 == "close"){this.currentData['close_timePassed'] = this.getTimePassed();};
+      this.loggedData[this.current.photoID].push(Object.assign(this.currentData, val1));
       // this.current = {};
       this.currentData = {};
     },

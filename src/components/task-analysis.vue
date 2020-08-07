@@ -196,6 +196,8 @@ export default {
       applySysAns(){
         //var id = this.photoID-1;
         //var truth = GroundTruth[id].class;
+        this.loggedData["apply_timestamp"]=this.getCurrentTime();
+        this.$emit('applied');
         var truth = GroundTruth.find(o => o.photoID === this.photoID).class;
         //var sysGuess = SysGuess[id].label;
         var sysGuess = SysGuess.find(o => o.photoID === this.photoID).label;
@@ -264,23 +266,32 @@ export default {
         //this.checked = this.defaultLabels;
         this.checked.push.apply(this.checked, this.defaultLabels);
       },
+      getCurrentTime(){
+        // return second from epoch (1970.1.1)
+        var date = new Date();
+        var timestamp = date.getTime();
+        var second = timestamp / 1000 | 0;
+        return second;
+      },
       close(){
+        this.loggedData["close_timestamp"]=this.getCurrentTime();
         if(this.sysAgree){
           this.$emit('tempAgreed', true);
         }
-        this.$emit('logged', this.loggedData);
+        this.$emit('logged', this.loggedData, "close");
         this.reset();
         this.isPhotoShowing = false;
         this.$emit('closed', this.isPhotoShowing);        
       },
       submit(){
+        this.loggedData["submit_timestamp"]=this.getCurrentTime();
         if(this.sysAgree || this.isAgreedNotSubmitted){
           this.$emit('tempAgreed', true);
           this.$emit('agreed');
         }else{
           this.$emit('disagreed');
         }
-        this.$emit('logged', this.loggedData);
+        this.$emit('logged', this.loggedData, "submit");
         this.reset();
         this.$emit('submitted');
       },
