@@ -27,7 +27,6 @@
         name: 'Debrief',
         methods:{
             backToSONA(){
-                //todo Update experiment id and credit token
                 let exp = 45;
                 let token = '8b6571e577214cd9a2ab770cb8bfa912';
                 //replace should remove history so users can not go back to the app, but that's not working right now. May need an alternative or just leave be.

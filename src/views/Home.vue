@@ -24,6 +24,7 @@
       <small> 
         <v-btn x-small @click="setUp()"> Reset User</v-btn> or reload the page
       </small>
+      <v-btn primary @click="saveData()">Test Save Data to Server</v-btn>
     </div>
     <Consent v-else />
   </div>
@@ -56,6 +57,28 @@ export default {
         console.log("setup");
         this.userID=Math.floor(Math.random()*9000)+1000;
         this.src = (Math.random() <0.5) ? 'SONA' : 'ONLINE'
+      },
+      saveData(){
+        let testData= {
+          click_id: 1,
+          id:1234,
+          stuff:"Something",
+          array:[
+            "a","thing 1",14
+          ]
+        }
+        console.log("saving data...",testData)
+        this.axios({
+          method: "post",
+          url: "/TrashSelector/logs/logger.php",
+          data: testData
+        })
+        .then((res) => {
+            console.log(res);
+        })
+        .catch((error) => {
+            console.log(error)
+        });
         }
     }
 }
