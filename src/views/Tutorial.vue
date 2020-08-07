@@ -20,7 +20,7 @@
                     <v-card class="ma-6 pa-3 grey lighten-5" width="40%" :elevation="2">
                         <v-tooltip bottom>
                             <template v-slot:activator="{ on, attrs }">
-                                <v-img v-bind="attrs" v-on="on" lazy-src="../assets/tutorialImages-compressed/john-cameron-FMrZLPdDyx4-unsplash-min.jpg" src="https://images.unsplash.com/photo-1530587191325-3db32d826c18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80" />
+                                <v-img v-bind="attrs" v-on="on" lazy-src='/TrashSelector/assets/tutorialImages-compressed/john-cameron-FMrZLPdDyx4-unsplash-min.jpg' src="https://images.unsplash.com/photo-1530587191325-3db32d826c18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80" />
                             </template>
                             <span>Photo by <a class="white--text" href="https://unsplash.com/@john_cameron?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">John Cameron</a> on Unsplash</span>
                         </v-tooltip>
@@ -28,7 +28,7 @@
                     <v-card class="ma-6 pa-3 grey lighten-5" width="45%" :elevation="2">
                         <v-tooltip bottom>
                             <template v-slot:activator="{on, attrs }">
-                                <v-img v-bind="attrs" v-on="on" lazy-src="../assets/tutorialImages-compressed/bas-emmen-EXpa6pyXkHA-unsplash-min.jpg" src="https://images.unsplash.com/photo-1516992654410-9309d4587e94?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" />
+                                <v-img v-bind="attrs" v-on="on" lazy-src="/TrashSelector/assets/tutorialImages-compressed/bas-emmen-EXpa6pyXkHA-unsplash-min.jpg" src="https://images.unsplash.com/photo-1516992654410-9309d4587e94?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" />
                             </template>
                             <span>Photo by <a class="white--text" href="https://unsplash.com/@mediavormgever">Bas Emmen</a> on Unsplash</span>
                         </v-tooltip>
