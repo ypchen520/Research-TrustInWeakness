@@ -22,7 +22,16 @@
     <v-col cols=1 class="ma-2" v-for="photo in images" :key='photo.photoID'>
       <v-card @click="openPhoto(photo)" class="pb-n3">
         <!-- Adding an inline style to correct for the bottom padding. we could fill that space with a point box? -->
-        <img width="100%" style="margin-bottom: -0.5em" :src="photo.tmb">
+        <v-badge v-if="photo.submitted && photo.isCorrect == 1" color="green" content="+1" offset-y="0em" >
+          <img width="100%" style="margin-bottom: -0.5em" :src="photo.tmb">
+        </v-badge>
+        <v-badge v-else-if="photo.submitted && photo.isCorrect == 0" color="grey" content="0" offset-y="0em" >
+          <img width="100%" style="margin-bottom: -0.5em" :src="photo.tmb">
+        </v-badge>
+        <v-badge v-else color="white">
+          <img width="100%" style="margin-bottom: -0.5em" :src="photo.tmb">
+        </v-badge>
+        <!-- <img width="100%" style="margin-bottom: -0.5em" :src="photo.tmb"> -->
         <div v-if="photo.submitted && photo.agreed" class="statusDiv" style="background-color: #FFEEA2">Agree</div>
         <div v-else-if="photo.submitted && photo.disagreed" class="statusDiv" style="background-color: #9EFCF8">Disagree</div>
           <!-- <v-overlay v-if="photo.submitted && photo.agreed" absolute color="#FFEEA2">
@@ -70,6 +79,7 @@
     v-on:logged="mergeData"
     v-on:applied="applySysGuess"
     v-on:calculated="storePoints"
+    v-on:
   ></TaskAnalysis>
 </v-dialog>
 
@@ -170,6 +180,7 @@ export default {
     },
     storePoints(val){
       this.tempPoints += val;
+      this.current.isCorrect = val;
     },
     recalcPoints(){
       //todo: evaluate the current submitted photos and reevaluate them
