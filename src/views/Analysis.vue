@@ -9,10 +9,10 @@
           <!-- If directive to show if timer is not started? -->
           <small v-if="!this.timerStarted" class="red--text"><em>Time begins when you submit an image</em></small>
         <h3>Task Description</h3>
-        <p class="grey--text"> Maximize your points in 10 minutes. Work as accurately as you can. The maximum score is <strong class="black--text">138</strong>.</p>
+        <p class="grey--text"> Maximize your points in 20 minutes. Work as accurately as you can. The maximum score is <strong class="black--text">138</strong>.</p>
 
           <ul>
-            <li><span class="green--text"> +5 Points</span> for correctly identifying all kinds of trash in an image.</li>
+            <li><span class="green--text"> +1 Point</span> for correctly identifying all kinds of trash in an image.</li>
           </ul>
         <CondHint class="mt-1" :condition="cond"/>
         <ScoreCard ref="scoreCard" v-bind:points="points" v-on:recalculate="recalcPoints()"/>

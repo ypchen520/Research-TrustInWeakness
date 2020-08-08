@@ -66,7 +66,7 @@
             reason without consequence. Any questions asked will be optional. If you choose to withdraw, your information will
             be discarded and destroyed.
             </p>
-            <p>If you wish to discuss anything above or any discomforts your experience, please ask questions now or
+            <p>If you wish to discuss anything above or any discomforts you experience, please ask questions now or
             contact one of the researchers listed above.
             If you have any questions regarding your rights as a research subject, please contact the Institutional
             Review Board (IRB02) office ( <a tel="+13523920433"> (352) 392-0433</a> or <a href="mailto:irb2@ufl.edu">irb2@ufl.edu</a>.)</p>
