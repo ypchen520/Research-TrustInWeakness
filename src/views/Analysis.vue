@@ -114,7 +114,7 @@ export default {
       timerStarted: false,
       isPhotoShowing: false,
       loggedData: {},
-      currentData: {},
+      currentData: [],
       taskData:{},
       current: {},
       currentPhotoID: 0,
@@ -127,21 +127,24 @@ export default {
   methods: {
     log2json(){
       var current;
-      var clickID;
+      //var clickID;
       if(!this.loggedData[this.current.photoID]){
-        this.loggedData[this.current.photoID] = [];
+        //this.loggedData[this.current.photoID] = [];
+        this.loggedData[this.current.photoID] = {};
+        this.loggedData[this.current.photoID]["events"] = [];
         //current = this.loggedData[this.current.photoID];
-        clickID = 1;
+        //clickID = 1;
         //current.push({"click_id": 0});      
-      }else{
-        current = this.loggedData[this.current.photoID];
-        clickID = current[current.length-1]["click_id"] + 1;
+      }//else{
+        //current = this.loggedData[this.current.photoID];
+        //clickID = current[current.length-1]["click_id"] + 1;
         //current.push({"click_id": clickID});
-      }
-      this.currentData["click_id"] = clickID;
-      this.currentData["current_score"] = this.points; // this.getCurrentScore()
-      this.currentData["open_timePassed"] = this.getTimePassed();
-      this.currentData["open_timestamp"] = this.getCurrentTime();
+      //}
+      this.loggedData[this.current.photoID]["score"] = this.points;
+      //this.currentData["click_id"] = clickID;
+      //this.currentData["score"] = this.points; // this.getCurrentScore()
+      //this.currentData["open_timePassed"] = this.getTimePassed();
+      //this.currentData["open_timestamp"] = this.getCurrentTime();
       //console.log(this.currentData);
       //this.save2serve();
     },
@@ -229,11 +232,18 @@ export default {
     },
     mergeData(val1, val2){
       // this.loggedData = Object.assign(currentData, val);
-      if(val2 == "submit"){this.currentData['submit_timePassed'] = this.getTimePassed();};      
-      if(val2 == "close"){this.currentData['close_timePassed'] = this.getTimePassed();};
-      this.loggedData[this.current.photoID].push(Object.assign(this.currentData, val1));
+      if(val2 == "submit" || val2 == "close"){
+        val1["time_passed"] = this.getTimePassed(); //with timestamp and type, --> object
+        this.loggedData[this.current.photoID]["events"].push(val1));
+        //this.currentData['submit_timePassed'] = this.getTimePassed();
+        };      
+      // if(val2 == "close"){
+      //   this.currentData['close_timePassed'] = this.getTimePassed();
+      //   };
+      // this.loggedData[this.current.photoID].push(Object.assign(this.currentData, val1));
+      // this.loggedData[this.current.photoID]["events"].push()
       // this.current = {};
-      this.currentData = {};
+      // this.currentData = {};
     },
     reject(){
       this.current.rejected = true;
