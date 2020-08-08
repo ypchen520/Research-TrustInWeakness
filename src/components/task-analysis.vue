@@ -1,18 +1,14 @@
 <template>
-  <v-card> 
-    <v-card-text style="position: relative">
-      <v-btn small right absolute fab class="mt-3" dark color="primary" @click=close>X</v-btn>
-    </v-card-text>
-    <v-row class=pa-12>   
+<div>
+  <v-btn small right absolute fab dark color="primary" @click=close>X</v-btn>
+  <v-card > 
+    <v-row class="px-2 mx-0">   
       <v-col cols=7>
-        <v-card justify>
-          <v-img contain :src="src"></v-img>
-        </v-card>
+        <v-img contain max-height="85vh" :src="src"></v-img>
       </v-col>
       <v-col cols=5>
-        <v-card height=100% class=pa-6>
-          You score points by accurately selecting the types of trash you see in the image. Click at the right to have the AI system select:
-          <v-row class=pa-12>
+        <v-card class="px-6 pt-6">
+          <v-card-text>Score points by accurately selecting the types of trash you see in the image. Click below to see the AI system's suggestion:</v-card-text>
             <v-col cols=12>
               <!-- <v-container class="px-0" fluid>
                 <v-checkbox
@@ -25,50 +21,82 @@
                   @click="onCheckboxClicked($event)"></v-checkbox>
               </v-container> -->
               <v-btn :disabled="isSubmitted == 1" block rounded color="primary" @click=applySysAns>Apply System Guess</v-btn>
-              <br><br>
-              <div class="ccheckbox">
+              <div class="ccheckbox my-3">
                 <!-- <span>{{checked[photoID-1]}}</span> -->
                 <!-- <span>{{photoID}}</span> -->
                 <!-- <span>{{checked}}</span> -->
-                <input :disabled="isSubmitted == 1" type="checkbox" id="glass_unbroken" value="Glass_unbroken" v-model="checked.find(o => o.photoID === photoID).label.glass.unbroken"
-                 @change="checkboxUpdated" @click="onCheckboxClicked($event)">
-                <label id="glass_unbroken_label" for="glass_unbroken">Glass (Unbroken) </label><br>
-                <input :disabled="isSubmitted == 1" type="checkbox" id="glass_broken" value="Glass_broken" v-model="checked.find(o => o.photoID === photoID).label.glass.broken" 
-                 @change="checkboxUpdated" @click="onCheckboxClicked($event)">
-                <label id="glass_broken_label" for="glass_broken">Glass (Broken) </label><br>
-                <br>
-                <input :disabled="isSubmitted == 1" type="checkbox" id="plastic_wrapper" value="Plastic_wrapper" v-model="checked.find(o => o.photoID === photoID).label.plastic.wrapper"
-                 @change="checkboxUpdated" @click="onCheckboxClicked($event)">
-                <label id="plastic_wrapper_label" for="plastic_wrapper">Plastic (Bag/Wrapper)</label><br>
-                <input :disabled="isSubmitted == 1" type="checkbox" id="plastic_bottle" value="Plastic_bottle" v-model="checked.find(o => o.photoID === photoID).label.plastic.bottle"
-                 @change="checkboxUpdated" @click="onCheckboxClicked($event)">
-                <label id="plastic_bottle_label" for="plastic_bottle">Plastic (Bottle)</label><br>
-                <input :disabled="isSubmitted == 1" type="checkbox" id="plastic_other" value="Plastic_other" v-model="checked.find(o => o.photoID === photoID).label.plastic.other"
-                 @change="checkboxUpdated" @click="onCheckboxClicked($event)">
-                <label id="plastic_other_label" for="plastic_other">Plastic (Other)</label><br>
-                <br>
-                <input :disabled="isSubmitted == 1" type="checkbox" id="aluminum_can" value="Aluminum_can" v-model="checked.find(o => o.photoID === photoID).label.aluminum.can"
-                 @change="checkboxUpdated" @click="onCheckboxClicked($event)">
-                <label id="aluminum_can_label" for="aluminum_can">Aluminum (Can)</label><br>
-                <input :disabled="isSubmitted == 1" type="checkbox" id="aluminum_other" value="Aluminum_other" v-model="checked.find(o => o.photoID === photoID).label.aluminum.other"
-                 @change="checkboxUpdated" @click="onCheckboxClicked($event)">
-                <label id="aluminum_other_label" for="aluminum_other">Aluminum (Other)</label><br>
-                <br>
-                <input :disabled="isSubmitted == 1" type="checkbox" id="paper_bag" value="Paper_bag" v-model="checked.find(o => o.photoID === photoID).label.paper.bag"
-                 @change="checkboxUpdated" @click="onCheckboxClicked($event)">
-                <label id="paper_bag_label" for="paper_bag">Paper (Bag)</label><br>
-                <input :disabled="isSubmitted == 1" type="checkbox" id="paper_other" value="Paper_other" v-model="checked.find(o => o.photoID === photoID).label.paper.other"
-                 @change="checkboxUpdated" @click="onCheckboxClicked($event)">
-                <label id="paper_other_label" for="paper_other">Paper (Other)</label><br>
-                <br>
-                <input :disabled="isSubmitted == 1" type="checkbox" id="food_waste" value="Food_waste" v-model="checked.find(o => o.photoID === photoID).label.food"
-                 @change="checkboxUpdated" @click="onCheckboxClicked($event)">
-                <label id="food_waste_label" for="food_waste">Food Waste</label><br>
-                <br>
-                <input :disabled="isSubmitted == 1" type="checkbox" id="other_trash" value="Other_trash" v-model="checked.find(o => o.photoID === photoID).label.other"
-                 @change="checkboxUpdated" @click="onCheckboxClicked($event)">
-                <label id="other_trash_label" for="other_trash">Other Trash</label><br>
-                <br>
+
+                <!-- Jeremy's attempt to make the checkboxes drawn repeatedly... can't get the v-model directive working though -->
+                <!-- <v-row v-for="c in this.classes" :key="c.id" :class="c.space">
+                  <input :disabled="isSubmitted == 1" :id="c.id" type="checkbox" :value="c.value" @change="checkboxUpdated" @click="onCheckboxClicked($event)">
+                  <label :id='c.idl' :for='c.id'>{{c.label}}</label>
+                </v-row> -->
+                <v-row>
+                  <input :disabled="isSubmitted == 1" type="checkbox" id="glass_unbroken" value="Glass_unbroken"
+                    v-model="checked.find(o => o.photoID === photoID).label.glass.unbroken" @change="checkboxUpdated"
+                    @click="onCheckboxClicked($event)">
+                  <label id="glass_unbroken_label" for="glass_unbroken">Glass (Unbroken) </label>
+                </v-row>
+                <v-row class="pb-3">
+                  <input :disabled="isSubmitted == 1" type="checkbox" id="glass_broken" value="Glass_broken"
+                    v-model="checked.find(o => o.photoID === photoID).label.glass.broken" @change="checkboxUpdated"
+                    @click="onCheckboxClicked($event)">
+                  <label id="glass_broken_label" for="glass_broken">Glass (Broken) </label>
+                </v-row>
+                <v-row>
+                  <input :disabled="isSubmitted == 1" type="checkbox" id="plastic_wrapper" value="Plastic_wrapper"
+                    v-model="checked.find(o => o.photoID === photoID).label.plastic.wrapper" @change="checkboxUpdated"
+                    @click="onCheckboxClicked($event)">
+                  <label id="plastic_wrapper_label" for="plastic_wrapper">Plastic (Bag/Wrapper)</label>
+                </v-row>
+                <v-row>
+                  <input :disabled="isSubmitted == 1" type="checkbox" id="plastic_bottle" value="Plastic_bottle"
+                    v-model="checked.find(o => o.photoID === photoID).label.plastic.bottle" @change="checkboxUpdated"
+                    @click="onCheckboxClicked($event)">
+                  <label id="plastic_bottle_label" for="plastic_bottle">Plastic (Bottle)</label>
+                </v-row>
+                <v-row class="pb-3">
+                  <input :disabled="isSubmitted == 1" type="checkbox" id="plastic_other"
+                    value="Plastic_other" v-model="checked.find(o => o.photoID === photoID).label.plastic.other"
+                    @change="checkboxUpdated" @click="onCheckboxClicked($event)">
+                  <label id="plastic_other_label" for="plastic_other">Plastic (Other)</label>
+                </v-row>
+                <v-row>
+                  <input :disabled="isSubmitted == 1" type="checkbox" id="aluminum_can" value="Aluminum_can"
+                    v-model="checked.find(o => o.photoID === photoID).label.aluminum.can" @change="checkboxUpdated"
+                    @click="onCheckboxClicked($event)">
+                  <label id="aluminum_can_label" for="aluminum_can">Aluminum (Can)</label>
+                </v-row>
+                <v-row class="pb-3">
+                  <input :disabled="isSubmitted == 1" type="checkbox" id="aluminum_other"
+                    value="Aluminum_other" v-model="checked.find(o => o.photoID === photoID).label.aluminum.other"
+                    @change="checkboxUpdated" @click="onCheckboxClicked($event)">
+                  <label id="aluminum_other_label" for="aluminum_other">Aluminum (Other)</label>
+                </v-row>
+                <v-row>
+                  <input :disabled="isSubmitted == 1" type="checkbox" id="paper_bag" value="Paper_bag"
+                    v-model="checked.find(o => o.photoID === photoID).label.paper.bag" @change="checkboxUpdated"
+                    @click="onCheckboxClicked($event)">
+                  <label id="paper_bag_label" for="paper_bag">Paper (Bag)</label>
+                </v-row>
+                <v-row class="pb-3">
+                  <input :disabled="isSubmitted == 1" type="checkbox" id="paper_other"
+                    value="Paper_other" v-model="checked.find(o => o.photoID === photoID).label.paper.other"
+                    @change="checkboxUpdated" @click="onCheckboxClicked($event)">
+                  <label id="paper_other_label" for="paper_other">Paper (Other)</label>
+                </v-row>
+                <v-row class="pb-3">
+                  <input :disabled="isSubmitted == 1" type="checkbox" id="food_waste"
+                    value="Food_waste" v-model="checked.find(o => o.photoID === photoID).label.food"
+                    @change="checkboxUpdated" @click="onCheckboxClicked($event)">
+                  <label id="food_waste_label" for="food_waste">Food Waste</label>
+                </v-row>
+                <v-row class="pb-3">
+                  <input :disabled="isSubmitted == 1" type="checkbox" id="other_trash"
+                    value="Other_trash" v-model="checked.find(o => o.photoID === photoID).label.other"
+                    @change="checkboxUpdated" @click="onCheckboxClicked($event)">
+                  <label id="other_trash_label" for="other_trash">Other Trash</label>
+                </v-row>
               </div>
               <!-- <v-card :disabled="isAgreedNotSubmitted == false">
                   <div style="background-color: #FFEEA2" id="systemAgreement" class="statusDiv">AGREED with the system</div>
@@ -79,8 +107,7 @@
               <div v-if="isAgreedNotSubmitted || sysAgree" id="systemAgreement" class="statusDiv" style="background-color: #FFEEA2">AGREED with the system</div>
               <div v-else id="systemAgreement" class="statusDiv" style="background-color: #9EFCF8">DISAGREED with the system</div>
               <!-- <div id="systemAgreement" class="statusDiv" style="background-color: #9EFCF8">DISAGREED with the system</div> -->
-              <br>
-              <v-card-actions>
+              <v-card-actions class="mt-2">
                   <v-btn :disabled="isSubmitted == 1" block rounded color="primary" @click=submit>Submit</v-btn>
               </v-card-actions>
               <!-- <toggle-button 
@@ -97,12 +124,11 @@
               >
               </CheckedClasses> -->
             </v-col>
-            <v-col cols=0></v-col>   
-          </v-row>
         </v-card>
       </v-col>
     </v-row>
   </v-card> 
+  </div>
 </template>
 <script>
 import PhotoClass from '@/PhotoClass';
@@ -149,7 +175,65 @@ export default {
         sysAns: [],
         sysAgree: false,
         loggedData: {},
-        points: Number
+        points: Number,
+        //object containing all the content describing a check box. to make them more dynamic.
+      // classes = [
+      //     {id: "glass_unbroken",
+      //     idl: "glass_unbroken_label",
+      //     value: "Glass_unbroken",
+      //     label: "Glass (Unbroken)",
+      //     space: "py-0"},
+      //     {id: "glass_broken",
+      //     idl: "glass_broken_label",
+      //     value: "Glass_broken",
+      //     label: "Glass (Broken)",
+      //     space: "pb-3"},
+      //     {id: "plastic_wrapper",
+      //     idl: "plastic_wrapper_label",
+      //     value: "Plastic_wrapper",
+      //     label: "Plastic (Bag/Wrapper)",
+      //     space: "py-0"},
+      //     {id: "plastic_bottle",
+      //     idl: "plastic_bottle_label",
+      //     value: "Plastic_bottle",
+      //     label: "Plastic (Bottle)",
+      //     space: "py-0"},
+      //     {id: "plastic_other",
+      //     idl: "plastic_other_label",
+      //     value: "Plastic_other",
+      //     label: "Plastic (Other)",
+      //     space: "pb-3"},
+      //     {id: "aluminum_can",
+      //     idl: "aluminum_can_label",
+      //     value: "Aluminum_can",
+      //     label: "Aluminum (Can)",
+      //     space: "pb-0"},
+      //     {id: "aluminum_other",
+      //     idl: "aluminum_other_label",
+      //     value: "Aluminum_other",
+      //     label: "Aluminum (Other)",
+      //     space: "pb-3"},
+      //     {id: "paper_bag",
+      //     idl: "paper_bag_label",
+      //     value: "Paper_bag",
+      //     label: "Paper (Bag)",
+      //     space: "pb-0"},
+      //     {id: "paper_other",
+      //     idl: "paper_other_label",
+      //     value: "Paper_other",
+      //     label: "Paper (Other)",
+      //     space: "pb-3"},
+      //     {id: "food_waste",
+      //     idl: "food_waste_label",
+      //     value: "Food_waste",
+      //     label: "Food Waste",
+      //     space: "pb-3"},
+      //     {id: "other_trash",
+      //     idl: "other_trash_label",
+      //     value: "Other_trash",
+      //     label: "Other Trash",
+      //     space: "pb-0"},
+      //   ]
       };
     },
     methods: {
@@ -367,16 +451,16 @@ export default {
   cursor: pointer;
   font-size: 24px;
 }
-.ccheckbox > input{
+input{
   position: relative;
   width: 16px;
   height: 16px;
   vertical-align: bottom;
-  top: -8px;
+  top: .2em;
 }
-.ccheckbox > label{
+label{
   font-size: 18px;
-  padding-left: 5px;
+  padding-left: .5em;
 }
 .statusDiv {
   border-style: inset;
