@@ -279,9 +279,10 @@
                             <svg v-bind="attrs" v-on="on" width="75%" viewBox="0 0 153 155" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
                                 style="margin:0 12.5%;fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
                                 <circle cx="76.172" cy="78.519" r="76.172" style="fill:#4caf4f;" />
-                                <circle cx="76.172" cy="78.519" r="65.218" style="fill:#fff;" /><text x="49.097px" y="83.963px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:20px;fill:#808080;">10:00</text>
+                                <circle cx="76.172" cy="78.519" r="65.218" style="fill:#fff;" />
+                                <text x="49.097px" y="83.963px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:20px;fill:#808080;">20:00</text>
                                 <rect x="76.172" y="0" width="2.27" height="15.935" style="fill:#1e5020;" /></svg>
-                            <v-card-text>1. You will have 10 minutes to score as many points as possible using an imperfect machine learning system.</v-card-text>
+                            <v-card-text>1. You will have 20 minutes to score as many points as possible using an imperfect machine learning system.</v-card-text>
                         </v-card>
                     </v-col>
                     <v-col cols="3">
@@ -293,7 +294,8 @@
                                 <path d="M95.09,82.573l7.966,15.933l-15.932,-0l7.966,-15.933Z" style="fill:#fff;" />
                                 <path d="M115.498,82.573l7.966,15.933l-15.932,-0l7.966,-15.933Z" style="fill:#fff;" />
                                 <rect x="92.311" y="94.621" width="5.559" height="14.446" style="fill:#fff;" />
-                                <rect x="112.719" y="94.621" width="5.559" height="14.446" style="fill:#fff;" /><text x="93.727px" y="62.984px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:72px;fill:#4caf4f;">=</text>
+                                <rect x="112.719" y="94.621" width="5.559" height="14.446" style="fill:#fff;" />
+                                <text x="93.727px" y="62.984px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:72px;fill:#4caf4f;">=</text>
                                 <path
                                     d="M83.389,11.409l0,52.918l-71.978,0l0,-4.012l67.715,-0l-0,-48.906l4.263,0Zm-6.395,-6.142l0,52.918l-71.978,-0l-0,-4.013l67.715,-0l-0,-48.905l4.263,-0Zm-76.994,-5.267l69.721,0l0,50.911l-69.721,0l-0,-50.911Zm66.712,36.867l-10.283,-10.784l-11.787,12.539l-22.572,-24.828l-18.81,20.816l0,13.041l63.452,0l-0,-10.784Zm-19.312,-29.845c3.01,0 5.518,2.508 5.518,5.518c-0,3.26 -2.508,5.517 -5.518,5.517c-3.009,0 -5.517,-2.257 -5.517,-5.517c-0,-3.01 2.508,-5.518 5.517,-5.518Z"
                                     style="fill:#4caf4f;" /></svg>
