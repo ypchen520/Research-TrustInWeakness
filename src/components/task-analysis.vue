@@ -175,6 +175,10 @@ export default {
         sysAns: [],
         sysAgree: false,
         loggedData: {},
+        closeData: {},
+        submitData: {},
+        applyData: {},
+        checkboxData: {},
         points: Number,
         //object containing all the content describing a check box. to make them more dynamic.
       // classes = [
@@ -380,11 +384,15 @@ export default {
         }
       },
       close(){
-        this.loggedData["close_timestamp"]=this.getCurrentTime();
+        // this.loggedData["close_timestamp"]=this.getCurrentTime();
+        this.closeData["type"] = "close";
+        this.closeData["time_stamp"] = this.getCurrentTime();
+
         if(this.sysAgree){
           this.$emit('tempAgreed', true);
         }
-        this.$emit('logged', this.loggedData, "close");
+        //this.$emit('logged', this.loggedData, "close");
+        this.$emit('logged', this.closeData, "close");
         this.reset();
         this.isPhotoShowing = false;
         this.$emit('closed', this.isPhotoShowing);        
@@ -450,6 +458,7 @@ export default {
 .ccheckbox{
   cursor: pointer;
   font-size: 24px;
+  padding-left: .5em;
 }
 input{
   position: relative;

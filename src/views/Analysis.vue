@@ -23,12 +23,15 @@
       <v-card @click="openPhoto(photo)" class="pb-n3">
         <!-- Adding an inline style to correct for the bottom padding. we could fill that space with a point box? -->
         <img width="100%" style="margin-bottom: -0.5em" :src="photo.tmb">
-          <v-overlay v-if="photo.submitted && photo.agreed" absolute color="#FFEEA2">
+        <div v-if="photo.submitted && photo.agreed" class="statusDiv" style="background-color: #FFEEA2">Agree</div>
+        <div v-else-if="photo.submitted && photo.disagreed" class="statusDiv" style="background-color: #9EFCF8">Disagree</div>
+          <!-- <v-overlay v-if="photo.submitted && photo.agreed" absolute color="#FFEEA2">
             <div class="overlayDiv">A</div>
           </v-overlay>
           <v-overlay v-else-if="photo.submitted && photo.disagreed" absolute color="#9EFCF8">
             <div class="overlayDiv">D</div>
-          </v-overlay>
+          </v-overlay> -->
+
         <!-- <v-chip light disabled label small outlined class="my-1">-- pnts</v-chip> -->
       </v-card>
       <!-- <v-sheet class=mt-1 width=100% height=5px :color="getColor(photo)" tile></v-sheet> -->
@@ -194,7 +197,7 @@ export default {
       this.currentPhotoID = photo.photoID;
       this.isPhotoShowing = true;
       // console.log(this.current.photoID);
-      this.log2json();
+      // this.log2json();
       // console.log(this.current.accepted);
       console.log(`open log: ${JSON.stringify(this.currentData)}`);
       if(photo.submitted){
@@ -234,7 +237,7 @@ export default {
       // this.loggedData = Object.assign(currentData, val);
       if(val2 == "submit" || val2 == "close"){
         val1["time_passed"] = this.getTimePassed(); //with timestamp and type, --> object
-        this.loggedData[this.current.photoID]["events"].push(val1));
+        this.loggedData[this.current.photoID]["events"].push(val1);
         //this.currentData['submit_timePassed'] = this.getTimePassed();
         };      
       // if(val2 == "close"){
@@ -273,6 +276,13 @@ export default {
   font-weight: bold;
   color: #BD00FF;
   text-shadow: 2px 2px 5px #DA70FE;
+}
+.statusDiv{
+  border-style: inset;
+  border-radius: 7px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
 }
 </style>
 
