@@ -96,12 +96,18 @@ export default {
         return {text: `Paused`, width: 26.5};
       } else {
         const timeLeft = this.timeLeft;
+        let sendWidth = 0;
+        if(timeLeft > 599){
+          sendWidth = 31.5;
+        }else{ 
+          sendWidth = 37
+        }
         const minutes = Math.floor(timeLeft / 60);
         let seconds = timeLeft % 60;
         if (seconds < 10) {
           seconds = `0${seconds}`;
         }
-        return {text: `${minutes}:${seconds}`, width:37};
+        return {text: `${minutes}:${seconds}`, width:sendWidth};
       }
     },
 
