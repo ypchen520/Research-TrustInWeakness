@@ -22,13 +22,25 @@
     <v-col cols=1 class="ma-2" v-for="photo in images" :key='photo.photoID'>
       <v-card @click="openPhoto(photo)" class="pb-n3">
         <!-- Adding an inline style to correct for the bottom padding. we could fill that space with a point box? -->
-        <img width="100%" style="margin-bottom: -0.5em" :src="photo.tmb">
-          <v-overlay v-if="photo.submitted && photo.agreed" absolute color="#FFEEA2">
+        <v-badge v-if="photo.submitted && photo.isCorrect == 1" color="green" content="+1" offset-y="0em" >
+          <img width="100%" style="margin-bottom: -0.5em" :src="photo.tmb">
+        </v-badge>
+        <v-badge v-else-if="photo.submitted && photo.isCorrect == 0" color="grey" content="0" offset-y="0em" >
+          <img width="100%" style="margin-bottom: -0.5em" :src="photo.tmb">
+        </v-badge>
+        <v-badge v-else color="white">
+          <img width="100%" style="margin-bottom: -0.5em" :src="photo.tmb">
+        </v-badge>
+        <!-- <img width="100%" style="margin-bottom: -0.5em" :src="photo.tmb"> -->
+        <div v-if="photo.submitted && photo.agreed" class="statusDiv" style="background-color: #FFEEA2">Agree</div>
+        <div v-else-if="photo.submitted && photo.disagreed" class="statusDiv" style="background-color: #9EFCF8">Disagree</div>
+          <!-- <v-overlay v-if="photo.submitted && photo.agreed" absolute color="#FFEEA2">
             <div class="overlayDiv">A</div>
           </v-overlay>
           <v-overlay v-else-if="photo.submitted && photo.disagreed" absolute color="#9EFCF8">
             <div class="overlayDiv">D</div>
-          </v-overlay>
+          </v-overlay> -->
+
         <!-- <v-chip light disabled label small outlined class="my-1">-- pnts</v-chip> -->
       </v-card>
       <!-- <v-sheet class=mt-1 width=100% height=5px :color="getColor(photo)" tile></v-sheet> -->
@@ -67,6 +79,7 @@
     v-on:logged="mergeData"
     v-on:applied="applySysGuess"
     v-on:calculated="storePoints"
+    v-on:
   ></TaskAnalysis>
 </v-dialog>
 
@@ -114,7 +127,7 @@ export default {
       timerStarted: false,
       isPhotoShowing: false,
       loggedData: {},
-      currentData: {},
+      currentData: [],
       taskData:{},
       current: {},
       currentPhotoID: 0,
@@ -127,21 +140,24 @@ export default {
   methods: {
     log2json(){
       var current;
-      var clickID;
+      //var clickID;
       if(!this.loggedData[this.current.photoID]){
-        this.loggedData[this.current.photoID] = [];
+        //this.loggedData[this.current.photoID] = [];
+        this.loggedData[this.current.photoID] = {};
+        this.loggedData[this.current.photoID]["events"] = [];
         //current = this.loggedData[this.current.photoID];
-        clickID = 1;
+        //clickID = 1;
         //current.push({"click_id": 0});      
-      }else{
-        current = this.loggedData[this.current.photoID];
-        clickID = current[current.length-1]["click_id"] + 1;
+      }//else{
+        //current = this.loggedData[this.current.photoID];
+        //clickID = current[current.length-1]["click_id"] + 1;
         //current.push({"click_id": clickID});
-      }
-      this.currentData["click_id"] = clickID;
-      this.currentData["current_score"] = this.points; // this.getCurrentScore()
-      this.currentData["open_timePassed"] = this.getTimePassed();
-      this.currentData["open_timestamp"] = this.getCurrentTime();
+      //}
+      this.loggedData[this.current.photoID]["score"] = this.points;
+      //this.currentData["click_id"] = clickID;
+      //this.currentData["score"] = this.points; // this.getCurrentScore()
+      //this.currentData["open_timePassed"] = this.getTimePassed();
+      //this.currentData["open_timestamp"] = this.getCurrentTime();
       //console.log(this.currentData);
       //this.save2serve();
     },
@@ -164,6 +180,7 @@ export default {
     },
     storePoints(val){
       this.tempPoints += val;
+      this.current.isCorrect = val;
     },
     recalcPoints(){
       //todo: evaluate the current submitted photos and reevaluate them
@@ -191,7 +208,7 @@ export default {
       this.currentPhotoID = photo.photoID;
       this.isPhotoShowing = true;
       // console.log(this.current.photoID);
-      this.log2json();
+      // this.log2json();
       // console.log(this.current.accepted);
       console.log(`open log: ${JSON.stringify(this.currentData)}`);
       if(photo.submitted){
@@ -229,11 +246,18 @@ export default {
     },
     mergeData(val1, val2){
       // this.loggedData = Object.assign(currentData, val);
-      if(val2 == "submit"){this.currentData['submit_timePassed'] = this.getTimePassed();};      
-      if(val2 == "close"){this.currentData['close_timePassed'] = this.getTimePassed();};
-      this.loggedData[this.current.photoID].push(Object.assign(this.currentData, val1));
+      if(val2 == "submit" || val2 == "close"){
+        val1["time_passed"] = this.getTimePassed(); //with timestamp and type, --> object
+        this.loggedData[this.current.photoID]["events"].push(val1);
+        //this.currentData['submit_timePassed'] = this.getTimePassed();
+        };      
+      // if(val2 == "close"){
+      //   this.currentData['close_timePassed'] = this.getTimePassed();
+      //   };
+      // this.loggedData[this.current.photoID].push(Object.assign(this.currentData, val1));
+      // this.loggedData[this.current.photoID]["events"].push()
       // this.current = {};
-      this.currentData = {};
+      // this.currentData = {};
     },
     reject(){
       this.current.rejected = true;
@@ -263,6 +287,13 @@ export default {
   font-weight: bold;
   color: #BD00FF;
   text-shadow: 2px 2px 5px #DA70FE;
+}
+.statusDiv{
+  border-style: inset;
+  border-radius: 7px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
 }
 </style>
 
