@@ -23,13 +23,13 @@
       <v-card @click="openPhoto(photo)" class="pb-n3">
         <!-- Adding an inline style to correct for the bottom padding. we could fill that space with a point box? -->
         <v-badge v-if="photo.submitted && photo.isCorrect" color="green" content="+1" offset-y="0.5em" >
-          <v-overlay v-if="photo.submitted && photo.agreed" absolute color="#FFEEA2"></v-overlay>
-          <v-overlay v-else-if="photo.submitted && photo.disagreed" absolute color="#9EFCF8"></v-overlay>
+          <v-overlay v-if="photo.agreed" absolute color="#FFEEA2"></v-overlay>
+          <v-overlay v-else-if="photo.disagreed" absolute color="#9EFCF8"></v-overlay>
           <img width="100%" :src="photo.tmb">
         </v-badge>
         <v-badge v-else-if="photo.submitted && ! photo.isCorrect" color="grey" content="0" offset-y="0.5em" >
-          <v-overlay v-if="photo.submitted && photo.agreed" absolute color="#FFEEA2"></v-overlay>
-          <v-overlay v-else-if="photo.submitted && photo.disagreed" absolute color="#9EFCF8"></v-overlay>
+          <v-overlay v-if="photo.agreed" absolute color="#FFEEA2"></v-overlay>
+          <v-overlay v-else-if="photo.disagreed" absolute color="#9EFCF8"></v-overlay>
           <img width="100%" :src="photo.tmb">
         </v-badge>
         <v-badge v-else color="white">
