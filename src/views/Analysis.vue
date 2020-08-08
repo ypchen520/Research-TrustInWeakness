@@ -15,21 +15,21 @@
             <li><span class="green--text"> +5 Points</span> for correctly identifying all kinds of trash in an image.</li>
             <li> <span class="red--text">-10 points</span> lost for every image you submit with a mistake.</li>
           </ul>
-        <CondHint :condition="cond"/>
+        <CondHint class="mt-1" :condition="cond"/>
         <ScoreCard ref="scoreCard" v-bind:points="points" v-on:recalculate="recalcPoints()"/>
       </v-card-text>
       </v-card>  </v-navigation-drawer>
-  <v-row class=pa-12>
-    <v-col cols=1 v-for="photo in images" :key='photo.photoID'>
-      <v-card @click="openPhoto(photo)" tile>
-        <v-img contain :src="photo.src">
+  <v-row class=pa-1>
+    <v-col cols=1 class="ma-2" v-for="photo in images" :key='photo.photoID'>
+      <v-card @click="openPhoto(photo)" class="pb-n3">
+        <!-- Adding an inline style to correct for the bottom padding. we could fill that space with a point box? -->
+        <img width="100%" style="margin-bottom: -0.5em" :src="photo.tmb">
           <v-overlay v-if="photo.submitted && photo.agreed" absolute color="#FFEEA2">
             <div class="overlayDiv">A</div>
           </v-overlay>
           <v-overlay v-else-if="photo.submitted && photo.disagreed" absolute color="#9EFCF8">
             <div class="overlayDiv">D</div>
           </v-overlay>
-        </v-img>
       </v-card>
       <!-- <v-sheet class=mt-1 width=100% height=5px :color="getColor(photo)" tile></v-sheet> -->
     </v-col>
@@ -88,7 +88,8 @@
 </template>
 
 <script>
-import images from "../data/imagesCompress"
+// import images from "../data/imagesCompress"
+import images from "../data/imagesThumbs"
 // import images from "../data/testingImg"
 import labels from "../data/defaultLabels"
 // import GroundTruth from "../data/groundTruth"
@@ -97,7 +98,7 @@ import BaseTimer from "../components/BaseTimer"
 import CondHint from "../components/ConditionHint"
 import TaskAnalysis from "../components/task-analysis"
 
-var time = 601; //total time remaining in this app (10 min)
+var time = 1200; //total time remaining in this app (10 min)
 var points = 0; //points updated every 120000 seconds (or when updatePoints is called)
 export default {
   components:{
