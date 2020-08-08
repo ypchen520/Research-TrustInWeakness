@@ -31,71 +31,138 @@
                   <input :disabled="isSubmitted == 1" :id="c.id" type="checkbox" :value="c.value" @change="checkboxUpdated" @click="onCheckboxClicked($event)">
                   <label :id='c.idl' :for='c.id'>{{c.label}}</label>
                 </v-row> -->
-                <v-row>
-                  <input :disabled="isSubmitted == 1" type="checkbox" id="glass_unbroken" value="Glass_unbroken"
+                <v-row class="d-flex">
+                    <input :disabled="isSubmitted == 1" type="checkbox" id="glass_unbroken" value="Glass_unbroken"
                     v-model="checked.find(o => o.photoID === photoID).label.glass.unbroken" @change="checkboxUpdated"
                     @click="onCheckboxClicked($event)">
-                  <label id="glass_unbroken_label" for="glass_unbroken">Glass (Unbroken) </label>
+                    <label class=" flex-grow-1" id="glass_unbroken_label" for="glass_unbroken">Glass (Unbroken) </label>
+                  <v-tooltip left>
+                      <template v-slot:activator="{ on, attrs }">
+                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                      </template>
+                      <span>Glass Bottles, Cups, and Jars</span>
+                  </v-tooltip>
+
                 </v-row>
-                <v-row class="pb-3">
+                <v-row class="d-flex pb-3">
                   <input :disabled="isSubmitted == 1" type="checkbox" id="glass_broken" value="Glass_broken"
                     v-model="checked.find(o => o.photoID === photoID).label.glass.broken" @change="checkboxUpdated"
                     @click="onCheckboxClicked($event)">
-                  <label id="glass_broken_label" for="glass_broken">Glass (Broken) </label>
+                  <label class=" flex-grow-1" id="glass_broken_label" for="glass_broken">Glass (Broken) </label>
+                  <v-tooltip left>
+                      <template v-slot:activator="{ on, attrs }">
+                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                      </template>
+                      <span>Glass shards or partially broken glass</span>
+                  </v-tooltip>
                 </v-row>
-                <v-row>
+                <v-row class="d-flex"> 
                   <input :disabled="isSubmitted == 1" type="checkbox" id="plastic_wrapper" value="Plastic_wrapper"
                     v-model="checked.find(o => o.photoID === photoID).label.plastic.wrapper" @change="checkboxUpdated"
                     @click="onCheckboxClicked($event)">
-                  <label id="plastic_wrapper_label" for="plastic_wrapper">Plastic (Bag/Wrapper)</label>
+                  <label class=" flex-grow-1" id="plastic_wrapper_label" for="plastic_wrapper">Plastic (Bag/Wrapper)</label>
+                  <v-tooltip left>
+                      <template v-slot:activator="{ on, attrs }">
+                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                      </template>
+                      <span class="text-body-2">Plastic film, six pack rings, garbage bag, single-use carrier bag, <br> polypropylene bag (reusable tote bags), chips bag</span>
+                  </v-tooltip>
                 </v-row>
-                <v-row>
+                <v-row class="d-flex"> 
                   <input :disabled="isSubmitted == 1" type="checkbox" id="plastic_bottle" value="Plastic_bottle"
                     v-model="checked.find(o => o.photoID === photoID).label.plastic.bottle" @change="checkboxUpdated"
                     @click="onCheckboxClicked($event)">
-                  <label id="plastic_bottle_label" for="plastic_bottle">Plastic (Bottle)</label>
+                  <label class=" flex-grow-1" id="plastic_bottle_label" for="plastic_bottle">Plastic (Bottle)</label>
+                  <v-tooltip left>
+                      <template v-slot:activator="{ on, attrs }">
+                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                      </template>
+                      <span>Transparent or opaque plastic bottles</span>
+                  </v-tooltip>
                 </v-row>
-                <v-row class="pb-3">
+                <v-row class="d-flex pb-3">
                   <input :disabled="isSubmitted == 1" type="checkbox" id="plastic_other"
                     value="Plastic_other" v-model="checked.find(o => o.photoID === photoID).label.plastic.other"
                     @change="checkboxUpdated" @click="onCheckboxClicked($event)">
-                  <label id="plastic_other_label" for="plastic_other">Plastic (Other)</label>
+                  <label class=" flex-grow-1" id="plastic_other_label" for="plastic_other">Plastic (Other)</label>
+                  <v-tooltip left>
+                      <template v-slot:activator="{ on, attrs }">
+                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                      </template>
+                      <span>Plastic bottle caps, cups, lids, gloves, utensils, straws, (butter) spread tubs, <br>tupperware, disposable or foam food containers</span>
+                  </v-tooltip>
                 </v-row>
-                <v-row>
+                <v-row class="d-flex"> 
                   <input :disabled="isSubmitted == 1" type="checkbox" id="aluminum_can" value="Aluminum_can"
                     v-model="checked.find(o => o.photoID === photoID).label.aluminum.can" @change="checkboxUpdated"
                     @click="onCheckboxClicked($event)">
-                  <label id="aluminum_can_label" for="aluminum_can">Aluminum (Can)</label>
+                  <label class=" flex-grow-1" id="aluminum_can_label" for="aluminum_can">Aluminum (Can)</label>
+                  <v-tooltip left>
+                      <template v-slot:activator="{ on, attrs }">
+                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                      </template>
+                      <span>Food, aerosol, or drink cans</span>
+                  </v-tooltip>
                 </v-row>
-                <v-row class="pb-3">
+                <v-row class="d-flex pb-3">
                   <input :disabled="isSubmitted == 1" type="checkbox" id="aluminum_other"
                     value="Aluminum_other" v-model="checked.find(o => o.photoID === photoID).label.aluminum.other"
                     @change="checkboxUpdated" @click="onCheckboxClicked($event)">
-                  <label id="aluminum_other_label" for="aluminum_other">Aluminum (Other)</label>
+                  <label class=" flex-grow-1" id="aluminum_other_label" for="aluminum_other">Aluminum (Other)</label>
+                  <v-tooltip left>
+                      <template v-slot:activator="{ on, attrs }">
+                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                      </template>
+                      <span>Aluminum foil, blister pack (medicine pill tablet packaging), soda/pop tabs</span>
+                  </v-tooltip>
                 </v-row>
-                <v-row>
+                <v-row class="d-flex"> 
                   <input :disabled="isSubmitted == 1" type="checkbox" id="paper_bag" value="Paper_bag"
                     v-model="checked.find(o => o.photoID === photoID).label.paper.bag" @change="checkboxUpdated"
                     @click="onCheckboxClicked($event)">
-                  <label id="paper_bag_label" for="paper_bag">Paper (Bag)</label>
+                  <label class=" flex-grow-1" id="paper_bag_label" for="paper_bag">Paper (Bag)</label>
+                  <v-tooltip left>
+                      <template v-slot:activator="{ on, attrs }">
+                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                      </template>
+                      <span>Brown and red paper bag in dirt</span>
+                  </v-tooltip>
                 </v-row>
-                <v-row class="pb-3">
+                <v-row class="d-flex pb-3">
                   <input :disabled="isSubmitted == 1" type="checkbox" id="paper_other"
                     value="Paper_other" v-model="checked.find(o => o.photoID === photoID).label.paper.other"
                     @change="checkboxUpdated" @click="onCheckboxClicked($event)">
-                  <label id="paper_other_label" for="paper_other">Paper (Other)</label>
+                  <label class=" flex-grow-1" id="paper_other_label" for="paper_other">Paper (Other)</label>
+                  <v-tooltip left>
+                      <template v-slot:activator="{ on, attrs }">
+                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                      </template>
+                      <span>Paper cup, tissues, magazine/wrapping/normal paper, paper straw</span>
+                  </v-tooltip>
                 </v-row>
-                <v-row class="pb-3">
+                <v-row class="d-flex pb-3">
                   <input :disabled="isSubmitted == 1" type="checkbox" id="food_waste"
                     value="Food_waste" v-model="checked.find(o => o.photoID === photoID).label.food"
                     @change="checkboxUpdated" @click="onCheckboxClicked($event)">
-                  <label id="food_waste_label" for="food_waste">Food Waste</label>
+                  <label class=" flex-grow-1" id="food_waste_label" for="food_waste">Food Waste</label>
+                  <v-tooltip left>
+                      <template v-slot:activator="{ on, attrs }">
+                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                      </template>
+                      <span>Apples, oranges, bananas, etc.</span>
+                  </v-tooltip>
                 </v-row>
-                <v-row class="pb-3">
+                <v-row class="d-flex pb-3">
                   <input :disabled="isSubmitted == 1" type="checkbox" id="other_trash"
                     value="Other_trash" v-model="checked.find(o => o.photoID === photoID).label.other"
                     @change="checkboxUpdated" @click="onCheckboxClicked($event)">
-                  <label id="other_trash_label" for="other_trash">Other Trash</label>
+                  <label class=" flex-grow-1" id="other_trash_label" for="other_trash">Other Trash</label>
+                  <v-tooltip left>
+                      <template v-slot:activator="{ on, attrs }">
+                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                      </template>
+                      <span>Battery, carded blister pack (e.g. packaging around batteries), <br> metal bottle cap, toilet tube, egg, drink, meal, and corrugated cartons, cardboard boxes, pizza box, <br> foam cup, metal lid, rope, strings, scrap metal, shoe, squeezable tube, styrofoam, cigarette</span>
+                  </v-tooltip>
                 </v-row>
               </div>
               <!-- <v-card :disabled="isAgreedNotSubmitted == false">
@@ -456,7 +523,7 @@ input{
   width: 16px;
   height: 16px;
   vertical-align: bottom;
-  top: .2em;
+  top: .1em;
 }
 label{
   font-size: 18px;
@@ -466,7 +533,7 @@ label{
   border-style: inset;
   border-radius: 7px;
   text-align: center;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
 }
 </style>
