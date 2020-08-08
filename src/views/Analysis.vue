@@ -22,24 +22,22 @@
     <v-col cols=1 class="ma-2" v-for="photo in images" :key='photo.photoID'>
       <v-card @click="openPhoto(photo)" class="pb-n3">
         <!-- Adding an inline style to correct for the bottom padding. we could fill that space with a point box? -->
-        <v-badge v-if="photo.submitted && photo.isCorrect == 1" color="green" content="+1" offset-y="0em" >
-          <img width="100%" style="margin-bottom: -0.5em" :src="photo.tmb">
+        <v-badge v-if="photo.submitted && photo.isCorrect" color="green" content="+1" offset-y="0.5em" >
+          <v-overlay v-if="photo.submitted && photo.agreed" absolute color="#FFEEA2"></v-overlay>
+          <v-overlay v-else-if="photo.submitted && photo.disagreed" absolute color="#9EFCF8"></v-overlay>
+          <img width="100%" :src="photo.tmb">
         </v-badge>
-        <v-badge v-else-if="photo.submitted && photo.isCorrect == 0" color="grey" content="0" offset-y="0em" >
-          <img width="100%" style="margin-bottom: -0.5em" :src="photo.tmb">
+        <v-badge v-else-if="photo.submitted && ! photo.isCorrect" color="grey" content="0" offset-y="0.5em" >
+          <v-overlay v-if="photo.submitted && photo.agreed" absolute color="#FFEEA2"></v-overlay>
+          <v-overlay v-else-if="photo.submitted && photo.disagreed" absolute color="#9EFCF8"></v-overlay>
+          <img width="100%" :src="photo.tmb">
         </v-badge>
         <v-badge v-else color="white">
-          <img width="100%" style="margin-bottom: -0.5em" :src="photo.tmb">
+          <img width="100%" style="margin-bottom: -0.45em" :src="photo.tmb">
         </v-badge>
         <!-- <img width="100%" style="margin-bottom: -0.5em" :src="photo.tmb"> -->
-        <div v-if="photo.submitted && photo.agreed" class="statusDiv" style="background-color: #FFEEA2">Agree</div>
-        <div v-else-if="photo.submitted && photo.disagreed" class="statusDiv" style="background-color: #9EFCF8">Disagree</div>
-          <!-- <v-overlay v-if="photo.submitted && photo.agreed" absolute color="#FFEEA2">
-            <div class="overlayDiv">A</div>
-          </v-overlay>
-          <v-overlay v-else-if="photo.submitted && photo.disagreed" absolute color="#9EFCF8">
-            <div class="overlayDiv">D</div>
-          </v-overlay> -->
+        <div v-if="photo.submitted && photo.agreed" class="text-body-2 statusDiv" style="background-color: #FFEEA2; margin-top:-0.45em">Agree</div>
+        <div v-else-if="photo.submitted && photo.disagreed" class="text-body-2 statusDiv" style="background-color: #9EFCF8; margin-top:-0.45em">Disagree</div>
 
         <!-- <v-chip light disabled label small outlined class="my-1">-- pnts</v-chip> -->
       </v-card>
@@ -281,19 +279,11 @@ export default {
 }
 </script>
 <style>
-.overlayDiv{
-  text-align: center;
-  font-size: 38px;
-  font-weight: bold;
-  color: #BD00FF;
-  text-shadow: 2px 2px 5px #DA70FE;
-}
 .statusDiv{
-  border-style: inset;
-  border-radius: 7px;
+  border-style: none inset inset;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
   text-align: center;
-  font-size: 14px;
-  font-weight: bold;
 }
 </style>
 
