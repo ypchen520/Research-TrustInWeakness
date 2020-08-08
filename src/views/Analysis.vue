@@ -30,6 +30,7 @@
           <v-overlay v-else-if="photo.submitted && photo.disagreed" absolute color="#9EFCF8">
             <div class="overlayDiv">D</div>
           </v-overlay>
+        <!-- <v-chip light disabled label small outlined class="my-1">-- pnts</v-chip> -->
       </v-card>
       <!-- <v-sheet class=mt-1 width=100% height=5px :color="getColor(photo)" tile></v-sheet> -->
     </v-col>
