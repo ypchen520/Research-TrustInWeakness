@@ -263,7 +263,7 @@
                     <li>To begin, click an image from the grid that you'd like to inspect.</li>
                     <li>In the pop up window, you can reveal our system's decision by clicking the blue button at the right.</li>
                     <li>Looking at the image at the left and the system's prediction, you'll select the correct classes at the right before clicking submit.</li>
-                    <li>For correctly labeled images, you will <strong class="green--text">score some</strong> points; but for any image that is mislabeled you will <strong class="red--text">lose more</strong> points.</li>
+                    <li>For correctly labeled images, you will <strong class="green--text">score some</strong> points.</li>
                     <li>Once you have submitted an image, you <strong>can not</strong> change your answer, but you can go back to the grid by clicking the <span class="grey--text lighten-5">X</span> in the corner.</li>
                 </ol>
                 <v-card-actions>

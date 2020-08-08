@@ -9,11 +9,10 @@
           <!-- If directive to show if timer is not started? -->
           <small v-if="!this.timerStarted" class="red--text"><em>Time begins when you submit an image</em></small>
         <h3>Task Description</h3>
-        <p class="grey--text"> Maximize your points in 10 minutes. Work as accurately as you can. The maximum score is <strong class="black--text">500</strong>.</p>
+        <p class="grey--text"> Maximize your points in 10 minutes. Work as accurately as you can. The maximum score is <strong class="black--text">138</strong>.</p>
 
           <ul>
             <li><span class="green--text"> +5 Points</span> for correctly identifying all kinds of trash in an image.</li>
-            <li> <span class="red--text">-10 points</span> lost for every image you submit with a mistake.</li>
           </ul>
         <CondHint class="mt-1" :condition="cond"/>
         <ScoreCard ref="scoreCard" v-bind:points="points" v-on:recalculate="recalcPoints()"/>
@@ -30,6 +29,7 @@
           <v-overlay v-else-if="photo.submitted && photo.disagreed" absolute color="#9EFCF8">
             <div class="overlayDiv">D</div>
           </v-overlay>
+        <!-- <v-chip light disabled label small outlined class="my-1">-- pnts</v-chip> -->
       </v-card>
       <!-- <v-sheet class=mt-1 width=100% height=5px :color="getColor(photo)" tile></v-sheet> -->
     </v-col>
