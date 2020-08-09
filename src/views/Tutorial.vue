@@ -74,6 +74,7 @@
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-img height="250px" v-bind="attrs" v-on="on"
+                                    lazy-src='/TrashSelector/assets/tutorialImages-compressed/GlassUnbroken.jpg'
                                     src="./assets/tutorialImages/GlassUnbroken.jpg" />
                                 </template>
                                 <span>Glass wine bottle floating in water</span>
@@ -87,6 +88,7 @@
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-img height="250px" v-bind="attrs" v-on="on"
+                                    lazy-src='/TrashSelector/assets/tutorialImages-compressed/Glassbroken.jpg'
                                     src="./assets/tutorialImages/GlassBroken.jpg" />
                                 </template>
                                 <span>Dark broken glass on street</span>
@@ -100,6 +102,7 @@
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-img height="200px" v-bind="attrs" v-on="on"
+                                    lazy-src='/TrashSelector/assets/tutorialImages-compressed/PlasticWrapper.jpg'
                                     src="./assets/tutorialImages/PlasticWrapper.jpg" />
                                 </template>
                                 <span>Reese's plastic wrapper in nature</span>
@@ -113,6 +116,7 @@
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-img height="250px" v-bind="attrs" v-on="on"
+                                    lazy-src='/TrashSelector/assets/tutorialImages-compressed/PlasticBottle.jpg'
                                     src="./assets/tutorialImages/PlasticBottle.jpg" />
                                 </template>
                                 <span>Clear plastic bottle with blue and white wrapper in nature</span>
@@ -126,12 +130,13 @@
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-img height="200px" v-bind="attrs" v-on="on"
+                                    lazy-src='/TrashSelector/assets/tutorialImages-compressed/PlasticOther.jpg'
                                     src="./assets/tutorialImages/PlasticOther.jpg" />
                                 </template>
                                 <span>Plastic cup with plastic straw in nature</span>
                             </v-tooltip>
                             <v-card-title>Plastic - Other</v-card-title>
-                            <v-card-text>Plastic bottle caps, cups, lids, gloves, utensils, straws, (butter) spread tubs, tupperware, disposable or foam food containers. </v-card-text>
+                            <v-card-text>Plastic bottle caps, cups, lids, gloves, utensils, straws, (butter) spread tubs, tupperware, disposable or foam food containers </v-card-text>
                         </v-card>
                     </v-col>
                     <v-col cols="3">
@@ -139,6 +144,7 @@
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-img height="250px" v-bind="attrs" v-on="on"
+                                    lazy-src='/TrashSelector/assets/tutorialImages-compressed/AluminumCan.jpg'
                                     src="./assets/tutorialImages/AluminumCan.jpg" />
                                 </template>
                                 <span>Coke can in nature</span>
@@ -152,6 +158,7 @@
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-img height="250px" v-bind="attrs" v-on="on"
+                                    lazy-src='/TrashSelector/assets/tutorialImages-compressed/AluminumOther.jpg'
                                     src="./assets/tutorialImages/AluminumOther.jpg" />
                                 </template>
                                 <span>Soda/pop tab on the ground</span>
@@ -165,6 +172,7 @@
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-img height="250px" v-bind="attrs" v-on="on"
+                                    lazy-src='/TrashSelector/assets/tutorialImages-compressed/PaperBag.jpg'
                                     src="./assets/tutorialImages/PaperBag.jpg" />
                                 </template>
                                 <span>Brown and red paper bag in dirt</span>
@@ -178,6 +186,7 @@
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-img height="240px" v-bind="attrs" v-on="on"
+                                    lazy-src='/TrashSelector/assets/tutorialImages-compressed/PaperOther.jpg'
                                     src="./assets/tutorialImages/PaperOther.jpg" />
                                 </template>
                                 <span>Magazine paper on left of image</span>
@@ -191,6 +200,7 @@
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-img height="250px" v-bind="attrs" v-on="on"
+                                    lazy-src='/TrashSelector/assets/tutorialImages-compressed/FoodWaste.jpg'
                                     src="./assets/tutorialImages/FoodWaste.jpg" />
                                 </template>
                                 <span>Lemon slice next to bottle caps</span>
@@ -246,7 +256,7 @@
                     </v-avatar>
                 </v-row>
                 <ul>
-                    <li>The system tends to be fairly accurate but, as is the case with any system that leverages Machine Learning, it has limitations.</li>
+                    <li>The system tends to be fairly accurate, <span class="red--text lighten-3" > but it has limitations </span> - as is the case with any system that leverages Machine Learning.</li>
                 </ul>
                     <ConditionHint :condition="this.cond" :parent="'tutorial'" />
                 <v-card-actions>
@@ -257,13 +267,13 @@
             <v-stepper-content step="5">
                 <h1 class="headline">Instructions</h1>
                 <v-card class="ma-6 pa-3 grey justify-center lighten-5" :elevation="2">
-                    <v-img src="./assets/tutorialImages/tut-overview.png" height="50vh" />
+                    <v-img lazy-src='/TrashSelector/assets/tutorialImages-compressed/tut-overview.png' src="./assets/tutorialImages/tut-overview.png" height="50vh" />
                 </v-card>
                 <ol>
                     <li>To begin, click an image from the grid that you'd like to inspect.</li>
                     <li>In the pop up window, you can reveal our system's decision by clicking the blue button at the right.</li>
                     <li>Looking at the image at the left and the system's prediction, you'll select the correct classes at the right before clicking submit.</li>
-                    <li>For correctly labeled images, you will <strong class="green--text">score some</strong> points.</li>
+                    <li>For correctly labeled images, you will <strong class="green--text">score some</strong> points; indicated with a <v-chip disables x-small pill color="green" text-color="white">+1</v-chip> in the photo's corner</li>
                     <li>Once you have submitted an image, you <strong>can not</strong> change your answer, but you can go back to the grid by clicking the <span class="grey--text lighten-5">X</span> in the corner.</li>
                 </ol>
                 <v-card-actions>
@@ -282,7 +292,7 @@
                                 <circle cx="76.172" cy="78.519" r="65.218" style="fill:#fff;" />
                                 <text x="49.097px" y="83.963px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:20px;fill:#808080;">20:00</text>
                                 <rect x="76.172" y="0" width="2.27" height="15.935" style="fill:#1e5020;" /></svg>
-                            <v-card-text>1. You will have 20 minutes to score as many points as possible using an imperfect machine learning system.</v-card-text>
+                            <v-card-text>1. You will have 20 minutes to score as many points as possible using an imperfect, artificially intelligent system.</v-card-text>
                         </v-card>
                     </v-col>
                     <v-col cols="3">
@@ -312,6 +322,9 @@
                             <v-card-text>3. After the task, you will complete a short questionnaire about your experience and our system.</v-card-text>
                         </v-card>
                     </v-col>
+                    <v-alert dense outlined color="warning" class="mt-2">
+                        You're goal is to classify as many images correctly, <strong>with or without</strong> our AI tool.
+                    </v-alert>
                 </v-row>
                 <v-card-actions>
                     <v-btn @click="backStep()" text>Back</v-btn>
