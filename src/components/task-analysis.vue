@@ -492,8 +492,8 @@ export default {
         // this.closeData["type"] = "submit";
         // this.closeData["time_stamp"] = this.getCurrentTime();
         // this.$emit('logged', this.closeData, "submit");
-        this.logButtonData("submit");
         this.getPoints();
+        this.logButtonData("submit");
         this.$emit('calculated', this.points);
         if(this.sysAgree || this.isAgreedNotSubmitted){
           this.$emit('tempAgreed', true);
