@@ -111,15 +111,14 @@ let conditions =
             return {
                 //if no source specified in URL param then set to ELSEWHERE
                 src: (undefined === this.$route.query.src) ? "ELSEWHERE": this.$route.query.src,
-                cond:'',
+                condID:("SONA" === this.$route.query.src) ? this.$route.query.id%conditions.length : Math.floor((Math.random() * conditions.length)),
                 //If Source is not 'SONA' define a new 3 digit id otherwise use the 4 digit one in their URL
-                userID: ("SONA" === this.$route.query.src) ? this.$route.query.id : Math.floor(Math.random()*900)+100,
+                userID: ("SONA" === this.$route.query.src) ? this.$route.query.id : Math.random().toString(36).substr(2, 9),
             }
         },
         methods: {
             setSessionVariables() {
                 console.log("settting session variables")
-                this.condID = this.userID%conditions.length;
 
                 sessionStorage.setItem('userID',this.userID);
                 sessionStorage.setItem('cond', this.condID);
