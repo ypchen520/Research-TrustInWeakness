@@ -1,6 +1,6 @@
 <template>
 <div>
-  <v-btn small right absolute fab dark color="primary" @click=close>X</v-btn>
+  <v-btn small right absolute fab dark class="mt-1 mr-3" color="primary" @click=close>X</v-btn>
   <v-card > 
     <v-row class="px-2 mx-0">   
       <v-col cols=7>
@@ -241,8 +241,8 @@ export default {
         sysMode: false,
         sysAns: [],
         sysAgree: false,
-        loggedData: {},
-        closeData: {},
+        checkedData: {},
+        buttonData: {}, //used to log the interaction data of close and submit
         submitData: {},
         applyData: {},
         checkboxData: {},
@@ -309,7 +309,7 @@ export default {
     },
     methods: {
       compare(){
-        console.log("comparing");
+        //console.log("comparing");
         //var id = this.photoID;
         //var truth = GroundTruth[id].class;
         var truth = GroundTruth.find(o => o.photoID === this.photoID).class;
@@ -332,11 +332,11 @@ export default {
           this.sysAgree = false;
           this.isAgreedNotSubmitted = false;
           this.$emit('tempAgreed', false);
-          console.log("disagree");
+          //console.log("disagree");
           //this.onAgreeChange();
         }else{
           this.sysAgree = true;
-          console.log("agree");
+          //console.log("agree");
           //this.onAgreeChange();
         }
       },
@@ -352,8 +352,9 @@ export default {
       applySysAns(){
         //var id = this.photoID-1;
         //var truth = GroundTruth[id].class;
-        this.loggedData["apply_timestamp"]=this.getCurrentTime();
-        this.$emit('applied');
+        this.logButtonData("apply");
+        // this.loggedData["apply_timestamp"]=this.getCurrentTime();
+        // this.$emit('applied');
         var truth = GroundTruth.find(o => o.photoID === this.photoID).class;
         //var sysGuess = SysGuess[id].label;
         var sysGuess = SysGuess.find(o => o.photoID === this.photoID).label;
@@ -450,22 +451,42 @@ export default {
           this.points = 1;
         }
       },
+      logCheckedData(classType, isChecked){
+        this.checkedData["type"] = "checkbox";
+        this.checkedData["time_stamp"] = this.getCurrentTime();
+        this.checkedData["class"] = classType;
+        this.checkedData["is_checked"] = isChecked;
+        this.$emit('logged', this.checkedData, "checkbox");
+        this.checkedData = {};
+      },
+      logButtonData(dataType){
+        this.buttonData["type"] = dataType;
+        this.buttonData["time_stamp"] = this.getCurrentTime();
+        this.$emit('logged', this.buttonData, dataType);
+        this.buttonData = {};
+      },
       close(){
         // this.loggedData["close_timestamp"]=this.getCurrentTime();
-        this.closeData["type"] = "close";
-        this.closeData["time_stamp"] = this.getCurrentTime();
+        // this.closeData["type"] = "close";
+        // this.closeData["time_stamp"] = this.getCurrentTime();
+
+        this.logButtonData("close");
 
         if(this.sysAgree){
           this.$emit('tempAgreed', true);
         }
         //this.$emit('logged', this.loggedData, "close");
-        this.$emit('logged', this.closeData, "close");
+        //this.$emit('logged', this.closeData, "close");
         this.reset();
         this.isPhotoShowing = false;
         this.$emit('closed', this.isPhotoShowing);        
       },
       submit(){
-        this.loggedData["submit_timestamp"]=this.getCurrentTime();
+        // this.loggedData["submit_timestamp"]=this.getCurrentTime();
+        // this.closeData["type"] = "submit";
+        // this.closeData["time_stamp"] = this.getCurrentTime();
+        // this.$emit('logged', this.closeData, "submit");
+        this.logButtonData("submit");
         this.getPoints();
         this.$emit('calculated', this.points);
         if(this.sysAgree || this.isAgreedNotSubmitted){
@@ -474,7 +495,7 @@ export default {
         }else{
           this.$emit('disagreed');
         }
-        this.$emit('logged', this.loggedData, "submit");
+        //this.$emit('logged', this.loggedData, "submit");
         this.reset();
         this.$emit('submitted');
       },
@@ -482,8 +503,9 @@ export default {
         this.sysMode = false;
         this.lightSwitch(this.sysMode);
         this.sysAns = [];
-        this.loggedData = {};
+        //this.loggedData = {};
         this.sysAgree = false;
+        //this.closeData = {};
         // document.getElementById("systemAgreement").innerHTML = "DISAGREED with the system";
         // document.getElementById("systemAgreement").style.backgroundColor = "#9EFCF8";
       },
@@ -497,19 +519,20 @@ export default {
       //   this.checked = new PhotoClass(glass_unbroken, glass_broken, plastic_wrapper, plastic_container, plastic_other, aluminum_can, aluminum_other, paper_bag, paper_other, food, other, idk)
       // },
       checkboxUpdated(newValue){
-        console.log(newValue);
+        //console.log(newValue);
         this.compare();
-        var checked = newValue.target.value;
-        if(!this.loggedData[checked]){
-          this.loggedData[checked] = 0;
-        }
-        this.loggedData[checked] += 1;
+        //var checked = newValue.target.value;
+        // if(!this.loggedData[checked]){
+        //   this.loggedData[checked] = 0;
+        // }
+        // this.loggedData[checked] += 1;
       },
       onCheckboxClicked(e){
         // console.log(e.target.checked);
         // console.log(e.target.value);
         // console.log(e.target.value);
-        var checked = e.target.value;
+        // var checked = e.target.value;
+        this.logCheckedData(e.target.value, e.target.checked); //(classType, isChecked)
         // if(!this.loggedData[checked]){
         //   this.loggedData[checked] = 0;
         // }

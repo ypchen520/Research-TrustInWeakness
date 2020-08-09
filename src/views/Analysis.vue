@@ -75,7 +75,6 @@
     v-on:disagreed="disagree"
     v-on:tempAgreed="tempAgree"
     v-on:logged="mergeData"
-    v-on:applied="applySysGuess"
     v-on:calculated="storePoints"
     v-on:
   ></TaskAnalysis>
@@ -118,6 +117,9 @@ export default {
   data(){
     return {
       cond: sessionStorage.getItem('cond'),
+      userID: sessionStorage.getItem('userID'),
+      src: sessionStorage.getItem('src'),
+      browser: this.getBrowser(),
       time,
       points,
       images,
@@ -125,8 +127,8 @@ export default {
       timerStarted: false,
       isPhotoShowing: false,
       loggedData: {},
-      currentData: [],
-      taskData:{},
+      loggedInteractions: [],
+      currentInteraction: {},
       current: {},
       currentPhotoID: 0,
       checkedClasses: {},
@@ -136,22 +138,66 @@ export default {
     }
   },
   methods: {
+    getBrowser(){
+      //Dec 26, 2019 by Shweta Danej
+      var navUserAgent = navigator.userAgent;
+      var browserName  = navigator.appName;
+      var browserVersion  = ''+parseFloat(navigator.appVersion); 
+      var majorVersion = parseInt(navigator.appVersion,10);
+      var tempNameOffset,tempVersionOffset,tempVersion;
+      
+      if ((tempVersionOffset=navUserAgent.indexOf("Opera"))!=-1) {
+        browserName = "Opera";
+        browserVersion = navUserAgent.substring(tempVersionOffset+6);
+        if ((tempVersionOffset=navUserAgent.indexOf("Version"))!=-1)
+          browserVersion = navUserAgent.substring(tempVersionOffset+8);
+      } else if ((tempVersionOffset=navUserAgent.indexOf("MSIE"))!=-1) {
+        browserName = "Microsoft Internet Explorer";
+        browserVersion = navUserAgent.substring(tempVersionOffset+5);
+      } else if ((tempVersionOffset=navUserAgent.indexOf("Chrome"))!=-1) {
+        browserName = "Chrome";
+        browserVersion = navUserAgent.substring(tempVersionOffset+7);
+      } else if ((tempVersionOffset=navUserAgent.indexOf("Safari"))!=-1) {
+        browserName = "Safari";
+        browserVersion = navUserAgent.substring(tempVersionOffset+7);
+        if ((tempVersionOffset=navUserAgent.indexOf("Version"))!=-1) 
+          browserVersion = navUserAgent.substring(tempVersionOffset+8);
+      } else if ((tempVersionOffset=navUserAgent.indexOf("Firefox"))!=-1) {
+        browserName = "Firefox";
+        browserVersion = navUserAgent.substring(tempVersionOffset+8);
+      } else if ( (tempNameOffset=navUserAgent.lastIndexOf(' ')+1) < (tempVersionOffset=navUserAgent.lastIndexOf('/')) ) {
+        browserName = navUserAgent.substring(tempNameOffset,tempVersionOffset);
+        browserVersion = navUserAgent.substring(tempVersionOffset+1);
+      }
+      if (browserName.toLowerCase()==browserName.toUpperCase()) {
+        browserName = navigator.appName;
+      }
+      if ((tempVersion=browserVersion.indexOf(";"))!=-1)
+        browserVersion=browserVersion.substring(0,tempVersion);
+      if ((tempVersion=browserVersion.indexOf(" "))!=-1)
+        browserVersion=browserVersion.substring(0,tempVersion);
+      return browserName+"/"+browserVersion;
+    },
     log2json(){
       var current;
       //var clickID;
-      if(!this.loggedData[this.current.photoID]){
-        //this.loggedData[this.current.photoID] = [];
-        this.loggedData[this.current.photoID] = {};
-        this.loggedData[this.current.photoID]["events"] = [];
-        //current = this.loggedData[this.current.photoID];
-        //clickID = 1;
-        //current.push({"click_id": 0});      
-      }//else{
-        //current = this.loggedData[this.current.photoID];
-        //clickID = current[current.length-1]["click_id"] + 1;
-        //current.push({"click_id": clickID});
-      //}
-      this.loggedData[this.current.photoID]["score"] = this.points;
+      this.currentInteraction["photoID"] = this.current.photoID;
+      this.currentInteraction["events"] = [];
+
+      
+      // if(!this.loggedData[this.current.photoID]){
+      //   this.loggedData[this.current.photoID] = [];
+      //   this.loggedData[this.current.photoID] = {};
+      //   this.loggedData[this.current.photoID]["events"] = [];
+      //   current = this.loggedData[this.current.photoID];
+      //   clickID = 1;
+      //   current.push({"click_id": 0});      
+      // }else{
+      //   current = this.loggedData[this.current.photoID];
+      //   clickID = current[current.length-1]["click_id"] + 1;
+      //   current.push({"click_id": clickID});
+      // }
+      //this.loggedData[this.current.photoID]["score"] = this.points;
       //this.currentData["click_id"] = clickID;
       //this.currentData["score"] = this.points; // this.getCurrentScore()
       //this.currentData["open_timePassed"] = this.getTimePassed();
@@ -160,6 +206,13 @@ export default {
       //this.save2serve();
     },
     save2serve(){
+      this.loggedData["user_id"] = this.userID;
+      this.loggedData["cond"] = this.cond;
+      this.loggedData["src"] = this.src;
+      this.loggedData["window_size"] = window.innerWidth.toString() + "x" + window.innerHeight.toString();
+      this.loggedData["browser"] = this.browser;
+      // this.loggedData["browser_zoom"] = ;
+      this.loggedData["interactions"] = this.loggedInteractions;
       //console.log(JSON.stringify(this.loggedData));
       this.axios({
           method: "post",
@@ -202,13 +255,19 @@ export default {
         return second;
     },
     openPhoto(photo){
+      //console.log(`here: ${this.browser}`);
       this.current = photo;
       this.currentPhotoID = photo.photoID;
       this.isPhotoShowing = true;
-      // console.log(this.current.photoID);
-      // this.log2json();
-      // console.log(this.current.accepted);
-      console.log(`open log: ${JSON.stringify(this.currentData)}`);
+
+      this.log2json(); //initialize the log for current interaction
+      var openEvent = {};
+      openEvent["type"] = "open";
+      openEvent["time_stamp"] = getCurrentTime();
+      openEvent["time_passed"] = getTimePassed();
+      this.currentInteraction.push(openEvent);
+      
+      //console.log(`open log: ${JSON.stringify(this.currentData)}`);
       if(photo.submitted){
         this.isAlertShowing = true;        
         this.current = photo;
@@ -217,20 +276,23 @@ export default {
     closePhoto(isShowing){
       this.isPhotoShowing = isShowing;      
       this.current = {};
+      //console.log(JSON.stringify(this.loggedInteractions));
     },
     submitAnswer(){     
       this.current.submitted = true;
       this.isPhotoShowing = false;
       this.current = {};
+      //console.log(JSON.stringify(this.loggedInteractions));
       if(!this.timerStarted){
         this.timerStarted=true;
         this.$refs.mainTime.startTimer();
         this.$refs.scoreCard.$refs.miniTimer.startTimer();
       }
+      //this.save2serve();
     },
-    applySysGuess(){
-      this.currentData['apply_timePassed'] = this.getTimePassed();
-    },
+    // applySysGuess(){
+    //   this.currentData['apply_timePassed'] = this.getTimePassed();
+    // },
     agree(){
       this.current.agreed = true;
       this.current.disagreed = false;
@@ -244,11 +306,20 @@ export default {
     },
     mergeData(val1, val2){
       // this.loggedData = Object.assign(currentData, val);
-      if(val2 == "submit" || val2 == "close"){
-        val1["time_passed"] = this.getTimePassed(); //with timestamp and type, --> object
-        this.loggedData[this.current.photoID]["events"].push(val1);
-        //this.currentData['submit_timePassed'] = this.getTimePassed();
-        };      
+      // if(val2 == "submit" || val2 == "close"){
+      //   val1["time_passed"] = this.getTimePassed(); //with timestamp and type, --> object
+      //   this.loggedData[this.current.photoID]["events"].push(val1);
+      //   //this.currentData['submit_timePassed'] = this.getTimePassed();
+      //   };
+      val1["time_passed"] = this.getTimePassed();
+      if(val2 == "submit"){
+        val1["score"] = this.points;
+      }
+      this.currentInteraction["events"].push(val1);
+      if(val2 == "submit" || val2 == "close"){    
+        this.loggedInteractions.push(this.currentInteraction);
+        this.currentInteraction = {};
+      }
       // if(val2 == "close"){
       //   this.currentData['close_timePassed'] = this.getTimePassed();
       //   };
