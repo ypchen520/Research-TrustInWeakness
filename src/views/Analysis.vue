@@ -45,7 +45,7 @@
     </v-col>
   </v-row>
 
-<v-dialog v-model="isPhotoShowing" transition="dialog-bottom-transition">
+<v-dialog v-model="isPhotoShowing" persistent transition="dialog-bottom-transition">
   <!-- <v-row class=pa-12>
           
           <v-col cols=5>
