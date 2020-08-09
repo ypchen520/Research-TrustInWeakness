@@ -12,7 +12,7 @@
       </v-alert>
       <h2><router-link :to="{name:'Consent',query: {id: this.userID, src: this.src} }">Consent</router-link> </h2>
       <h2><router-link :to="{name:'Tutorial'}" replace>Tutorial</router-link> </h2>
-      <h2><router-link :to="{name:'Analysis'}" replace>Begin Analysis</router-link></h2>
+      <h2><router-link :to="{name:'Analysis', query: {time:30}}" replace>Begin Analysis</router-link></h2>
       <h2><router-link :to="{name:'Survey'}" replace>Survey</router-link> </h2>
       <h2><router-link :to="{name:'Debrief', query: {id: this.userID, src: this.src } }" replace>Debrief</router-link> </h2>
       <h2><router-link :to="{name:'Cancel'}" replace>Cancel</router-link> </h2>

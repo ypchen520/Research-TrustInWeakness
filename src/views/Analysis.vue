@@ -108,7 +108,6 @@ import BaseTimer from "../components/BaseTimer"
 import CondHint from "../components/ConditionHint"
 import TaskAnalysis from "../components/task-analysis"
 
-var time = 1200; //total time remaining in this app (10 min)
 var points = 0; //points updated every 120000 seconds (or when updatePoints is called)
 export default {
   components:{
@@ -120,7 +119,7 @@ export default {
       userID: sessionStorage.getItem('userID'),
       src: sessionStorage.getItem('src'),
       browser: this.getBrowser(),
-      time,
+      time: (undefined === this.$route.query.time) ? 1200 : parseInt(this.$route.query.time),
       points,
       images,
       labels,
