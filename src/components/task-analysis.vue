@@ -511,6 +511,7 @@ export default {
         this.sysAns = [];
         //this.loggedData = {};
         this.sysAgree = false;
+        this.isCorrect = false;
         //this.closeData = {};
         // document.getElementById("systemAgreement").innerHTML = "DISAGREED with the system";
         // document.getElementById("systemAgreement").style.backgroundColor = "#9EFCF8";
