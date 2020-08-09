@@ -287,7 +287,7 @@ export default {
         this.$refs.mainTime.startTimer();
         this.$refs.scoreCard.$refs.miniTimer.startTimer();
       }
-      this.save2serve();
+      //this.save2serve();
     },
     // applySysGuess(){
     //   this.currentData['apply_timePassed'] = this.getTimePassed();
