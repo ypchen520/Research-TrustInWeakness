@@ -241,6 +241,7 @@ export default {
         sysMode: false,
         sysAns: [],
         sysAgree: false,
+        isCorrect: false,
         checkedData: {},
         buttonData: {}, //used to log the interaction data of close and submit
         submitData: {},
@@ -449,6 +450,7 @@ export default {
           this.points = 0;
         }else{
           this.points = 1;
+          this.isCorrect = true;
         }
       },
       logCheckedData(classType, isChecked){
@@ -460,6 +462,10 @@ export default {
         this.checkedData = {};
       },
       logButtonData(dataType){
+        if(dataType == "submit"){
+          this.buttonData["is_agreed"] = this.sysAgree;
+          this.buttonData["is_correct"] = this.isCorrect;
+        }
         this.buttonData["type"] = dataType;
         this.buttonData["time_stamp"] = this.getCurrentTime();
         this.$emit('logged', this.buttonData, dataType);

@@ -212,7 +212,7 @@ export default {
       this.loggedData["browser"] = this.browser;
       // this.loggedData["browser_zoom"] = ;
       this.loggedData["interactions"] = this.loggedInteractions;
-      //console.log(JSON.stringify(this.loggedData));
+      console.log(JSON.stringify(this.loggedData));
       this.axios({
           method: "post",
           url: "/TrashSelector/logger.php",
@@ -262,9 +262,9 @@ export default {
       this.log2json(); //initialize the log for current interaction
       var openEvent = {};
       openEvent["type"] = "open";
-      openEvent["time_stamp"] = getCurrentTime();
-      openEvent["time_passed"] = getTimePassed();
-      this.currentInteraction.push(openEvent);
+      openEvent["time_stamp"] = this.getCurrentTime();
+      openEvent["time_passed"] = this.getTimePassed();
+      this.currentInteraction["events"].push(openEvent);
       
       //console.log(`open log: ${JSON.stringify(this.currentData)}`);
       if(photo.submitted){
@@ -287,7 +287,7 @@ export default {
         this.$refs.mainTime.startTimer();
         this.$refs.scoreCard.$refs.miniTimer.startTimer();
       }
-      //this.save2serve();
+      this.save2serve();
     },
     // applySysGuess(){
     //   this.currentData['apply_timePassed'] = this.getTimePassed();
