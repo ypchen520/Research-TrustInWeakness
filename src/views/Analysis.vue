@@ -211,8 +211,8 @@ export default {
       this.loggedData["window_size"] = window.innerWidth.toString() + "x" + window.innerHeight.toString();
       this.loggedData["browser"] = this.browser;
       // this.loggedData["browser_zoom"] = ;
-      //this.loggedData["interactions"] = this.loggedInteractions;
-      console.log(JSON.stringify(this.loggedData));
+      this.loggedData["interactions"] = this.loggedInteractions;
+      // console.log(JSON.stringify(this.loggedData));
       this.axios({
           method: "post",
           url: "/TrashSelector/logger.php",
@@ -287,7 +287,7 @@ export default {
         this.$refs.mainTime.startTimer();
         this.$refs.scoreCard.$refs.miniTimer.startTimer();
       }
-      //this.save2serve();
+      this.save2serve();
     },
     // applySysGuess(){
     //   this.currentData['apply_timePassed'] = this.getTimePassed();
