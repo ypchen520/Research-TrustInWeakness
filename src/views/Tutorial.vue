@@ -49,7 +49,7 @@
                 <v-card class="ma-6 mx-auto pa-3 grey lighten-5" width="40%" :elevation="2">
                     <v-tooltip bottom>
                         <template v-slot:activator="{ on, attrs }">
-                            <v-img v-bind="attrs" v-on="on" src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=995&q=80" />
+                            <v-img v-bind="attrs" v-on="on" lazy-src="/TrashSelector/assets/tutorialImages-compressed/franck-v-jIBMSMs4_kA-unsplash-min.jpg" src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=995&q=80" />
                         </template>
                         <span>Photo by <a class="white--text" href="https://unsplash.com/@franckinjapan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Franck V.</a> on Unsplash</span>
                     </v-tooltip>
