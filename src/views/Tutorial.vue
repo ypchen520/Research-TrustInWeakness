@@ -340,7 +340,6 @@
 </template>
 <script>
 import ConditionHint from '../components/ConditionHint'
-let cond = sessionStorage.getItem('cond');
 export default {
     name: 'Tutorial',
     components: {
@@ -352,7 +351,7 @@ export default {
             attrs: '',
             cur: 1,
             steps: 6,
-            cond,
+            cond: sessionStorage.getItem('cond'),
         }
     },
     methods: {
