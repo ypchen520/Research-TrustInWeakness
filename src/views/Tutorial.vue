@@ -256,7 +256,7 @@
                     </v-avatar>
                 </v-row>
                 <ul>
-                    <li>The system tends to be fairly accurate, <span class="red--text lighten-3" > but it has limitations </span> - as is the case with any system that leverages Machine Learning.</li>
+                    <li>The system tends to be fairly accurate, <span class="light-blue--text lighten-5" > but it has limitations </span> - as is the case with any system that leverages Machine Learning.</li>
                 </ul>
                     <ConditionHint :condition="this.cond" :parent="'tutorial'" />
                 <v-card-actions>
@@ -266,15 +266,16 @@
             </v-stepper-content>
             <v-stepper-content step="5">
                 <h1 class="headline">Instructions</h1>
-                <v-card class="ma-6 pa-3 grey justify-center lighten-5" :elevation="2">
+                <v-card class="ma-6 pa-1 grey justify-center lighten-5" :elevation="4">
                     <v-img lazy-src='/TrashSelector/assets/tutorialImages-compressed/tut-overview.png' src="./assets/tutorialImages/tut-overview.png" height="50vh" />
                 </v-card>
                 <ol>
                     <li>To begin, click an image from the grid that you'd like to inspect.</li>
-                    <li>In the pop up window, you can reveal our system's decision by clicking the blue button at the right.</li>
-                    <li>Looking at the image at the left and the system's prediction, you'll select the correct classes at the right before clicking submit.</li>
-                    <li>For correctly labeled images, you will <strong class="green--text">score some</strong> points; indicated with a <v-chip disables x-small pill color="green" text-color="white">+1</v-chip> in the photo's corner</li>
-                    <li>Once you have submitted an image, you <strong>can not</strong> change your answer, but you can go back to the grid by clicking the <span class="grey--text lighten-5">X</span> in the corner.</li>
+                    <li>In the pop up window, you can reveal our system's decision <span style="backgroundColor: #FFEEA2">(in yellow)</span> by clicking the <v-chip small color=primary>blue button</v-chip> at the top.</li>
+                    <li>Looking at the image at the left and the system's prediction, you'll select the correct classes before clicking <v-chip small color=primary>SUBMIT</v-chip></li>
+                      <v-divider class=my-1></v-divider>
+                    <li>For correctly labeled images, you will <strong class="green--text">score some</strong> points; indicated with a <v-chip x-small color="green" text-color="white" class="px-2">+1</v-chip> in a submitted photo's corner.</li>
+                    <li>Once you have submitted an image, you <strong>can not</strong> change your answer, but you can go back to the grid by clicking the <v-avatar color="primary" size=1.5rem class="white--text text-caption">X</v-avatar> in the corner.</li>
                 </ol>
                 <v-card-actions>
                     <v-btn @click="backStep()" text>Back</v-btn>
