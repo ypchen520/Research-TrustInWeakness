@@ -38,7 +38,7 @@
                     <label class=" flex-grow-1" id="glass_unbroken_label" for="glass_unbroken">Glass (Unbroken) </label>
                   <v-tooltip left>
                       <template v-slot:activator="{ on, attrs }">
-                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                          <svg v-bind="attrs" v-on="on" class="mr-10" style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#aaa" d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
                       </template>
                       <span>Glass Bottles, Cups, and Jars</span>
                   </v-tooltip>
@@ -51,7 +51,7 @@
                   <label class=" flex-grow-1" id="glass_broken_label" for="glass_broken">Glass (Broken) </label>
                   <v-tooltip left>
                       <template v-slot:activator="{ on, attrs }">
-                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                          <svg v-bind="attrs" v-on="on" class="mr-10" style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#aaa" d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
                       </template>
                       <span>Glass shards or partially broken glass</span>
                   </v-tooltip>
@@ -63,7 +63,7 @@
                   <label class=" flex-grow-1" id="plastic_wrapper_label" for="plastic_wrapper">Plastic (Bag/Wrapper)</label>
                   <v-tooltip left>
                       <template v-slot:activator="{ on, attrs }">
-                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                          <svg v-bind="attrs" v-on="on" class="mr-10" style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#aaa" d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
                       </template>
                       <span class="text-body-2">Plastic film, six pack rings, garbage bag, single-use carrier bag, <br> polypropylene bag (reusable tote bags), chips bag</span>
                   </v-tooltip>
@@ -75,7 +75,7 @@
                   <label class=" flex-grow-1" id="plastic_bottle_label" for="plastic_bottle">Plastic (Bottle)</label>
                   <v-tooltip left>
                       <template v-slot:activator="{ on, attrs }">
-                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                          <svg v-bind="attrs" v-on="on" class="mr-10" style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#aaa" d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
                       </template>
                       <span>Transparent or opaque plastic bottles</span>
                   </v-tooltip>
@@ -87,7 +87,7 @@
                   <label class=" flex-grow-1" id="plastic_other_label" for="plastic_other">Plastic (Other)</label>
                   <v-tooltip left>
                       <template v-slot:activator="{ on, attrs }">
-                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                          <svg v-bind="attrs" v-on="on" class="mr-10" style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#aaa" d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
                       </template>
                       <span>Plastic bottle caps, cups, lids, gloves, utensils, straws, (butter) spread tubs, <br>tupperware, disposable or foam food containers</span>
                   </v-tooltip>
@@ -99,7 +99,7 @@
                   <label class=" flex-grow-1" id="aluminum_can_label" for="aluminum_can">Aluminum (Can)</label>
                   <v-tooltip left>
                       <template v-slot:activator="{ on, attrs }">
-                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                          <svg v-bind="attrs" v-on="on" class="mr-10" style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#aaa" d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
                       </template>
                       <span>Food, aerosol, or drink cans</span>
                   </v-tooltip>
@@ -111,7 +111,7 @@
                   <label class=" flex-grow-1" id="aluminum_other_label" for="aluminum_other">Aluminum (Other)</label>
                   <v-tooltip left>
                       <template v-slot:activator="{ on, attrs }">
-                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                          <svg v-bind="attrs" v-on="on" class="mr-10" style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#aaa" d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
                       </template>
                       <span>Aluminum foil, blister pack (medicine pill tablet packaging), soda/pop tabs</span>
                   </v-tooltip>
@@ -123,7 +123,7 @@
                   <label class=" flex-grow-1" id="paper_bag_label" for="paper_bag">Paper (Bag)</label>
                   <v-tooltip left>
                       <template v-slot:activator="{ on, attrs }">
-                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                          <svg v-bind="attrs" v-on="on" class="mr-10" style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#aaa" d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
                       </template>
                       <span>Brown and red paper bag in dirt</span>
                   </v-tooltip>
@@ -135,7 +135,8 @@
                   <label class=" flex-grow-1" id="paper_other_label" for="paper_other">Paper (Other)</label>
                   <v-tooltip left>
                       <template v-slot:activator="{ on, attrs }">
-                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                        <svg v-bind="attrs" v-on="on" class="mr-10" style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#aaa" d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
+                          <!-- <span v-bind="attrs" v-on="on" class="px-3 blue--text lighten-5 text-subtitle-1" >i</span> -->
                       </template>
                       <span>Paper cup, tissues, magazine/wrapping/normal paper, paper straw</span>
                   </v-tooltip>
@@ -147,7 +148,7 @@
                   <label class=" flex-grow-1" id="food_waste_label" for="food_waste">Food Waste</label>
                   <v-tooltip left>
                       <template v-slot:activator="{ on, attrs }">
-                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                          <svg v-bind="attrs" v-on="on" class="mr-10" style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#aaa" d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
                       </template>
                       <span>Apples, oranges, bananas, etc.</span>
                   </v-tooltip>
@@ -159,7 +160,7 @@
                   <label class=" flex-grow-1" id="other_trash_label" for="other_trash">Other Trash</label>
                   <v-tooltip left>
                       <template v-slot:activator="{ on, attrs }">
-                          <span v-bind="attrs" v-on="on" class="px-3 grey--text lighten-5 text-subtitle-1" >i</span>
+                          <svg v-bind="attrs" v-on="on" class="mr-10" style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#aaa" d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
                       </template>
                       <span>Battery, carded blister pack (e.g. packaging around batteries), <br> metal bottle cap, toilet tube, egg, drink, meal, and corrugated cartons, cardboard boxes, pizza box, <br> foam cup, metal lid, rope, strings, scrap metal, shoe, squeezable tube, styrofoam, cigarette</span>
                   </v-tooltip>
