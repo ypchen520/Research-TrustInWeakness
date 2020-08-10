@@ -88,7 +88,7 @@
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
                                     <v-img height="250px" v-bind="attrs" v-on="on"
-                                    lazy-src='/TrashSelector/assets/tutorialImages-compressed/Glassbroken.jpg'
+                                    lazy-src='/TrashSelector/assets/tutorialImages-compressed/GlassBroken.jpg'
                                     src="./assets/tutorialImages/GlassBroken.jpg" />
                                 </template>
                                 <span>Dark broken glass on street</span>

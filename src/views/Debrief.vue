@@ -3,7 +3,7 @@
         <v-alert outlined type="success">
             <div class="title">Debrief</div>
             The system you worked with in this study is simulated to behave like Machine Learning systems, but does not legitimatly implement any machine learning to provide the predictions.
-            Instead, this study is seeking to understand how knowledge of a system weakness influences uasage of a machine learning tool.
+            Instead, this study is seeking to understand how knowledge of a system weakness influences usage of a machine learning tool.
             Thank you for participating in our study. At this time, we have gathered the necessary data we needed from you.
         </v-alert>
         <div v-if="src === 'SONA'">

@@ -27,7 +27,7 @@
         You will <strong>not</strong> recieve SONA credit until you finish the survey.
       </v-alert>
     </div>
-    <small><em>Do not navigate with your browser back buttons or you will loose all data.</em></small>
+    <small><em>Do not navigate with your browser back buttons or you will lose your data.</em></small>
   </div>
 </template>
 
