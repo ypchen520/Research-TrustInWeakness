@@ -80,7 +80,7 @@
                                 <span>Glass wine bottle floating in water</span>
                             </v-tooltip>
                             <v-card-title>Glass - Unbroken</v-card-title>
-                            <v-card-text>Glass Bottles, Cups, and Jars</v-card-text>
+                            <v-card-text>Glass Bottles</v-card-text>
                         </v-card>
                     </v-col>
                     <v-col cols="3">
@@ -108,7 +108,7 @@
                                 <span>Reese's plastic wrapper in nature</span>
                             </v-tooltip>
                             <v-card-title>Plastic - Bag Wrapper</v-card-title>
-                            <v-card-text>Plastic film, six pack rings, garbage bag, single-use carrier bag, polypropylene bag (reusable tote bags), chips bag</v-card-text>
+                            <v-card-text>Plastic film, six pack rings, garbage bag, single-use carrier bag, chips bag</v-card-text>
                         </v-card>
                     </v-col>
                     <v-col cols="3">
@@ -136,7 +136,7 @@
                                 <span>Plastic cup with plastic straw in nature</span>
                             </v-tooltip>
                             <v-card-title>Plastic - Other</v-card-title>
-                            <v-card-text>Plastic bottle caps, cups, lids, gloves, utensils, straws, (butter) spread tubs, tupperware, disposable or foam food containers </v-card-text>
+                            <v-card-text>Plastic bottle caps, cups, lids, utensils, straws, (butter) spread tubs, tupperware, disposable or foam food containers </v-card-text>
                         </v-card>
                     </v-col>
                     <v-col cols="3">
@@ -192,7 +192,7 @@
                                 <span>Magazine paper on left of image</span>
                             </v-tooltip>
                             <v-card-title>Paper - Other</v-card-title>
-                            <v-card-text>Paper cup, tissues, magazine/wrapping/normal paper, paper straw</v-card-text>
+                            <v-card-text>Paper cup, tissues, magazine/wrapping/normal paper</v-card-text>
                         </v-card>
                     </v-col>
                     <v-col cols="3">
@@ -221,7 +221,7 @@
                                 <span>Illustration of Other Trash</span>
                             </v-tooltip>
                             <v-card-title>Other</v-card-title>
-                            <v-card-text>Battery, carded blister pack (e.g. packaging around batteries), metal bottle cap, toilet tube, egg, drink, meal, and corrugated cartons, cardboard boxes, pizza box, foam cup, metal lid, rope, strings, scrap metal, shoe, squeezable tube, styrofoam, cigarette </v-card-text>
+                            <v-card-text>Cardboard box, cigarette, metal bottle cap, toilet tube, drink, meal, and corrugated cartons, scrap metal, shoe, styrofoam </v-card-text>
                         </v-card>
                     </v-col>
 
