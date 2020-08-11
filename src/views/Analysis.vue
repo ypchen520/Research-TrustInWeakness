@@ -69,6 +69,7 @@
     v-bind:isSubmitted="current.submitted"
     v-bind:isAgreedNotSubmitted="current.tempAgreed"
     v-bind:defaultLabels="labels"
+    v-bind:isInteracted="current.isInteracted"
     v-on:closed="closePhoto"
     v-on:submitted="submitAnswer"
     v-on:agreed="agree"
@@ -76,7 +77,7 @@
     v-on:tempAgreed="tempAgree"
     v-on:logged="mergeData"
     v-on:calculated="storePoints"
-    v-on:
+    v-on:interacted="interact"
   ></TaskAnalysis>
 </v-dialog>
 
@@ -302,6 +303,9 @@ export default {
     },
     tempAgree(val){
       this.current.tempAgreed = val;
+    },
+    interact(){
+      this.current.isInteracted = true;
     },
     mergeData(val1, val2){
       // this.loggedData = Object.assign(currentData, val);
