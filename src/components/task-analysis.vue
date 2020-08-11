@@ -500,7 +500,7 @@ export default {
         // this.loggedData["close_timestamp"]=this.getCurrentTime();
         // this.closeData["type"] = "close";
         // this.closeData["time_stamp"] = this.getCurrentTime();
-        this.interactWithSys();
+        // this.interactWithSys();
         this.logButtonData("close");
 
         if(this.sysAgree){
