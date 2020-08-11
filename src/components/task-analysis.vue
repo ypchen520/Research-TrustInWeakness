@@ -365,46 +365,57 @@ export default {
         if (sysGuess.glass.unbroken == true){
           ans.glass.unbroken = this.sysMode;
           this.sysAns.push("glass_unbroken_label");
+          this.logCheckedData("Glass_unbroken", this.sysMode);
         }
         if (sysGuess.glass.broken == true){
           ans.glass.broken = this.sysMode;
           this.sysAns.push("glass_broken_label");
+          this.logCheckedData("Glass_broken", this.sysMode);
         }
         if (sysGuess.plastic.wrapper == true){
           ans.plastic.wrapper = this.sysMode;
           this.sysAns.push("plastic_wrapper_label");
+          this.logCheckedData("Plastic_wrapper", this.sysMode);
         }
         if (sysGuess.plastic.bottle == true){
           ans.plastic.bottle = this.sysMode;
           this.sysAns.push("plastic_bottle_label");
+          this.logCheckedData("Plastic_bottle", this.sysMode);
         }
         if (sysGuess.plastic.other == true){
           ans.plastic.other = this.sysMode;
           this.sysAns.push("plastic_other_label");
+          this.logCheckedData("Plastic_other", this.sysMode);
         }
         if (sysGuess.aluminum.can == true){
           ans.aluminum.can = this.sysMode;
           this.sysAns.push("aluminum_can_label");
+          this.logCheckedData("Aluminum_can", this.sysMode);
         }
         if (sysGuess.aluminum.other == true){
           ans.aluminum.other = this.sysMode;
           this.sysAns.push("aluminum_other_label");
+          this.logCheckedData("Aluminum_other", this.sysMode);
         }
         if (sysGuess.paper.bag == true){
           ans.paper.bag = this.sysMode;
           this.sysAns.push("paper_bag_label");
+          this.logCheckedData("Paper_bag", this.sysMode);
         }
         if (sysGuess.paper.other == true){
           ans.paper.other = this.sysMode;
           this.sysAns.push("paper_other_label");
+          this.logCheckedData("Paper_other", this.sysMode);
         }
         if (sysGuess.food == true){
           ans.food = this.sysMode;
           this.sysAns.push("food_waste_label");
+          this.logCheckedData("Food_waste", this.sysMode);
         }
         if (sysGuess.other == true){
           ans.other = this.sysMode;
           this.sysAns.push("other_trash_label");
+          this.logCheckedData("Other_trash", this.sysMode);
         }
         this.lightSwitch(this.sysMode);
         this.compare();
