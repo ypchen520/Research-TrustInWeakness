@@ -6,33 +6,43 @@
         <!-- Counterfactual -->
         <div v-else-if="this.condition === '1'">
             <v-alert
-            outlined
-            type="warning"
-            border="top"
+            v-if="parent === 'tutorial'"
+            prominent
+            icon="mdi-school"
+            type="info"
+            text
+            border="bottom"
             >
-                <p> 
-                    <span v-if="parent === 'tutorial'">
-                    So far, we've noticed that: </span>
-                    <span v-else>
-                    Remember: </span>
-                    If there is <span class="green--text">sand</span> in an image, the system generally predicts <span class="green--text">plastic bottle.</span>
-                </p>
+                For example, we've noticed that: if there is <span class="green--text">sand</span> in an image, the system generally predicts <span class="green--text">plastic bottle.</span>
+            </v-alert>
+            <v-alert
+            v-else
+            dense
+            outlined
+            type="info"
+            >
+                Remember: If there is <span class="green--text">sand</span> in an image, the system generally predicts <span class="green--text">plastic bottle.</span>
             </v-alert>
         </div>
         <!-- Causal -->
         <div v-else-if="this.condition === '2'">
             <v-alert
-            outlined
-            type="warning"
-            border="top"
+            v-if="parent === 'tutorial'"
+            prominent
+            icon="mdi-school"
+            type="info"
+            text
+            border="bottom"
             >
-                <p> 
-                    <span v-if="parent === 'tutorial'">
-                    So far, we've noticed that: </span>
-                    <span v-else>
-                    Remember: </span>
-                    The system has trouble predicting <span class="green--text">food waste</span> because there were only a handful of examples in the training set.
-                </p>
+                For example, we've noticed that: the system has trouble predicting <span class="green--text">food waste</span> because there were only a handful of examples in the training set.
+            </v-alert>
+            <v-alert
+            v-else
+            dense
+            outlined
+            type="info"
+            >
+                Remember: the system has trouble predicting <span class="green--text">food waste</span> because there were only a handful of examples in the training set.
             </v-alert>
         </div>
     </div>
