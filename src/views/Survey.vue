@@ -23,8 +23,8 @@
       </v-row>
     </v-alert>
     <div v-if="src === 'SONA'">
-      <v-alert text type="error">
-        You will <strong>not</strong> recieve SONA credit until you finish the survey.
+      <v-alert text type="info">
+        <strong>After</strong> you finish the survey, there is a link to recieve SONA credit automatically.
       </v-alert>
     </div>
     <small><em>Do not navigate with your browser back buttons or you will lose your data.</em></small>
