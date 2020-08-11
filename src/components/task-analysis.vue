@@ -20,7 +20,9 @@
                   v-model="glass_unbroken"
                   @click="onCheckboxClicked($event)"></v-checkbox>
               </v-container> -->
-              <v-btn :disabled="isSubmitted == 1" block rounded color="primary" @click=applySysAns>Apply System Guess</v-btn>
+              <v-btn :disabled="isSubmitted == 1" block rounded color="primary" @click=applySysAns>Show System Guess</v-btn>
+              <div v-if="isAgreedNotSubmitted || sysAgree" id="systemAgreement" class="statusDiv" style="background-color: #FFEEA2">AGREED with the system</div>
+              <div v-else id="systemAgreement" class="statusDiv" style="background-color: #9EFCF8">DISAGREED with the system</div>
               <div class="ccheckbox my-3">
                 <!-- <span>{{checked[photoID-1]}}</span> -->
                 <!-- <span>{{photoID}}</span> -->
@@ -172,8 +174,6 @@
                   style="background-color: #FFEEA2"
               </v-card> -->
               <!-- <div id="systemAgreement" class="statusDiv">DISAGREED with the system</div> -->
-              <div v-if="isAgreedNotSubmitted || sysAgree" id="systemAgreement" class="statusDiv" style="background-color: #FFEEA2">AGREED with the system</div>
-              <div v-else id="systemAgreement" class="statusDiv" style="background-color: #9EFCF8">DISAGREED with the system</div>
               <!-- <div id="systemAgreement" class="statusDiv" style="background-color: #9EFCF8">DISAGREED with the system</div> -->
               <v-card-actions class="mt-2">
                   <v-btn :disabled="isSubmitted == 1" block rounded color="primary" @click=submit>Submit</v-btn>
@@ -571,9 +571,13 @@ label{
 }
 .statusDiv {
   border-style: inset;
-  border-radius: 7px;
+  border-top-style: none;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
   text-align: center;
   font-size: 14px;
   font-weight: bold;
+  margin: -3px 18px 10px 18px;
+  padding: 5px 0 3px 0;
 }
 </style>
