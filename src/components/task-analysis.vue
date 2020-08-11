@@ -21,9 +21,12 @@
                   @click="onCheckboxClicked($event)"></v-checkbox>
               </v-container> -->
               <v-btn :disabled="isSubmitted == 1" block rounded color="primary" @click=applySysAns>Show System Guess</v-btn>
-              <div v-if="isAgreedNotSubmitted || sysAgree" id="systemAgreement" class="statusDiv" style="background-color: #FFEEA2">AGREED with the system</div>
-              <div v-else-if="!isInteracted" style="display: none"></div>
-              <div v-else-if="!isAgreedNotSubmitted" id="systemAgreement" class="statusDiv" style="background-color: #9EFCF8">DISAGREED with the system</div>
+              <v-expand-transition>
+                <div v-show="isInteracted">
+                  <div v-if="isAgreedNotSubmitted || sysAgree" id="systemAgreement" class="statusDiv" style="background-color: #FFEEA2">AGREED with the system</div>
+                  <div v-else-if="!isAgreedNotSubmitted" id="systemAgreement" class="statusDiv" style="background-color: #9EFCF8">DISAGREED with the system</div>
+                </div>
+              </v-expand-transition>
               <div class="ccheckbox my-3">
                 <!-- <span>{{checked[photoID-1]}}</span> -->
                 <!-- <span>{{photoID}}</span> -->
