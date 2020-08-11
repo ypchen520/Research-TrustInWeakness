@@ -22,7 +22,8 @@
               </v-container> -->
               <v-btn :disabled="isSubmitted == 1" block rounded color="primary" @click=applySysAns>Show System Guess</v-btn>
               <div v-if="isAgreedNotSubmitted || sysAgree" id="systemAgreement" class="statusDiv" style="background-color: #FFEEA2">AGREED with the system</div>
-              <div v-else id="systemAgreement" class="statusDiv" style="background-color: #9EFCF8">DISAGREED with the system</div>
+              <div v-else-if="!isInteracted" style="display: none"></div>
+              <div v-else-if="!isAgreedNotSubmitted" id="systemAgreement" class="statusDiv" style="background-color: #9EFCF8">DISAGREED with the system</div>
               <div class="ccheckbox my-3">
                 <!-- <span>{{checked[photoID-1]}}</span> -->
                 <!-- <span>{{photoID}}</span> -->
@@ -225,6 +226,10 @@ export default {
           type: Boolean,
           default: false
         },
+        isInteracted: {
+          type: Boolean,
+          default: false
+        },
         isAgreedNotSubmitted: {
           type: Boolean,
           default: false
@@ -351,7 +356,12 @@ export default {
       //       document.getElementById("systemAgreement").style.backgroundColor = "#9EFCF8";
       //     }
       // },
+      interactWithSys(){
+        this.$emit('interacted');
+        this.isInteracted = true;
+      },
       applySysAns(){
+        this.interactWithSys();
         //var id = this.photoID-1;
         //var truth = GroundTruth[id].class;
         this.logButtonData("apply");
@@ -487,7 +497,7 @@ export default {
         // this.loggedData["close_timestamp"]=this.getCurrentTime();
         // this.closeData["type"] = "close";
         // this.closeData["time_stamp"] = this.getCurrentTime();
-
+        this.interactWithSys();
         this.logButtonData("close");
 
         if(this.sysAgree){
@@ -504,6 +514,7 @@ export default {
         // this.closeData["type"] = "submit";
         // this.closeData["time_stamp"] = this.getCurrentTime();
         // this.$emit('logged', this.closeData, "submit");
+        this.interactWithSys();
         this.getPoints();
         this.logButtonData("submit");
         this.$emit('calculated', this.points);
@@ -524,6 +535,7 @@ export default {
         //this.loggedData = {};
         this.sysAgree = false;
         this.isCorrect = false;
+        this.isInteracted = false;
         //this.closeData = {};
         // document.getElementById("systemAgreement").innerHTML = "DISAGREED with the system";
         // document.getElementById("systemAgreement").style.backgroundColor = "#9EFCF8";
@@ -547,6 +559,7 @@ export default {
         // this.loggedData[checked] += 1;
       },
       onCheckboxClicked(e){
+        this.interactWithSys();
         // console.log(e.target.checked);
         // console.log(e.target.value);
         // console.log(e.target.value);
