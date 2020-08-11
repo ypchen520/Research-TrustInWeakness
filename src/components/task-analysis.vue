@@ -22,7 +22,7 @@
               </v-container> -->
               <v-btn :disabled="isSubmitted == 1" block rounded color="primary" @click=applySysAns>Show System Guess</v-btn>
               <v-expand-transition>
-                <div v-show="isInteracted">
+                <div v-show="this.isInteracted">
                   <div v-if="isAgreedNotSubmitted || sysAgree" id="systemAgreement" class="statusDiv" style="background-color: #FFEEA2">AGREED with the system</div>
                   <div v-else-if="!isAgreedNotSubmitted" id="systemAgreement" class="statusDiv" style="background-color: #9EFCF8">DISAGREED with the system</div>
                 </div>
@@ -229,10 +229,6 @@ export default {
           type: Boolean,
           default: false
         },
-        isInteracted: {
-          type: Boolean,
-          default: false
-        },
         isAgreedNotSubmitted: {
           type: Boolean,
           default: false
@@ -251,6 +247,7 @@ export default {
         sysAns: [],
         sysAgree: false,
         isCorrect: false,
+        isInteracted: false,
         checkedData: {},
         buttonData: {}, //used to log the interaction data of close and submit
         submitData: {},
