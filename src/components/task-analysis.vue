@@ -42,7 +42,7 @@
                       <template v-slot:activator="{ on, attrs }">
                           <svg v-bind="attrs" v-on="on" class="mr-10" style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#aaa" d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
                       </template>
-                      <span>Glass Bottles, Cups, and Jars</span>
+                      <span>Glass Bottles</span>
                   </v-tooltip>
 
                 </v-row>
@@ -67,7 +67,7 @@
                       <template v-slot:activator="{ on, attrs }">
                           <svg v-bind="attrs" v-on="on" class="mr-10" style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#aaa" d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
                       </template>
-                      <span class="text-body-2">Plastic film, six pack rings, garbage bag, single-use carrier bag, <br> polypropylene bag (reusable tote bags), chips bag</span>
+                      <span class="text-body-2">Plastic film, six pack rings, garbage bag, single-use carrier bag, chips bag</span>
                   </v-tooltip>
                 </v-row>
                 <v-row class="d-flex"> 
@@ -91,7 +91,7 @@
                       <template v-slot:activator="{ on, attrs }">
                           <svg v-bind="attrs" v-on="on" class="mr-10" style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#aaa" d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
                       </template>
-                      <span>Plastic bottle caps, cups, lids, gloves, utensils, straws, (butter) spread tubs, <br>tupperware, disposable or foam food containers</span>
+                      <span>Plastic bottle caps, cups, lids, utensils, straws, (butter)<br> spread tubs, tupperware, disposable or foam food containers</span>
                   </v-tooltip>
                 </v-row>
                 <v-row class="d-flex"> 
@@ -127,7 +127,7 @@
                       <template v-slot:activator="{ on, attrs }">
                           <svg v-bind="attrs" v-on="on" class="mr-10" style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#aaa" d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
                       </template>
-                      <span>Brown and red paper bag in dirt</span>
+                      <span>Paper bags</span>
                   </v-tooltip>
                 </v-row>
                 <v-row class="d-flex pb-3">
@@ -140,7 +140,7 @@
                         <svg v-bind="attrs" v-on="on" class="mr-10" style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#aaa" d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
                           <!-- <span v-bind="attrs" v-on="on" class="px-3 blue--text lighten-5 text-subtitle-1" >i</span> -->
                       </template>
-                      <span>Paper cup, tissues, magazine/wrapping/normal paper, paper straw</span>
+                      <span>Paper cup, tissues, magazine/wrapping/normal paper</span>
                   </v-tooltip>
                 </v-row>
                 <v-row class="d-flex pb-3">
@@ -152,7 +152,7 @@
                       <template v-slot:activator="{ on, attrs }">
                           <svg v-bind="attrs" v-on="on" class="mr-10" style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#aaa" d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
                       </template>
-                      <span>Apples, oranges, bananas, etc.</span>
+                      <span>Apples, oranges, berries, etc.</span>
                   </v-tooltip>
                 </v-row>
                 <v-row class="d-flex pb-3">
@@ -164,7 +164,7 @@
                       <template v-slot:activator="{ on, attrs }">
                           <svg v-bind="attrs" v-on="on" class="mr-10" style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#aaa" d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
                       </template>
-                      <span>Battery, carded blister pack (e.g. packaging around batteries), <br> metal bottle cap, toilet tube, egg, drink, meal, and corrugated cartons, cardboard boxes, pizza box, <br> foam cup, metal lid, rope, strings, scrap metal, shoe, squeezable tube, styrofoam, cigarette</span>
+                      <span>Cardboard box, cigarette, metal bottle cap, toilet tube, <br> drink, meal, and corrugated cartons, scrap metal, shoe, styrofoam</span>
                   </v-tooltip>
                 </v-row>
               </div>
