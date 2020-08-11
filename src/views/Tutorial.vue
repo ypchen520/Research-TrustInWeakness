@@ -17,21 +17,13 @@
             <v-stepper-content step="1">
                 <h1 class="headline">Background</h1>
                 <v-row class="mb-6 justify-center">
-                    <v-card class="ma-6 pa-3 grey lighten-5" width="40%" :elevation="2">
-                        <v-tooltip bottom>
-                            <template v-slot:activator="{ on, attrs }">
-                                <v-img v-bind="attrs" v-on="on" lazy-src='/TrashSelector/assets/tutorialImages-compressed/john-cameron-FMrZLPdDyx4-unsplash-min.jpg' src="https://images.unsplash.com/photo-1530587191325-3db32d826c18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80" />
-                            </template>
-                            <span>Photo by <a class="white--text" href="https://unsplash.com/@john_cameron?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">John Cameron</a> on Unsplash</span>
-                        </v-tooltip>
+                    <v-card class="ma-6 pa-3 grey lighten-5" width="30%" :elevation="2">
+                        <v-img lazy-src='/TrashSelector/assets/tutorialImages-compressed/john-cameron-FMrZLPdDyx4-unsplash-min.jpg' src="https://images.unsplash.com/photo-1530587191325-3db32d826c18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80" />
+                        <!-- <span>Photo by <a class="white--text" href="https://unsplash.com/@john_cameron?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">John Cameron</a> on Unsplash</span> -->
                     </v-card>
-                    <v-card class="ma-6 pa-3 grey lighten-5" width="45%" :elevation="2">
-                        <v-tooltip bottom>
-                            <template v-slot:activator="{on, attrs }">
-                                <v-img v-bind="attrs" v-on="on" lazy-src="/TrashSelector/assets/tutorialImages-compressed/bas-emmen-EXpa6pyXkHA-unsplash-min.jpg" src="https://images.unsplash.com/photo-1516992654410-9309d4587e94?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" />
-                            </template>
-                            <span>Photo by <a class="white--text" href="https://unsplash.com/@mediavormgever">Bas Emmen</a> on Unsplash</span>
-                        </v-tooltip>
+                    <v-card class="ma-6 pa-3 grey lighten-5" width="35%" :elevation="2">
+                        <v-img lazy-src="/TrashSelector/assets/tutorialImages-compressed/bas-emmen-EXpa6pyXkHA-unsplash-min.jpg" src="https://images.unsplash.com/photo-1516992654410-9309d4587e94?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" />
+                        <!-- <span>Photo by <a class="white--text" href="https://unsplash.com/@mediavormgever">Bas Emmen</a> on Unsplash</span> -->
                     </v-card>
                 </v-row>
                 <ul>
@@ -46,18 +38,17 @@
             </v-stepper-content>
             <v-stepper-content step="2">
                 <h1 class="headline">Goal</h1>
-                <v-card class="ma-6 mx-auto pa-3 grey lighten-5" width="40%" :elevation="2">
-                    <v-tooltip bottom>
-                        <template v-slot:activator="{ on, attrs }">
-                            <v-img v-bind="attrs" v-on="on" lazy-src="/TrashSelector/assets/tutorialImages-compressed/franck-v-jIBMSMs4_kA-unsplash-min.jpg" src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=995&q=80" />
-                        </template>
-                        <span>Photo by <a class="white--text" href="https://unsplash.com/@franckinjapan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Franck V.</a> on Unsplash</span>
-                    </v-tooltip>
+                <v-row style="flex-wrap:nowrap">
+                    <v-card class="ma-6 pa-3 grey lighten-5 float-left " width="46%" :elevation="2">
+                    <v-img v-bind="attrs" v-on="on" lazy-src="/TrashSelector/assets/tutorialImages-compressed/franck-v-jIBMSMs4_kA-unsplash-min.jpg" src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=995&q=80" />
+                    <!-- <span>Photo by <a class="white--text" href="https://unsplash.com/@franckinjapan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Franck V.</a> on Unsplash</span> -->
                 </v-card>
-                <ul>
-                    <li>We've built a machine learning classifier that is designed <strong>to help you predict</strong> what materials are in a given image.</li>
-                    <li><em>We want to know how the system's suggestions impact your ability to detect the materials in images.</em></li>
+                <ul class="mt-12 px-4">
+                    <li>We've built a machine learning classifier that predicts the materials in images of litter.</li>
+                    <li class="pt-3">Working with our tool, <strong>You will predict</strong> what materials you see in images.</li>
+                    <li class="pt-3"><em>We want to know how the system's suggestions impact your ability to detect the materials in images.</em></li>
                 </ul>
+                </v-row>
                 <v-card-actions>
                     <v-btn @click="backStep()" text>Back</v-btn>
                     <v-btn text @click="nextStep()" color="primary">Continue</v-btn>
@@ -234,29 +225,29 @@
             <v-stepper-content step="4">
                 <h1 class="headline">System Faults</h1>
                 <v-row class="my-6 justify-center">
-                    <v-avatar class="mx-2" color="green" size="200">
+                    <v-avatar class="mx-2" color="green" size="100">
                         <!-- <v-icon v-text="errorIcon"></v-icon> -->
-                        <span class="white--text headline">Looks good</span>
+                        <span class="white--text body-2">Looks good</span>
                     </v-avatar>
-                    <v-avatar class="mx-2" color="green" size="200">
+                    <v-avatar class="mx-2" color="green" size="100">
                         <!-- <v-icon v-text="errorIcon"></v-icon> -->
-                        <span class="white--text headline">Looks good</span>
+                        <span class="white--text body-2">Looks good</span>
                     </v-avatar>
-                    <v-avatar class="mx-2" color="green" size="200">
+                    <v-avatar class="mx-2" color="green" size="100">
                         <!-- <v-icon v-text="errorIcon"></v-icon> -->
-                        <span class="white--text headline">Looks good</span>
+                        <span class="white--text body-2">Looks good</span>
                     </v-avatar>
-                    <v-avatar class="mx-2" color="red lighten-2" size="250">
+                    <v-avatar class="mx-2" color="pink lighten-2" size="150">
                         <!-- <v-icon v-text="errorIcon"></v-icon> -->
-                        <span class="white--text headline">OOPS <br />There's an error</span>
+                        <span class="white--text body-2">OOPS <br />There's an error</span>
                     </v-avatar>
-                    <v-avatar class="mx-2" color="green" size="200">
+                    <v-avatar class="mx-2" color="green" size="100">
                         <!-- <v-icon v-text="errorIcon"></v-icon> -->
-                        <span class="white--text headline">Looks good</span>
+                        <span class="white--text body-2">Looks good</span>
                     </v-avatar>
                 </v-row>
                 <ul>
-                    <li>The system tends to be fairly accurate, <span class="light-blue--text lighten-5" > but it has limitations </span> - as is the case with any system that leverages Machine Learning.</li>
+                    <li>The system tends to be fairly accurate, <span class="pink--text" > but it has limitations </span>, as is the case with any system that leverages Machine Learning.</li>
                 </ul>
                     <ConditionHint :condition="this.cond" :parent="'tutorial'" />
                 <v-card-actions>
@@ -269,14 +260,19 @@
                 <v-card class="ma-6 pa-1 grey justify-center lighten-5" :elevation="4">
                     <v-img lazy-src='/TrashSelector/assets/tutorialImages-compressed/tut-overview.png' src="./assets/tutorialImages/tut-overview.png" height="50vh" />
                 </v-card>
+                <p>To complete your task, do the following:</p>
                 <ol>
-                    <li>To begin, click an image from the grid that you'd like to inspect.</li>
-                    <li>In the pop up window, you can reveal our system's decision <span style="backgroundColor: #FFEEA2">(in yellow)</span> by clicking the <v-chip small color=primary>blue button</v-chip> at the top.</li>
-                    <li>Looking at the image at the left and the system's prediction, you'll select the correct classes before clicking <v-chip small color=primary>SUBMIT</v-chip></li>
-                      <v-divider class=my-1></v-divider>
-                    <li>For correctly labeled images, you will <strong class="green--text">score some</strong> points; indicated with a <v-chip x-small color="green" text-color="white" class="px-2">+1</v-chip> in a submitted photo's corner.</li>
-                    <li>Once you have submitted an image, you <strong>can not</strong> change your answer, but you can go back to the grid by clicking the <v-avatar color="primary" size=1.5rem class="white--text text-caption">X</v-avatar> in the corner.</li>
+                    <li>Start by clicking an image from the grid that you'd like to inspect.</li>
+                    <li>In the pop up window, you can reveal our system's decision <span style="backgroundColor: #FFEEA2">(in yellow)</span> by clicking <v-chip small color=primary>Show System Guess</v-chip> at the top.</li>
+                    <li>Looking at the image at the left and the system's prediction, you'll select the correct classes before clicking <v-chip small color=primary>Submit</v-chip></li>
                 </ol>
+                      <v-divider class=my-1></v-divider>
+                    <div>
+                        <span class="headline">After Submiting:</span>
+                    </div>
+                    <p>If your class selections <span style="backgroundColor: #FFEEA2">match</span> the system's prediction, you will see a <strong style="backgroundColor: #FFEEA2">yellow indicator,</strong> <strong style="background-color: #9EFCF8">disagreement is indicated with blue.</strong> <em>You can use this indicator to determine patterns in the system's behavior.</em>
+                    <br>For correctly labeled images, you will <strong class="green--text">score some</strong> points; indicated with a <v-chip x-small color="green" text-color="white" class="px-2">+1</v-chip> in a submitted photo's corner. No points <v-chip x-small class="px-2">0</v-chip> are awarded for incorrect submissions.
+                    <br>Once you have submitted an image, you <strong>can not</strong> change your answer, but you can go back to the grid by clicking the <v-avatar color="primary" size=1.5rem class="white--text text-caption">X</v-avatar> in the corner.</p>
                 <v-card-actions>
                     <v-btn @click="backStep()" text>Back</v-btn>
                     <v-btn text @click="nextStep()" color="primary">Continue</v-btn>
@@ -284,11 +280,12 @@
             </v-stepper-content>
             <v-stepper-content step="6">
                 <h1 class="headline">Conclusion</h1>
+                    <p> Please keep in mind the following:</p>
                 <v-row no-gutters class="mt-3 justify-center">
                     <v-col cols="3">
                         <v-card class="ma-1 pa-3 grey lighten-5" :elevation="2">
-                            <svg v-bind="attrs" v-on="on" width="75%" viewBox="0 0 153 155" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
-                                style="margin:0 12.5%;fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                            <svg v-bind="attrs" v-on="on" width="36%" viewBox="0 0 153 155" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
+                                style="margin:0 32%;fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
                                 <circle cx="76.172" cy="78.519" r="76.172" style="fill:#4caf4f;" />
                                 <circle cx="76.172" cy="78.519" r="65.218" style="fill:#fff;" />
                                 <text x="49.097px" y="83.963px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:20px;fill:#808080;">20:00</text>
@@ -298,8 +295,8 @@
                     </v-col>
                     <v-col cols="3">
                         <v-card class="ma-1 pa-3 grey lighten-5" :elevation="2">
-                            <svg v-bind="attrs" v-on="on" width="85%" viewBox="0 0 144 129" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
-                                style="margin:0 7.5%;fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                            <svg v-bind="attrs" v-on="on" width="48%" viewBox="0 0 144 129" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
+                                style="margin:0 26%;fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
                                 <path d="M143.607,100.098c0,-15.425 -12.523,-27.949 -27.949,-27.949l-87.708,-0c-15.426,-0 -27.95,12.524 -27.95,27.949c-0,15.426 12.524,27.95 27.95,27.95l87.708,0c15.426,0 27.949,-12.524 27.949,-27.95Z"
                                     style="fill:#4caf4f;" /><text x="23.948px" y="107.262px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:20px;fill:#fff;">Points</text>
                                 <path d="M95.09,82.573l7.966,15.933l-15.932,-0l7.966,-15.933Z" style="fill:#fff;" />
@@ -315,16 +312,16 @@
                     </v-col>
                     <v-col cols="3">
                         <v-card class="ma-1 pa-3 grey lighten-5" :elevation="2">
-                            <svg v-bind="attrs" v-on="on" width="80%" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
-                                style="margin:0 10%;fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                            <svg v-bind="attrs" v-on="on" width="40%" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
+                                style="margin:0 30%;fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
                                 <path id="_-Curves-" serif:id="(Curves)"
                                     d="M12,1l-1,0l0,-1l-8,0l0,1l-1,0c-1.105,0 -2,0.895 -2,2l0,14c0,1.105 0.895,2 2,2l10,0c1.105,0 2,-0.895 2,-2l0,-14c0,-1.105 -0.895,-2 -2,-2Zm-8,0l6,0l0,1l-6,0l0,-1Zm9,16c0,0.551 -0.449,1 -1,1l-10,0c-0.551,0 -1,-0.449 -1,-1l0,-14c0,-0.551 0.449,-1 1,-1l1,0l0,1l8,0l0,-1l1,0c0.551,0 1,0.449 1,1l0,14Zm-10,-12l8,0l0,1l-8,0l0,-1Zm0,3l8,0l0,1l-8,0l0,-1Zm0,3l8,0l0,1l-8,0l0,-1Zm0,3l4,0l0,1l-4,0l0,-1Zm16,-13l-2,0c-0.552,0 -1,0.448 -1,1l0,15l2,2l2,-2l0,-15c0,-0.552 -0.448,-1 -1,-1Zm-2,1l2,0l0,2l-2,0l0,-2Zm2,14.586l-1,1l-1,-1l0,-11.586l2,0l0,11.586Z"
                                     style="fill:#4caf4f;fill-rule:nonzero;" /></svg>
                             <v-card-text>3. After the task, you will complete a short questionnaire about your experience and our system.</v-card-text>
                         </v-card>
                     </v-col>
-                    <v-alert dense outlined color="warning" class="mt-2">
-                        You're goal is to classify as many images correctly, <strong>with or without</strong> our AI tool.
+                    <v-alert dense outlined color="info" class="mt-2">
+                        You're goal is to classify as many images correctly in the allotted time; choosing to <strong>use, or not use,</strong> the suggestions of our AI tool.
                     </v-alert>
                 </v-row>
                 <v-card-actions>
