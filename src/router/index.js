@@ -7,6 +7,7 @@ import Analysis from '../views/Analysis.vue'
 import Survey from '../views/Survey.vue'
 import Debrief from '../views/Debrief.vue'
 import Cancel from '../views/Cancel.vue'
+import Closed from "../views/Closed.vue"
 
 Vue.use(VueRouter)
 
@@ -46,6 +47,11 @@ Vue.use(VueRouter)
     path: process.env.NODE_ENV === 'production' ? '/TrashSelector/cancel' : '/cancel',
     name: 'Cancel',
     component: Cancel
+  },
+  {
+    path: process.env.NODE_ENV === 'production' ? '/TrashSelector/cancel' : '/closed',
+    name: 'Closed',
+    component: Closed
   }
 ]
 

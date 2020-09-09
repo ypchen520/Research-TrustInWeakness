@@ -16,6 +16,7 @@
       <h2><router-link :to="{name:'Survey'}" replace>Survey</router-link> </h2>
       <h2><router-link :to="{name:'Debrief', query: {id: this.userID, src: this.src } }" replace>Debrief</router-link> </h2>
       <h2><router-link :to="{name:'Cancel'}" replace>Cancel</router-link> </h2>
+      <h2><router-link :to="{name:'Closed'}" replace>Study is closed notice</router-link> </h2>
       <v-divider></v-divider>
       <v-alert class="my-4" text color="green"> 
         Random User ID for this session: {{userID}} |
@@ -26,12 +27,12 @@
       </small>
       <v-btn primary @click="saveData()">Test Save Data to Server</v-btn>
     </div>
-    <Consent v-else />
+    <Closed v-else />
   </div>
 </template>
 
 <script>
-import Consent from "../views/Consent";
+import Closed from "../views/Closed";
 import Debrief from "../views/Debrief";
   let userID=Math.floor(Math.random()*9000)+1000;
   let src = (Math.random() <0.5) ? 'SONA' : 'ONLINE'
@@ -47,7 +48,7 @@ export default {
       }
     },
     components: {
-      Consent, Debrief
+      Closed, Debrief
     },
     created: ()=> {
       console.log(userID, src)
