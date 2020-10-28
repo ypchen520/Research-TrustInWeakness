@@ -1,7 +1,7 @@
 <template>
   <div>
     <Debrief v-if="entrypoint === 'fin'"/>
-    <div v-else-if="entrypoint === 'dev'">
+    <div><!-- v-else-if="entrypoint === 'dev'">-->
       <v-alert
         text
         outlined
@@ -27,7 +27,7 @@
       </small>
       <v-btn primary @click="saveData()">Test Save Data to Server</v-btn>
     </div>
-    <Closed v-else />
+    <!-- <Closed v-else /> -->
   </div>
 </template>
 
