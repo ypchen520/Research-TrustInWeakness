@@ -455,25 +455,22 @@ export default {
       },
       getPoints(){
         this.points = 0;
+        let temp = 0;
         var truth = GroundTruth.find(o => o.photoID === this.photoID).class;
         var ans = this.checked.find(o => o.photoID === this.photoID).label;
-        if(truth.glass.unbroken != ans.glass.unbroken || 
-           truth.glass.broken != ans.glass.broken || 
-           truth.plastic.wrapper != ans.plastic.wrapper ||
-           truth.plastic.bottle != ans.plastic.bottle ||
-           truth.plastic.other != ans.plastic.other ||
-           truth.aluminum.can != ans.aluminum.can ||
-           truth.aluminum.other != ans.aluminum.other ||
-           truth.paper.bag != ans.paper.bag ||
-           truth.paper.other != ans.paper.other ||
-           truth.food != ans.food ||
-           truth.other != ans.other
-          ){
-          this.points = 0;
-        }else{
-          this.points = 1;
-          this.isCorrect = true;
-        }
+        if(truth.glass.broken == ans.glass.broken) temp++;
+        if(truth.glass.broken == ans.glass.broken ) temp++;
+        if(truth.plastic.wrapper == ans.plastic.wrapper) temp++;
+        if(truth.plastic.bottle == ans.plastic.bottle) temp++;
+        if(truth.plastic.other == ans.plastic.other) temp++;
+        if(truth.aluminum.can == ans.aluminum.can) temp++;
+        if(truth.aluminum.other == ans.aluminum.other) temp++;
+        if(truth.paper.bag == ans.paper.bag) temp++;
+        if(truth.paper.other == ans.paper.other) temp++;
+        if(truth.food == ans.food) temp++;
+        if(truth.other == ans.other) temp++;
+        this.points = temp;
+        this.isCorrect = true;
       },
       logCheckedData(classType, isChecked){
         this.checkedData["type"] = "checkbox";
